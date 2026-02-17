@@ -1,0 +1,641 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{FSE 570 Capstone Project Proposal}}\\[0.2cm]
+{\large \textbf{Earnings Call \& Risk Intelligence Engine for Financial Decision Support}}\\[0.3cm]
+
+\begin{center}
+\begin{tabular}{ccc}
+\textbf{Shalin Nilesh Bhavsar} &
+\textbf{Ramanuja Magadi Anantha Krishna} &
+\textbf{Freya Hemalbhai Shah} \\
+
+\href{mailto:sbhavsa8@asu.edu}{sbhavsa8@asu.edu} &
+\href{mailto:rkrish79@asu.edu}{rkrish79@asu.edu} &
+\href{mailto:fshah14@asu.edu}{fshah14@asu.edu} \\
+\end{tabular}
+
+\vspace{0.3cm}
+
+\begin{tabular}{cc}
+\textbf{Kruthika Suresh} &
+\textbf{Harihara Yashwanth Veldanda} \\
+
+\href{mailto:ksures21@asu.edu}{ksures21@asu.edu} &
+\href{mailto:hveldan1@asu.edu}{hveldan1@asu.edu} \\
+\end{tabular}
+\end{center}
+\end{center}
+
+\begin{center}
+\textbf{Arizona State University}
+\end{center}
+
+
+\section*{1. Problem Statement}
+
+Financial analysts, investors, and risk managers rely heavily on earnings calls to assess company performance, management credibility, and future risks. Earnings calls are lengthy, unstructured, and contain nuanced language such as hedging, optimism, and evasiveness, making systematic and objective analysis difficult.
+
+Current practices depend on manual transcript review, basic keyword searches, or delayed market reactions. These approaches are subjective, inconsistent, and do not scale across thousands of firms and quarterly earnings calls. As a result, important risk signals may be missed, leading to delayed or suboptimal financial decisions.
+
+This project addresses a data-driven engineering problem by developing an \textbf{Earnings Call \& Risk Intelligence Engine} that automatically extracts sentiment, risk indicators, and management confidence signals from earnings call transcripts and integrates them with structured financial and market data.
+\\\\
+To effectively solve this problem, the system must meet the following requirements:
+\begin{itemize}[leftmargin=*]
+    \item Scalable processing of large volumes of earnings call transcripts.
+    \item Accurate and interpretable extraction of sentiment and risk-related signals.
+    \item Seamless integration of unstructured text features with structured financial time-series data.
+    \item Timely outputs suitable for real-world financial decision support.
+\end{itemize}
+
+\noindent
+Primary stakeholders include institutional investors, financial analysts, portfolio managers, and risk management teams. Solving this problem enables earlier identification of financial risk, improved interpretation of earnings outcomes, and more informed capital allocation. At a broader level, this contributes to more efficient and transparent financial markets.
+
+\section*{2. Data Sources}
+
+This project will use multiple large, heterogeneous datasets:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Earnings Call Transcripts}: Publicly available transcripts from sources such as Seeking Alpha and SEC EDGAR. The dataset will consist of several thousand earnings calls spanning multiple years and publicly traded U.S. companies. These unstructured text documents include prepared remarks and analyst Q\&A sections.
+    
+    \item \textbf{Financial and Market Data}: Structured quarterly financial statements (income statements, balance sheets, and cash flow statements) from SEC EDGAR and daily stock price data from Yahoo Finance. These datasets provide numerical time-series features aligned with earnings call dates.
+\end{itemize}
+
+\noindent
+Key challenges include text cleaning, speaker segmentation, temporal alignment between transcripts and financial data, and handling missing or noisy records. All datasets are publicly accessible and contain no personally identifiable information, ensuring compliance with data usage and privacy requirements.
+
+\section*{3. Methodology}
+
+The proposed system integrates natural language processing and machine learning techniques to extract actionable insights from earnings calls.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Text Processing}: Transcript cleaning, tokenization, lemmatization, speaker-role identification, and separation of prepared remarks and Q\&A sections.
+    
+    \item \textbf{Feature Extraction}: Transformer-based financial language models (e.g., FinBERT) will generate sentiment scores, risk embeddings, and linguistic uncertainty measures. Topic modeling will identify recurring risk-related themes.
+    
+    \item \textbf{Predictive Modeling}: Supervised learning models such as logistic regression, random forests, and gradient boosting will predict post-earnings stock movement and earnings surprises using combined textual and numerical features.
+    
+    \item \textbf{Model Validation}: Models will be evaluated using train-test splits and cross-validation. Performance will be assessed using accuracy, F1-score, ROC-AUC, and regression error metrics. Results will be compared against baseline models using only numerical financial features.
+\end{itemize}
+
+\noindent
+This methodology explicitly applies advanced data science techniques to manage, analyze, and extract knowledge from large, heterogeneous datasets.
+
+\section*{4. Project Management: Timeline, Milestones, and Risks}
+
+\textbf{Timeline and Milestones (Week-wise):}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{|c|p{16cm}|}
+\hline
+\textbf{Week} & \textbf{Planned Activities and Milestones} \\
+\hline
+Week 1 & Finalize project scope, confirm problem definition, identify datasets, and define evaluation metrics. \\
+\hline
+Week 2 & Collect earnings call transcripts and financial market data; perform initial data inspection and quality checks. \\
+\hline
+Week 3 & Data cleaning, text preprocessing, speaker segmentation, and alignment of transcripts with financial data. \\
+\hline
+Week 4 & Exploratory data analysis and baseline feature engineering using numerical financial indicators. \\
+\hline
+Week 5 & NLP-based feature extraction using transformer models; generation of sentiment, risk, and uncertainty signals. \\
+\hline
+Week 6 & Development of supervised learning models and comparison of baseline versus NLP-enhanced models. \\
+\hline
+Week 7 & Model validation through cross-validation, hyperparameter tuning, and performance evaluation. \\
+\hline
+Week 8 & Error analysis, model refinement, and interpretability assessment of model outputs. \\
+\hline
+Week 9 & Final model selection, results consolidation, and draft report preparation. \\
+\hline
+Week 10 & Final report submission, presentation preparation, and project closure. \\
+\hline
+\end{tabular}
+\caption{Week-wise Project Timeline and Milestones}
+\end{table}
+
+\noindent\textbf{Status Check-ins and Monitoring Metrics:}  
+Progress will be monitored through weekly milestone completion, dataset readiness indicators, model validation performance trends, and comparison against baseline metrics.
+
+\noindent\textbf{\\Key Risks and Mitigation Strategies:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Data Quality Risk:} Incomplete or noisy transcripts. Monitored via transcript coverage and preprocessing error rates. Mitigated through data filtering and robust preprocessing pipelines.
+    \item \textbf{Model Performance Risk:} Limited improvement over baseline models. Monitored using validation metrics and performance deltas. Mitigated through feature refinement and model tuning.
+    \item \textbf{Time Constraint Risk:} Scope expansion due to model complexity. Monitored through weekly milestone completion. Mitigated by prioritizing core deliverables.
+\end{itemize}
+
+\end{document}
+
+
+% \documentclass[11pt,letterpaper]{article}
+
+% % Packages
+% \usepackage[margin=1in]{geometry}
+% \usepackage{titlesec}
+% \usepackage{enumitem}
+% \usepackage{booktabs}
+% \usepackage{tabularx}
+% \usepackage{xcolor}
+% \usepackage{hyperref}
+% \usepackage{fancyhdr}
+% \usepackage{lastpage}
+% \usepackage{amsmath}
+% \usepackage{graphicx}
+
+% % Header and footer
+% \pagestyle{fancy}
+% \fancyhf{}
+% \lhead{FSE 570 Capstone Project Proposal}
+% \rhead{February 2026}
+% \cfoot{Page \thepage\ of \pageref{LastPage}}
+
+% % Hyperlink setup
+% \hypersetup{
+%     colorlinks=true,
+%     linkcolor=blue,
+%     urlcolor=blue,
+%     citecolor=blue
+% }
+
+% % Section formatting
+% \titleformat{\section}
+%   {\normalfont\Large\bfseries}{\thesection}{1em}{}
+% \titleformat{\subsection}
+%   {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+% \titleformat{\subsubsection}
+%   {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% % Custom colors
+% \definecolor{darkblue}{RGB}{0,51,102}
+
+% \begin{document}
+
+% % Title Page
+% \begin{titlepage}
+%     \centering
+%     \vspace*{2cm}
+    
+%     {\Huge\bfseries FSE 570 Capstone Project Proposal\par}
+%     \vspace{0.5cm}
+%     {\LARGE Earnings Call \& Risk Intelligence Engine\\for Financial Decision Support\par}
+%     \vspace{1.5cm}
+    
+%     {\Large\textbf{Team Members:}\par}
+%     \vspace{0.5cm}
+%     \begin{tabular}{ll}
+%     \textbf{Name} & \textbf{Email} \\
+%     \hline
+%     Shalin Nilesh Bhavsar & sbhavsa8@asu.edu \\
+%     Ramanuj Magadi Anantha Krishna & rkrish79@asu.edu \\
+%     Freya Hemalbhai Shah & fshah14@asu.edu \\
+%     Kruthika Suresh & ksures21@asu.edu \\
+%     Harihara Yashwanth Veldanda & hveldan1@asu.edu \\
+%     \end{tabular}
+    
+%     \vspace{1.5cm}
+%     {\Large\textbf{Date:} February 2026\par}
+%     \vspace{0.3cm}
+%     {\Large\textbf{Project Deadline:} April 30, 2026\par}
+%     \vspace{0.3cm}
+%     {\Large\textbf{Arizona State University}\par}
+%     \vfill
+% \end{titlepage}
+
+
+% \section{Problem Statement (25\%)}
+
+% \subsection{Real-World Problem Definition}
+
+% Financial institutions and investment analysts face a critical challenge: \textbf{tracking how corporate risk narratives evolve over time across earnings calls and SEC filings}. Public companies disclose extensive risk information quarterly through earnings call transcripts and regulatory filings (10-K, 10-Q), yet this data presents severe analytical barriers:
+
+% \subsubsection{Problem Requirements:}
+
+% \begin{enumerate}[leftmargin=*]
+%     \item \textbf{Volume Overload:} A single S\&P 500 company produces $\sim$100,000 words/quarter of risk-related text; tracking 20 companies = 8M words/year
+    
+%     \item \textbf{Manual Analysis Limitations:} Detecting subtle quarter-over-quarter changes in risk emphasis requires reading hundreds of documents sequentially
+    
+%     \item \textbf{Lack of Temporal Tracking:} No automated system tracks longitudinal changes in corporate risk communication (e.g., cybersecurity mentions increasing 340\% over 3 years)
+    
+%     \item \textbf{Hallucination Risk:} General AI tools (ChatGPT, etc.) cannot enforce evidence grounding or cite specific sources, violating financial governance standards
+    
+%     \item \textbf{Integration Gap:} Earnings calls (conversational) and SEC filings (legal) are analyzed separately, missing critical discrepancies between management tone and formal disclosures
+% \end{enumerate}
+
+% \textbf{Current State:} Analysts manually read documents, create ad-hoc spreadsheets, and miss early warning signals. Tools like Bloomberg Terminal provide document access but no automated longitudinal risk intelligence.
+
+% \subsection{How This Project Solves the Problem}
+
+% This project delivers an \textbf{AI-powered Earnings Call \& Risk Intelligence Engine} that:
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Automates longitudinal tracking:} Detects quarter-over-quarter and year-over-year changes in risk emphasis across 900+ documents
+    
+%     \item \textbf{Enforces evidence grounding:} Every AI-generated insight includes citations to specific filing sections (no hallucinations)
+    
+%     \item \textbf{Quantifies qualitative disclosures:} Transforms narrative text into measurable indicators (risk frequency, sentiment drift, uncertainty scores)
+    
+%     \item \textbf{Integrates heterogeneous sources:} Compares management tone in earnings calls against formal risk disclosures in SEC filings
+    
+%     \item \textbf{Provides explainable insights:} Generates audit-ready reports with source attribution
+% \end{itemize}
+
+% \subsubsection{Value to Stakeholders:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Investment Analysts:} Reduce due diligence time from 40 hours $\rightarrow$ 2 hours per company; detect risk signals 2--4 quarters earlier
+    
+%     \item \textbf{Credit Officers:} Identify borrower risk deterioration before financial metrics reflect problems (e.g., increasing caution in disclosures)
+    
+%     \item \textbf{Corporate Strategy Teams:} Benchmark risk posture against competitors; track industry-wide responses to regulatory changes
+    
+%     \item \textbf{Academic Researchers:} Enable large-scale analysis of corporate communication behavior (previously limited by manual analysis)
+% \end{itemize}
+
+% \subsection{Societal \& Industry Impact}
+
+% \textbf{Financial Markets Efficiency:} Early detection of corporate risk changes improves capital allocation, reducing systemic risk from overlooked warnings (cf.\ 2008 financial crisis where risk disclosures signaled problems analysts missed).
+
+% \textbf{Regulatory Transparency:} Demonstrates how AI can enhance disclosure effectiveness, supporting SEC initiatives for improved investor protection.
+
+% \textbf{Economic Impact:} Better investment decisions reduce portfolio volatility; estimated 5--10\% improvement in risk-adjusted returns = billions in value for institutional investors managing \$30+ trillion in U.S.\ equities.
+
+% \textbf{Research Contribution:} Creates open-source methodology for temporal NLP analysis of financial disclosures, advancing computational finance and corporate governance research.
+
+% \section{Data Sources (25\%)}
+
+% \subsection{Dataset 1: SEC EDGAR Financial Filings (Primary Source)}
+
+% \begin{table}[h]
+% \begin{tabularx}{\textwidth}{lX}
+% \toprule
+% \textbf{Source} & U.S.\ Securities and Exchange Commission EDGAR database \\
+% \textbf{Access} & \url{https://www.sec.gov/edgar} | API: \url{https://data.sec.gov/} \\
+% \textbf{Legal Status} & Public domain (U.S.\ government data), completely free, no restrictions \\
+% \textbf{Size} & 500+ filings (20 companies $\times$ 25 filings/company over 5 years) \\
+% \bottomrule
+% \end{tabularx}
+% \end{table}
+
+% \subsubsection{Structure:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Document Types:} 10-K (annual reports), 10-Q (quarterly reports)
+%     \item \textbf{Key Sections:} Item 1A (Risk Factors), Item 7 (MD\&A -- Management Discussion \& Analysis)
+%     \item \textbf{Content Volume:} 30 million characters total; avg 35,000 chars/Risk Factors section
+%     \item \textbf{Time Coverage:} 2020--2024 (captures COVID, inflation, AI disruption, geopolitical risks)
+%     \item \textbf{Companies:} Apple, Microsoft, Google, Amazon, JPMorgan, Bank of America, Pfizer, Johnson \& Johnson, Walmart, ExxonMobil (+ 10 more across tech, finance, healthcare, retail, energy sectors)
+% \end{itemize}
+
+% \textbf{Relevance:} Risk Factors sections are legally mandated comprehensive inventories of all material risks; longitudinal analysis reveals how corporate risk posture evolves with business conditions.
+
+% \subsubsection{Heterogeneity:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item 5 industry sectors with distinct risk vocabularies (tech: IP/AI; finance: credit/market; healthcare: FDA/litigation)
+%     \item Annual (10-K) vs quarterly (10-Q) reporting cadences
+%     \item Formal legal language with embedded quantitative metrics
+%     \item Document length variation: 20,000--80,000 characters
+% \end{itemize}
+
+% \subsection{Dataset 2: Public Earnings Call Transcripts (Secondary Source)}
+
+% \begin{table}[h]
+% \begin{tabularx}{\textwidth}{lX}
+% \toprule
+% \textbf{Source} & Financial Modeling Prep API (primary) + Kaggle public datasets (backup) 
+% \\
+% \textbf{Access} & \url{https://financialmodelingprep.com/api} (free tier: 250 calls/day) | Kaggle: \url{https://www.kaggle.com/datasets/tpotterer/motley-fool-scraped-earnings-call-transcripts} \\
+% \textbf{Legal Status} & Publicly disclosed investor communications, licensed for research use \\
+% \textbf{Size} & 400+ transcripts (20 companies $\times$ 20 quarters) \\
+% \bottomrule
+% \end{tabularx}
+% \end{table}
+
+% \subsubsection{Structure:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Components:} Prepared management remarks (2,000--5,000 words) + Q\&A session (3,000--6,000 words)
+%     \item \textbf{Content Volume:} 20 million characters total; avg 50,000 chars/transcript
+%     \item \textbf{Speakers:} CEO, CFO, division heads (management) + equity analysts (questioners)
+%     \item \textbf{Format:} Transcribed conversational speech with speaker labels
+% \end{itemize}
+
+% \textbf{Relevance:} Earnings calls reveal real-time management priorities and tone 30--45 days before formal SEC filings; Q\&A sections expose analyst concerns that management may downplay in prepared remarks.
+
+% \subsubsection{Heterogeneity:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item Conversational vs written text (verbal fillers, fragmented sentences, emotional cues)
+%     \item Multi-speaker dynamics (management optimism vs analyst skepticism)
+%     \item Quarterly cadence (higher temporal resolution than annual 10-Ks)
+%     \item Unstructured dialogue vs structured SEC sections
+% \end{itemize}
+
+% \subsection{Data Integration \& Challenges}
+
+% \textbf{Linkage:} Common keys (ticker symbol, fiscal quarter/year) enable temporal alignment
+
+% \textbf{Combined Dataset:} 900+ documents, 50 million characters, 250MB storage
+
+% \subsubsection{Challenges \& Solutions:}
+
+% \begin{enumerate}[leftmargin=*]
+%     \item \textbf{HTML Parsing Variability (SEC):} Non-standard formatting in older filings $\rightarrow$ Multi-pattern regex extraction + BeautifulSoup HTML cleaning
+    
+%     \item \textbf{Section Extraction Failures ($\sim$2--5\%):} Tables/custom layouts $\rightarrow$ Fallback to broader text capture + manual validation flags
+    
+%     \item \textbf{Transcription Errors (Calls):} Speech-to-text mistakes $\rightarrow$ Accept minor errors (focus on themes not exact wording) + cross-reference with SEC filings
+    
+%     \item \textbf{Missing Transcripts ($\sim$15\%):} Not all companies publish calls $\rightarrow$ Document coverage gaps, ensure 80\% minimum threshold
+    
+%     \item \textbf{Temporal Misalignment:} Calls occur 30 days before filings $\rightarrow$ Explicitly model lag; analyze as leading indicator vs comprehensive record
+    
+%     \item \textbf{Boilerplate Text:} Standard legal disclaimers repeated across filings $\rightarrow$ Document common phrases; optional removal or model learns to ignore
+    
+%     \item \textbf{Rate Limiting (API):} 250 calls/day limit $\rightarrow$ Schedule collection over 2--3 days OR use Kaggle backup dataset
+% \end{enumerate}
+
+% \textbf{Data Accessibility:} Both datasets are publicly available with no authentication barriers. SEC provides free bulk downloads; FMP offers free tier sufficient for project scope. No proprietary data or PII involved (executives mentioned in professional capacity only).
+
+% \section{Methodology (30\%)}
+
+% \subsection{Advanced Data Science Techniques}
+
+% \subsubsection{3.1 Natural Language Processing Pipeline}
+
+% \textbf{Technique 1: Financial Domain NLP (Transformers)}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Model:} FinBERT (BERT fine-tuned on financial text) for sentiment analysis and risk classification
+    
+%     \item \textbf{Justification:} Domain-specific language models outperform general models on financial terminology (0.85 vs 0.65 F1-score on financial sentiment benchmarks)
+    
+%     \item \textbf{Application:}
+%     \begin{itemize}
+%         \item Classify risks into categories (regulatory, cyber, market, operational, financial, reputational, technology)
+%         \item Extract sentiment polarity ($-1$ to $+1$) and uncertainty scores (0--100)
+%         \item Identify forward-looking statements vs historical discussion
+%     \end{itemize}
+% \end{itemize}
+
+% \textbf{Technique 2: Temporal Change Detection (Statistical NLP)}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Methods:}
+%     \begin{itemize}
+%         \item TF-IDF vectorization with cosine similarity for quarter-over-quarter comparison
+%         \item Change-point detection algorithms (PELT, Bayesian online changepoint detection) to identify structural breaks in risk language
+%         \item Named Entity Recognition (NER) for risk-related entities (regulations, competitors, technologies)
+%     \end{itemize}
+    
+%     \item \textbf{Justification:} Detects not just what risks exist but when they emerge, intensify, or diminish
+    
+%     \item \textbf{Validation:} Ground truth from known events (e.g., COVID emergence in Q1 2020 should show pandemic risk spike)
+% \end{itemize}
+
+% \subsubsection{3.2 Machine Learning Models}
+
+% \textbf{Model 1: Multi-Label Risk Classification}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Algorithm:} Gradient Boosting (XGBoost) with TF-IDF features + BERT embeddings
+%     \item \textbf{Training Data:} Hand-labeled sample of 200 risk factor paragraphs (10 categories)
+%     \item \textbf{Features:} Word frequencies, n-grams, sentence embeddings, document metadata
+%     \item \textbf{Validation:} 80/20 train-test split, 5-fold cross-validation
+%     \item \textbf{Target Metric:} F1-score $>0.70$ (benchmark: random baseline $\sim0.10$)
+% \end{itemize}
+
+% \textbf{Model 2: Sentiment Regression}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Algorithm:} Fine-tuned FinBERT with regression head for continuous sentiment scores
+%     \item \textbf{Training:} Transfer learning from FinBERT weights + fine-tuning on Financial PhraseBank dataset
+%     \item \textbf{Validation:} RMSE on held-out test set; correlation with stock price movements (sanity check)
+% \end{itemize}
+
+% \textbf{Model 3: Risk Emergence Detection}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Algorithm:} Bayesian changepoint detection on time-series of keyword frequencies
+%     \item \textbf{Justification:} Probabilistic approach quantifies uncertainty in detecting new risks
+%     \item \textbf{Validation:} Precision/Recall on synthetically inserted ``new risks'' in historical data
+% \end{itemize}
+
+% \subsubsection{3.3 Retrieval-Augmented Generation (RAG) System}
+
+% \textbf{Architecture:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Embedding Model:} sentence-transformers/all-mpnet-base-v2 (768-dim dense vectors)
+%     \item \textbf{Vector Database:} FAISS (Facebook AI Similarity Search) for $\sim$50M character corpus
+%     \item \textbf{LLM:} GPT-4 or Claude-3 (via API) with strict prompt engineering for citation enforcement
+%     \item \textbf{Retrieval:} Top-$k$ ($k=5$) semantically similar passages for each query
+% \end{itemize}
+
+% \textbf{Evidence Grounding Mechanism:}
+
+% \begin{verbatim}
+% User Query: "How has Apple's cybersecurity risk changed?"
+%     ↓
+% 1. Embed query → retrieve relevant Risk Factor passages (2020-2024)
+% 2. Construct LLM prompt: "Based ONLY on these excerpts: [passages], 
+%    answer: [query]. MUST cite sources as [Company, Filing Date, 
+%    Section]. If insufficient evidence, say so."
+% 3. LLM generates answer with inline citations
+% 4. Validate citations point to actual retrieved passages
+% 5. Return answer + source documents for user verification
+% \end{verbatim}
+
+% \textbf{Validation:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Citation Accuracy:} 95\% of statements must trace to actual source text (automated checking)
+%     \item \textbf{Hallucination Detection:} Red-team testing with unanswerable queries (should return ``insufficient evidence'')
+%     \item \textbf{User Study:} 10 finance professionals rate explanation quality (target: 4.5/5 satisfaction)
+% \end{itemize}
+
+% \subsection{Workflow}
+
+% \begin{verbatim}
+% Data Collection → Preprocessing → Feature Engineering → Model Training 
+% → RAG Integration → Validation → Deployment
+%      ↓                ↓               ↓                    ↓
+%   API calls      HTML clean      TF-IDF vectors      XGBoost fit
+%  (1-2 weeks)    Text norm      BERT embeddings      FinBERT tune
+%               Sentence split   NER extraction      Changepoint fit
+%                                                          ↓
+%                                                    FAISS index
+%                                                    LLM prompts
+%                                                    Citation check
+%                                                          ↓
+%                                                     Cross-val
+%                                                    Test set eval
+%                                                    User testing
+%                                                          ↓
+%                                                   Streamlit UI
+%                                                    (Week 10)
+% \end{verbatim}
+
+% \subsection{Model Validation Strategy}
+
+% \textbf{1. Quantitative Metrics:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item Risk Classification: F1-score, Precision, Recall (target: $>0.70$)
+%     \item Sentiment: RMSE, MAE (target: $<0.15$ on $[-1,1]$ scale)
+%     \item Changepoint: Precision/Recall on known events (target: $>0.80$)
+%     \item RAG: Citation accuracy (target: $>95\%$), answer relevance (BLEU/ROUGE scores)
+% \end{itemize}
+
+% \textbf{2. Qualitative Validation:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item Case studies: Deep-dive on 3 companies comparing model outputs to manual analyst reports
+%     \item Expert review: 2 finance professionals evaluate 20 random predictions
+%     \item Ablation studies: Test impact of removing each component (e.g., FinBERT vs generic BERT)
+% \end{itemize}
+
+% \textbf{3. Temporal Validation:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item Walk-forward testing: Train on 2020--2022, test on 2023--2024
+%     \item Event-based validation: Measure detection lag for known risk events (e.g., Silicon Valley Bank collapse)
+% \end{itemize}
+
+% \section{Proposal Presentation and Clarity (10\%)}
+
+% \textbf{Organization:} Structured in order: Problem $\rightarrow$ Data $\rightarrow$ Methods $\rightarrow$ Management (2 pages)
+
+% \textbf{Conciseness:} Essential elements only; detailed specs in separate 28-page data documentation
+
+% \textbf{Clarity:} Plain language for business impact; technical precision for methodology
+
+% \textbf{Professional Formatting:} Headers, tables, clear section breaks; GitHub repository will include complete documentation
+
+% \section{Project Management (10\%)}
+
+% \subsection{Timeline \& Milestones (13 weeks: Feb 1 -- Apr 30, 2026)}
+
+% \begin{table}[h]
+% \small
+% \begin{tabularx}{\textwidth}{|c|c|X|X|X|}
+% \hline
+% \textbf{Week} & \textbf{Dates} & \textbf{Phase} & \textbf{Deliverables} & \textbf{Status Check Goals} \\
+% \hline
+% 1--2 & Feb 1--12 & Data Collection \& Proposal & 500 SEC filings + 400 transcripts collected, validated & \textbf{Proposal Due (Feb 12):} Project proposal submitted \\
+% \hline
+% 3--5 & Feb 13--Mar 5 & Preprocessing \& EDA & Cleaned dataset, preprocessing pipeline, EDA report & \textbf{Status Update 1 (Mar 5):} Processed data ready, identified 5+ temporal trends \\
+% \hline
+% 6--8 & Mar 6--26 & NLP Model Development & Risk classifier (F1$>0.70$), sentiment analyzer, changepoint detector trained & All 3 models validated on test set, performance metrics documented \\
+% \hline
+% 9--11 & Mar 27--Apr 2 & RAG System Development & FAISS index built, LLM integrated, citation system working & \textbf{Status Update 2 (Apr 2):} RAG system answers queries with $>95\%$ citation accuracy \\
+% \hline
+% 12--13 & Apr 3--23 & Integration \& Testing & Full system integrated, user interface (Streamlit), end-to-end testing & System runs end-to-end, demo ready \\
+% \hline
+% 14 & Apr 24--30 & Documentation \& Delivery & Technical docs, presentation, demo video, final report & \textbf{Final Submission (Apr 30):} Presentation \& Report \\
+% \hline
+% \end{tabularx}
+% \end{table}
+
+% \subsection{Risk Identification \& Mitigation}
+
+% \textbf{Risk 1: Data Collection Delays (Probability: Medium, Impact: High)}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Monitoring Metric:} Filings collected per day; API success rate
+%     \item \textbf{Threshold:} If $<50\%$ of target collected by Week 1 end $\rightarrow$ trigger mitigation
+%     \item \textbf{Mitigation Strategy:}
+%     \begin{itemize}
+%         \item Primary: Use Kaggle pre-scraped datasets (immediate access, no API limits)
+%         \item Secondary: Extend collection into Week 3 by parallelizing with preprocessing
+%         \item Contingency: Reduce scope to 10 companies instead of 20 (still meets ``large dataset'' requirement)
+%     \end{itemize}
+% \end{itemize}
+
+% \textbf{Risk 2: NLP Model Underperformance (Probability: Medium, Impact: Medium)}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Monitoring Metric:} F1-score on validation set during training
+%     \item \textbf{Threshold:} If F1 $<0.60$ after initial training $\rightarrow$ trigger mitigation
+%     \item \textbf{Mitigation Strategy:}
+%     \begin{itemize}
+%         \item Primary: Switch to proven FinBERT (already trained on financial text) vs training from scratch
+%         \item Secondary: Simplify to rule-based classification + sentiment lexicons (LoughranMcDonald dictionary)
+%         \item Contingency: Focus on descriptive analytics (keyword trends) vs predictive models; still valuable for longitudinal tracking
+%     \end{itemize}
+% \end{itemize}
+
+% \textbf{Risk 3: RAG Citation Accuracy Issues (Probability: Low, Impact: High)}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Monitoring Metric:} \% of LLM responses with verifiable citations; hallucination rate in testing
+%     \item \textbf{Threshold:} If citation accuracy $<85\%$ $\rightarrow$ trigger mitigation
+%     \item \textbf{Mitigation Strategy:}
+%     \begin{itemize}
+%         \item Primary: Implement strict prompt engineering with citation format enforcement + post-processing validation
+%         \item Secondary: Add deterministic keyword-based retrieval as fallback (less sophisticated but 100\% traceable)
+%         \item Contingency: Simplify to retrieval-only system (no generation), just surface relevant passages for analyst review
+%     \end{itemize}
+% \end{itemize}
+
+% \subsection{Risk Monitoring Dashboard (Weekly Tracking)}
+
+% \begin{table}[h]
+% \begin{tabular}{lccc}
+% \toprule
+% \textbf{Metric} & \textbf{Target} & \textbf{Current} & \textbf{Status} \\
+% \midrule
+% Data Collection Progress & 100\% by W2 & TBD & \textcolor{green}{Green}/\textcolor{yellow}{Yellow}/\textcolor{red}{Red} \\
+% Model F1-Score & $>0.70$ & TBD & \textcolor{green}{Green}/\textcolor{yellow}{Yellow}/\textcolor{red}{Red} \\
+% RAG Citation Accuracy & $>95\%$ & TBD & \textcolor{green}{Green}/\textcolor{yellow}{Yellow}/\textcolor{red}{Red} \\
+% Timeline Adherence & On schedule & TBD & \textcolor{green}{Green}/\textcolor{yellow}{Yellow}/\textcolor{red}{Red} \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+% \textbf{Proactive Risk Management:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item \textbf{Daily standups (self-check):} 15-min review of progress vs plan
+%     \item \textbf{Weekly status reports:} Document metrics, blockers, adjustments
+%     \item \textbf{Bi-weekly advisor check-ins:} Review risks, get guidance on mitigation decisions
+%     \item \textbf{Contingency buffer:} Weeks 12--14 have slack for addressing unforeseen issues
+% \end{itemize}
+
+% \section{Expected Deliverables (April 30, 2026)}
+
+% \begin{enumerate}[leftmargin=*]
+%     \item \textbf{Working AI System:} Deployed locally or cloud (Streamlit interface)
+%     \item \textbf{Technical Documentation:} 30+ pages (architecture, data pipeline, model specs, evaluation)
+%     \item \textbf{User Guide:} Instructions for analysts to use the system
+%     \item \textbf{Code Repository:} GitHub with clean, documented code + README
+%     \item \textbf{Final Report:} 15--20 pages (problem, methods, results, limitations, future work)
+%     \item \textbf{Presentation:} 25--30 slides + 10-min demo video
+%     \item \textbf{Dataset \& Models:} Processed data + trained model weights (for reproducibility)
+% \end{enumerate}
+
+% \subsection{Success Criteria:}
+
+% \begin{itemize}[leftmargin=*]
+%     \item All 3 NLP models meet performance targets (F1$>0.70$, RMSE$<0.15$, Precision$>0.80$)
+%     \item RAG system achieves $>95\%$ citation accuracy on test queries
+%     \item User study shows 4.5/5 satisfaction from finance professionals
+%     \item System processes 5-year company history in $<5$ minutes
+%     \item Complete documentation enables reproduction by other researchers
+% \end{itemize}
+
+% \vspace{1cm}
+
+% \noindent\rule{\textwidth}{0.4pt}
+
+% \end{document}

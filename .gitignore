@@ -1,0 +1,89 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data files (IMPORTANT - don't commit large datasets)
+data/raw/market/*.csv
+data/raw/financial/*.csv
+data/raw/transcripts/*.json
+data/raw/transcripts/individual/*.txt
+data/processed/
+data/features/
+data/final/
+
+# Keep directory structure but ignore contents
+!data/raw/market/.gitkeep
+!data/raw/financial/.gitkeep
+!data/raw/transcripts/.gitkeep
+
+# Logs
+logs/*.log
+*.log
+
+# Models (large binary files)
+models/baseline/*.pkl
+models/advanced/*.pkl
+models/checkpoints/*.h5
+
+# Results
+results/figures/*.png
+results/figures/*.jpg
+results/tables/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# API Keys and Secrets
+.env
+*.key
+config_local.py
+secrets.json
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+temp/
+tmp/
+
+# Large files
+*.csv.gz
+*.parquet
+*.h5
+*.hdf5
