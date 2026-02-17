@@ -50,7 +50,7 @@ data/final/
 !data/raw/market/.gitkeep
 !data/raw/financial/.gitkeep
 !data/raw/transcripts/.gitkeep
-
+!data/samples
 # Logs
 logs/*.log
 *.log
