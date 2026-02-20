@@ -51,20 +51,36 @@ class TranscriptCollector:
     
     def get_high_priority_tickers(self):
         """
-        Get list of high-priority tickers (most liquid S&P 500 stocks)
-        These are most likely to have transcripts available
+        Get tickers that ACTUALLY have financial data
+        This ensures alignment in Phase 2D
         """
-        # Top 60 most liquid S&P 500 stocks
-        priority_tickers = [
-            'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'META', 'TSLA', 'BRK-B', 'UNH', 'JNJ',
-            'XOM', 'V', 'JPM', 'PG', 'MA', 'LLY', 'HD', 'CVX', 'MRK', 'ABBV',
-            'PEP', 'COST', 'KO', 'AVGO', 'TMO', 'WMT', 'MCD', 'CSCO', 'ACN', 'ABT',
-            'BAC', 'CRM', 'ADBE', 'DHR', 'LIN', 'NFLX', 'VZ', 'NKE', 'TXN', 'CMCSA',
-            'WFC', 'NEE', 'DIS', 'RTX', 'ORCL', 'AMD', 'UPS', 'PM', 'QCOM', 'MS',
-            'INTU', 'HON', 'T', 'IBM', 'AMGN', 'COP', 'LOW', 'AMAT', 'GE', 'CAT'
-        ]
+        from config import PROCESSED_DATA_DIR
+        import pandas as pd
         
-        return priority_tickers
+        # Read tickers from actual financial data
+        financial_file = PROCESSED_DATA_DIR / 'financial' / 'financial_features_normalized.csv'
+        
+        if financial_file.exists():
+            print("📊 Reading tickers from financial data...")
+            df = pd.read_csv(financial_file)
+            available_tickers = df['Ticker'].unique().tolist()
+            print(f"✅ Found {len(available_tickers)} tickers with financial data")
+            
+            # Return first 50 tickers that have the most data
+            ticker_counts = df['Ticker'].value_counts()
+            top_tickers = ticker_counts.head(50).index.tolist()
+            
+            return top_tickers
+        else:
+            print("⚠️  Financial data not found, using default tickers")
+            # Fallback to default list
+            return [
+                'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'META', 'TSLA', 'BRK-B', 'UNH', 'JNJ',
+                'XOM', 'V', 'JPM', 'PG', 'MA', 'LLY', 'HD', 'CVX', 'MRK', 'ABBV',
+                'PEP', 'COST', 'KO', 'AVGO', 'TMO', 'WMT', 'MCD', 'CSCO', 'ACN', 'ABT',
+                'BAC', 'CRM', 'ADBE', 'DHR', 'LIN', 'NFLX', 'VZ', 'NKE', 'TXN', 'CMCSA',
+                'WFC', 'NEE', 'DIS', 'RTX', 'ORCL', 'AMD', 'UPS', 'PM', 'QCOM', 'MS'
+            ]
     
     def collect_from_sec_edgar(self, ticker, max_transcripts=3):
         """
@@ -272,15 +288,27 @@ Thank you all for joining today's call. We appreciate your continued interest in
         
         return qa_template
     
+    # def _get_quarter_date(self, quarter_str):
+    #     """Convert quarter string to date that matches financial data"""
+    #     quarter_map = {
+    #         'Q2 2024': '2024-07-31',
+    #         'Q3 2024': '2024-10-31', 
+    #         'Q4 2024': '2025-01-31',
+    #     }
+    #     return quarter_map.get(quarter_str, '2024-10-31')
     def _get_quarter_date(self, quarter_str):
-        """Convert quarter string to approximate date"""
-        quarter_map = {
-            'Q1 2023': '2023-04-30',
-            'Q2 2023': '2023-07-31',
-            'Q3 2023': '2023-10-31',
-            'Q4 2023': '2024-01-31',
+        quarter, year = quarter_str.split()
+        year = int(year)
+        quarter_num = int(quarter[1])
+
+        quarter_end = {
+            1: f"{year}-03-31",
+            2: f"{year}-06-30",
+            3: f"{year}-09-30",
+            4: f"{year}-12-31"
         }
-        return quarter_map.get(quarter_str, '2023-12-31')
+
+        return quarter_end[quarter_num]
     
     def save_transcripts(self, transcripts):
         """
