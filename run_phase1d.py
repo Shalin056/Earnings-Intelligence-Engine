@@ -481,7 +481,7 @@ and we intend to be active in the open market. We think the stock is meaningfull
 
 def generate_aligned_transcripts():
     """
-    Load real transcripts (>=20KB) first, then fill with synthetic ones.
+    Load real transcripts (>=40KB) first, then fill with synthetic ones.
     All transcripts aligned with financial and market data.
     """
     print("="*60)
@@ -504,20 +504,74 @@ def generate_aligned_transcripts():
 
     # Quarter -> earnings call date mapping
     QUARTER_TO_DATE = {
+        # 2016
+        'Q1 2016': '2016-04-30', 'Q2 2016': '2016-07-31',
+        'Q3 2016': '2016-10-31', 'Q4 2016': '2017-01-31',
+        # 2017
+        'Q1 2017': '2017-04-30', 'Q2 2017': '2017-07-31',
+        'Q3 2017': '2017-10-31', 'Q4 2017': '2018-01-31',
+        # 2018
+        'Q1 2018': '2018-04-30', 'Q2 2018': '2018-07-31',
+        'Q3 2018': '2018-10-31', 'Q4 2018': '2019-01-31',
+        # 2019
+        'Q1 2019': '2019-04-30', 'Q2 2019': '2019-07-31',
+        'Q3 2019': '2019-10-31', 'Q4 2019': '2020-01-31',
+        # 2020
+        'Q1 2020': '2020-04-30', 'Q2 2020': '2020-07-31',
+        'Q3 2020': '2020-10-31', 'Q4 2020': '2021-01-31',
+        # 2021
+        'Q1 2021': '2021-04-30', 'Q2 2021': '2021-07-31',
+        'Q3 2021': '2021-10-31', 'Q4 2021': '2022-01-31',
+        # 2022
+        'Q1 2022': '2022-04-30', 'Q2 2022': '2022-07-31',
+        'Q3 2022': '2022-10-31', 'Q4 2022': '2023-01-31',
+        # 2023
+        'Q1 2023': '2023-04-30', 'Q2 2023': '2023-07-31',
+        'Q3 2023': '2023-10-31', 'Q4 2023': '2024-01-31',
+        # 2024
         'Q1 2024': '2024-04-30', 'Q2 2024': '2024-07-31',
         'Q3 2024': '2024-10-31', 'Q4 2024': '2025-01-31',
+        # 2025
         'Q1 2025': '2025-04-30', 'Q2 2025': '2025-07-31',
         'Q3 2025': '2025-10-31', 'Q4 2025': '2026-01-31',
     }
     MARKET_DATA_END = '2026-02-19'
 
-    # 2. Load real transcripts (>=20KB)
+    # Month abbreviation -> Quarter number
+    MONTH_TO_QUARTER = {
+        'Jan': 'Q1', 'Feb': 'Q1', 'Mar': 'Q1',
+        'Apr': 'Q2', 'May': 'Q2', 'Jun': 'Q2',
+        'Jul': 'Q3', 'Aug': 'Q3', 'Sep': 'Q3',
+        'Oct': 'Q4', 'Nov': 'Q4', 'Dec': 'Q4',
+    }
+
+    def _make_transcript_record(f, ticker, quarter, date, year):
+        full_text = f.read_text(encoding='utf-8', errors='ignore')
+        q_num = quarter.split()[0]
+        return {
+            'ticker': ticker,
+            'company_name': f"{ticker} Inc.",
+            'quarter': quarter,
+            'date': date,
+            'fiscal_year': int(year),
+            'fiscal_quarter': int(q_num[1]),
+            'prepared_remarks': full_text,
+            'qa_section': '',
+            'full_text': full_text,
+            'word_count': len(full_text.split()),
+            'speaker_count': 2,
+            'source': 'REAL',
+            'collection_date': datetime.now().strftime('%Y-%m-%d')
+        }
+
+    # 2. Load real transcripts
     individual_dir = RAW_DATA_DIR / 'transcripts' / 'individual'
     transcripts = []
     real_keys = set()
 
+    # Scanner 1: individual/ folder — format TICKER_Q1_2025.txt
     if individual_dir.exists():
-        print("📂 Scanning for real transcripts (>=20KB)...")
+        print("📂 Scanning individual/ for real transcripts (>=20KB)...")
         for f in sorted(individual_dir.glob('*.txt')):
             if f.stat().st_size < 20_000:
                 continue
@@ -532,27 +586,75 @@ def generate_aligned_transcripts():
             if date is None or date > MARKET_DATA_END:
                 print(f"   ⚠️  Skipping {f.name} — date outside market range")
                 continue
-            full_text = f.read_text(encoding='utf-8', errors='ignore')
-            transcript = {
-                'ticker': ticker,
-                'company_name': f"{ticker} Inc.",
-                'quarter': quarter,
-                'date': date,
-                'fiscal_year': int(year),
-                'fiscal_quarter': int(q_num[1]),
-                'prepared_remarks': full_text,
-                'qa_section': '',
-                'full_text': full_text,
-                'word_count': len(full_text.split()),
-                'speaker_count': 2,
-                'source': 'REAL',
-                'collection_date': datetime.now().strftime('%Y-%m-%d')
-            }
-            transcripts.append(transcript)
+            t = _make_transcript_record(f, ticker, quarter, date, year)
+            transcripts.append(t)
             real_keys.add((ticker, quarter))
+        print(f"   Found {len(transcripts)} transcripts from individual/")
 
-        print(f"✅ Loaded {len(transcripts)} real transcripts")
-        print()
+    # Scanner 2: real/Transcripts/TICKER/ — format 2016-Apr-26-AAPL.txt
+    real_base = RAW_DATA_DIR / 'transcripts' / 'real' / 'Transcripts'
+    if real_base.exists():
+        print("📂 Scanning real/Transcripts/ for historical transcripts (2016-2020)...")
+        count_before = len(transcripts)
+        for ticker_dir in sorted(real_base.iterdir()):
+            if not ticker_dir.is_dir():
+                continue
+            ticker = ticker_dir.name
+            for f in sorted(ticker_dir.glob('*.txt')):
+                if f.stat().st_size < 20_000:
+                    continue
+                parts = f.stem.split('-')
+                if len(parts) < 3:
+                    continue
+                try:
+                    year = parts[0]
+                    month_abbr = parts[1]
+                    q_num = MONTH_TO_QUARTER.get(month_abbr)
+                    if q_num is None:
+                        continue
+                    quarter = f"{q_num} {year}"
+                    date = QUARTER_TO_DATE.get(quarter)
+                    if date is None or date > MARKET_DATA_END:
+                        continue
+                    if (ticker, quarter) in real_keys:
+                        continue
+                    t = _make_transcript_record(f, ticker, quarter, date, year)
+                    transcripts.append(t)
+                    real_keys.add((ticker, quarter))
+                except Exception:
+                    continue
+        print(f"   Found {len(transcripts) - count_before} transcripts from real/Transcripts/")
+
+    # Scanner 3: real/ root folder — format TICKER_Q1_2025.txt
+    real_root = RAW_DATA_DIR / 'transcripts' / 'real'
+    if real_root.exists():
+        print("📂 Scanning real/ root for transcripts (>=20KB)...")
+        count_before = len(transcripts)
+        for f in sorted(real_root.glob('*.txt')):
+            if f.stat().st_size < 20_000:
+                continue
+            parts = f.stem.split('_')
+            if len(parts) < 3:
+                continue
+            try:
+                ticker = parts[0]
+                q_num  = parts[1]
+                year   = parts[2]
+                quarter = f"{q_num} {year}"
+                date = QUARTER_TO_DATE.get(quarter)
+                if date is None or date > MARKET_DATA_END:
+                    continue
+                if (ticker, quarter) in real_keys:
+                    continue
+                t = _make_transcript_record(f, ticker, quarter, date, year)
+                transcripts.append(t)
+                real_keys.add((ticker, quarter))
+            except Exception:
+                continue
+        print(f"   Found {len(transcripts) - count_before} transcripts from real/ root")
+
+    print(f"✅ Total real transcripts loaded: {len(transcripts)}")
+    print()
 
     # 3. Fill with synthetic transcripts for remaining tickers/quarters
     print(f"🤖 Generating synthetic transcripts...")

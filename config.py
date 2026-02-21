@@ -19,8 +19,8 @@ RESULTS_DIR = PROJECT_ROOT / 'results'
 LOGS_DIR = PROJECT_ROOT / 'logs'
 
 # Data collection parameters
-START_DATE = '2018-01-01'
-END_DATE = '2023-12-31'
+START_DATE = '2016-01-01'
+END_DATE = '2026-02-19'
 TARGET_COMPANIES = 500  # S&P 500
 
 # Model parameters
