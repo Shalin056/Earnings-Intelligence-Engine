@@ -70,7 +70,7 @@ class DataQualityReporter:
         # 3. Load transcript data
         transcript_file = self.processed_dir / 'transcripts' / 'transcripts_segmented.json'
         if transcript_file.exists():
-            with open(transcript_file, 'r') as f:
+            with open(transcript_file, 'r', encoding='utf-8') as f:
                 data['transcripts'] = json.load(f)
             print(f"✅ Transcript data: {len(data['transcripts'])} records")
         

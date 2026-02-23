@@ -198,7 +198,7 @@ class FeatureIntegrator:
         
         return merged, metadata_cols, target_col, feature_cols
     
-    def create_train_test_split(self, df, test_size=0.2):
+    def create_train_test_split(self, df, test_size=0.3):
         """
         Create train/test split based on temporal order
         """
