@@ -85,7 +85,7 @@ class DataQualityReporter:
         data['statistics'] = {}
         for name, file in stats_files.items():
             if file.exists():
-                with open(file, 'r') as f:
+                with open(file, 'r', encoding='utf-8') as f:
                     data['statistics'][name] = json.load(f)
                 print(f"✅ {name.capitalize()} statistics loaded")
         

@@ -47,7 +47,7 @@ def verify_phase2d():
     
     # 2. Load and verify statistics
     print("2️⃣ ALIGNMENT STATISTICS...")
-    with open(aligned_dir / 'alignment_statistics.json', 'r') as f:
+    with open(aligned_dir / 'alignment_statistics.json', 'r', encoding='utf-8') as f:
         stats = json.load(f)
     
     print(f"   Total transcripts:      {stats['total_transcripts']}")

@@ -44,7 +44,7 @@ def verify_phase2b():
     
     # 2. Load and verify statistics
     print("2️⃣ SEGMENTATION STATISTICS...")
-    with open(transcripts_dir / 'segmentation_statistics.json', 'r') as f:
+    with open(transcripts_dir / 'segmentation_statistics.json', 'r', encoding='utf-8') as f:
         stats = json.load(f)
     
     print(f"   Total processed:         {stats['total_processed']}")

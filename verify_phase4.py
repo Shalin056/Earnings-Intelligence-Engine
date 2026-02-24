@@ -100,7 +100,7 @@ def verify_phase4():
     print("7️⃣ ENHANCEMENT STATISTICS...")
     stats_path = FINAL_DATA_DIR / 'target_enhancement_stats.json'
     if stats_path.exists():
-        with open(stats_path, 'r') as f:
+        with open(stats_path, 'r', encoding='utf-8') as f:
             stats = json.load(f)
         
         print(f"   Total records: {stats['total_records']}")

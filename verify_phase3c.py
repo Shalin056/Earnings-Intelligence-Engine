@@ -75,7 +75,7 @@ def verify_phase3c():
     
     # 4. Feature info
     print("4️⃣ FEATURE INFORMATION...")
-    with open(FINAL_DATA_DIR / 'feature_info.json', 'r') as f:
+    with open(FINAL_DATA_DIR / 'feature_info.json', 'r', encoding='utf-8') as f:
         feature_info = json.load(f)
     
     print(f"   Metadata columns: {len(feature_info['metadata_columns'])}")

@@ -337,7 +337,7 @@ class TargetEnhancer:
             # Update feature info
             feature_info_path = self.final_dir / 'feature_info.json'
             if feature_info_path.exists():
-                with open(feature_info_path, 'r') as f:
+                with open(feature_info_path, 'r', encoding='utf-8') as f:
                     feature_info = json.load(f)
                 
                 # Add new target columns

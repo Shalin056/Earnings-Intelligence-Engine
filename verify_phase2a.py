@@ -44,7 +44,7 @@ def verify_phase2a():
     
     # 2. Load and verify statistics
     print("2️⃣ CLEANING STATISTICS...")
-    with open(transcripts_dir / 'cleaning_statistics.json', 'r') as f:
+    with open(transcripts_dir / 'cleaning_statistics.json', 'r', encoding='utf-8') as f:
         stats = json.load(f)
     
     print(f"   Total processed:      {stats['total_processed']}")
@@ -73,7 +73,7 @@ def verify_phase2a():
     
     # 4. Verify JSON structure
     print("4️⃣ JSON STRUCTURE...")
-    with open(transcripts_dir / 'transcripts_cleaned.json', 'r') as f:
+    with open(transcripts_dir / 'transcripts_cleaned.json', 'r', encoding='utf-8') as f:
         cleaned_data = json.load(f)
     
     print(f"   Total transcripts: {len(cleaned_data)}")

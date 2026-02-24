@@ -49,7 +49,7 @@ def verify_phase2c():
     
     # 2. Load and verify statistics
     print("2️⃣ NORMALIZATION STATISTICS...")
-    with open(financial_dir / 'normalization_statistics.json', 'r') as f:
+    with open(financial_dir / 'normalization_statistics.json', 'r', encoding='utf-8') as f:
         stats = json.load(f)
     
     print(f"   Total records:           {stats['total_records']:,}")

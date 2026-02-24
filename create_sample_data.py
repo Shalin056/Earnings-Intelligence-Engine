@@ -36,7 +36,7 @@ def create_samples():
     
     # 4. Sample transcript (1 file)
     import json
-    with open(RAW_DATA_DIR / 'transcripts' / 'transcripts_full.json', 'r') as f:
+    with open(RAW_DATA_DIR / 'transcripts' / 'transcripts_full.json', 'r', encoding='utf-8') as f:
         transcripts = json.load(f)
     
     sample_transcript = [transcripts[0]]

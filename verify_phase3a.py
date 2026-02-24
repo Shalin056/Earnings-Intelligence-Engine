@@ -94,7 +94,7 @@ def verify_phase3a():
     
     # 6. Extraction stats
     print("6️⃣ EXTRACTION STATISTICS...")
-    with open(FEATURES_DIR / 'finbert_extraction_stats.json', 'r') as f:
+    with open(FEATURES_DIR / 'finbert_extraction_stats.json', 'r', encoding='utf-8') as f:
         stats = json.load(f)
     
     print(f"   Total transcripts: {stats['total_transcripts']}")

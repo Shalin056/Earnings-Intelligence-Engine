@@ -60,7 +60,7 @@ def verify_transcripts():
     
     # 4. Load JSON and check structure
     print("4️⃣ VERIFYING JSON STRUCTURE...")
-    with open(transcripts_dir / 'transcripts_full.json', 'r') as f:
+    with open(transcripts_dir / 'transcripts_full.json', 'r', encoding='utf-8') as f:
         transcripts_json = json.load(f)
     
     print(f"   ✅ Total transcripts in JSON: {len(transcripts_json)}")
