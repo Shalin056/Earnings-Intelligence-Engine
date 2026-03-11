@@ -2,7 +2,7 @@
 Phase 6: Baseline Models
 6A: Logistic Regression (financial-only)
 6B: Logistic Regression (sentiment-only)
-6C: Model evaluation metrics
+6C: Combined model + evaluation metrics
 6D: Baseline performance documentation
 """
 import pandas as pd
@@ -26,6 +26,46 @@ sys.path.append(str(project_root))
 from config import FINAL_DATA_DIR, MODELS_DIR, RESULTS_DIR, LOGS_DIR
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# Columns that must NEVER be used as model features.
+# These are either the target variable, future price information (look-ahead),
+# or metadata identifiers that carry no predictive signal.
+# ─────────────────────────────────────────────────────────────────────────────
+LEAK_COLS = {
+    # Target variables — these ARE what we are predicting
+    'stock_return_3day',
+    'abnormal_return',
+    'label_binary',
+    'label_median',
+    'label_tertile',
+
+    # Future price information — direct look-ahead bias
+    'price_before_earnings',   # correlated with after-price
+    'price_after_earnings',    # never available at prediction time
+
+    # Market dates — metadata, not predictive features
+    'market_date_before',
+    'market_date_after',
+
+    # Validation and pipeline flags
+    'is_temporally_valid',
+    'alignment_timestamp',
+
+    # Identifier columns — models should not memorise tickers/names
+    'ticker',
+    'company_name',
+    'quarter',
+
+    # Date columns — models should not overfit to calendar dates
+    'transcript_date',
+    'financial_date',
+    'fiscal_year',
+    'fiscal_quarter',
+    'financial_date_diff_days',
+    'financial_DateDiff',
+}
+
+
 class BaselineModels:
 
     def __init__(self):
@@ -38,6 +78,8 @@ class BaselineModels:
         self.log_file.parent.mkdir(parents=True, exist_ok=True)
         self.all_results = {}
 
+    # ── Data Loading ──────────────────────────────────────────────────────────
+
     def load_data(self):
         print("📂 LOADING DATA...")
         train_df = pd.read_csv(self.data_dir / 'train_data.csv')
@@ -49,21 +91,73 @@ class BaselineModels:
         print()
         return train_df, test_df, feature_info
 
+    # ── Feature Set Definitions ───────────────────────────────────────────────
+
     def get_feature_sets(self, feature_info, train_df):
-        all_cols = set(feature_info['feature_columns']) & set(train_df.columns)
-        financial = sorted([c for c in all_cols
-                            if c.startswith('financial_') or c.startswith('fin_')])
-        sentiment = sorted([c for c in all_cols
-                            if any(c.startswith(p) for p in [
-                                'sentiment_', 'mgmt_sentiment_', 'analyst_sentiment_',
-                                'lm_', 'mgmt_lm_', 'analyst_lm_',
-                                'word_count', 'question_count', 'lexical_diversity',
-                                'mgmt_word_count', 'analyst_word_count',
-                                'lm_sentiment_divergence', 'uncertainty_divergence'])])
-        combined  = sorted([c for c in all_cols if not c.startswith('embedding_')])
-        return {'financial_only': financial, 'sentiment_only': sentiment, 'combined': combined}
+        """
+        Define which columns belong to each feature set.
+
+        LEAK_COLS are excluded from every feature set to prevent:
+          - Look-ahead bias (price_after_earnings)
+          - Target leakage (label_binary, abnormal_return)
+          - Identifier memorisation (ticker, company_name)
+        """
+        # Valid columns = in feature_info AND in dataframe AND not a leak col
+        all_cols = (
+            set(feature_info['feature_columns']) & set(train_df.columns)
+        ) - LEAK_COLS
+
+        # Report what was removed
+        removed = (
+            set(feature_info['feature_columns']) & set(train_df.columns)
+        ) & LEAK_COLS
+        if removed:
+            print(f"⚠️  Removed {len(removed)} leak/invalid columns from features:")
+            for c in sorted(removed):
+                print(f"      - {c}")
+            print()
+
+        # Financial features
+        financial = sorted([
+            c for c in all_cols
+            if c.startswith('financial_') or c.startswith('fin_')
+        ])
+
+        # Sentiment / NLP features
+        sentiment = sorted([
+            c for c in all_cols
+            if any(c.startswith(p) for p in [
+                'sentiment_', 'mgmt_sentiment_', 'analyst_sentiment_',
+                'lm_', 'mgmt_lm_', 'analyst_lm_',
+                'word_count', 'question_count', 'lexical_diversity',
+                'mgmt_word_count', 'analyst_word_count',
+                'lm_sentiment_divergence', 'uncertainty_divergence',
+                'mgmt_avg_word_length', 'avg_word_length', 'unique_words',
+            ])
+        ])
+
+        # Combined: financial + sentiment, no FinBERT embeddings
+        combined = sorted([
+            c for c in all_cols
+            if not c.startswith('embedding_')
+        ])
+
+        print(f"📊 Feature sets (after leak removal):")
+        print(f"   financial_only : {len(financial)} features")
+        print(f"   sentiment_only : {len(sentiment)} features")
+        print(f"   combined       : {len(combined)} features")
+        print()
+
+        return {
+            'financial_only': financial,
+            'sentiment_only': sentiment,
+            'combined':       combined,
+        }
+
+    # ── Preprocessing ─────────────────────────────────────────────────────────
 
     def clean_and_scale(self, X_train, X_test):
+        """Handle inf/nan, clip extremes, standardise. Fit ONLY on train."""
         for X in [X_train, X_test]:
             X[np.isinf(X)] = np.nan
         medians = np.nanmedian(X_train, axis=0)
@@ -82,17 +176,19 @@ class BaselineModels:
         X_test  = test_df[cols].values.astype(np.float64)
         return self.clean_and_scale(X_train, X_test)
 
+    # ── Model Evaluation ──────────────────────────────────────────────────────
+
     def eval_clf(self, model, X_tr, y_tr, X_te, y_te):
         model.fit(X_tr, y_tr)
         y_pred  = model.predict(X_te)
         y_proba = model.predict_proba(X_te)[:, 1]
         return {
-            'accuracy':  float(accuracy_score(y_te, y_pred)),
-            'precision': float(precision_score(y_te, y_pred, zero_division=0)),
-            'recall':    float(recall_score(y_te, y_pred, zero_division=0)),
-            'f1':        float(f1_score(y_te, y_pred, zero_division=0)),
-            'roc_auc':   float(roc_auc_score(y_te, y_proba)),
-            'confusion_matrix': confusion_matrix(y_te, y_pred).tolist()
+            'accuracy':         float(accuracy_score(y_te, y_pred)),
+            'precision':        float(precision_score(y_te, y_pred, zero_division=0)),
+            'recall':           float(recall_score(y_te, y_pred, zero_division=0)),
+            'f1':               float(f1_score(y_te, y_pred, zero_division=0)),
+            'roc_auc':          float(roc_auc_score(y_te, y_proba)),
+            'confusion_matrix': confusion_matrix(y_te, y_pred).tolist(),
         }
 
     def eval_reg(self, model, X_tr, y_tr, X_te, y_te):
@@ -102,16 +198,23 @@ class BaselineModels:
             'rmse':      float(np.sqrt(mean_squared_error(y_te, y_pred))),
             'mae':       float(mean_absolute_error(y_te, y_pred)),
             'r2':        float(r2_score(y_te, y_pred)),
-            'direction': float(np.mean((y_te > 0) == (y_pred > 0)))
+            'direction': float(np.mean((y_te > 0) == (y_pred > 0))),
         }
 
+    # ── Sub-phase Runner ──────────────────────────────────────────────────────
+
     def _run_subphase(self, label, feature_key, train_df, test_df, feature_sets, result_key):
-        print("="*60)
+        print("=" * 60)
         print(f"{label}")
-        print("="*60)
+        print("=" * 60)
         cols = feature_sets[feature_key]
         print(f"   Features: {len(cols)}")
         print()
+
+        if len(cols) == 0:
+            print("   ⚠️  No features found for this set — skipping.")
+            print()
+            return None
 
         X_tr, X_te = self.prepare(train_df, test_df, cols)
         y_tr_clf = train_df['label_binary'].values
@@ -119,12 +222,26 @@ class BaselineModels:
         y_tr_reg = train_df['abnormal_return'].values
         y_te_reg = test_df['abnormal_return'].values
 
-        lr = self.eval_clf(LogisticRegression(C=0.1, max_iter=1000, random_state=42),
-                           X_tr, y_tr_clf, X_te, y_te_clf)
-        rf = self.eval_clf(RandomForestClassifier(n_estimators=100, max_depth=6,
-                           random_state=42, n_jobs=-1), X_tr, y_tr_clf, X_te, y_te_clf)
-        reg = self.eval_reg(Lasso(alpha=0.001, max_iter=5000),
-                            X_tr, y_tr_reg, X_te, y_te_reg)
+        lr = self.eval_clf(
+            LogisticRegression(
+                C=0.1, max_iter=1000,
+                class_weight='balanced',   # handles 67/33 imbalance
+                random_state=42
+            ),
+            X_tr, y_tr_clf, X_te, y_te_clf
+        )
+        rf = self.eval_clf(
+            RandomForestClassifier(
+                n_estimators=100, max_depth=6,
+                class_weight='balanced',   # handles 67/33 imbalance
+                random_state=42, n_jobs=-1
+            ),
+            X_tr, y_tr_clf, X_te, y_te_clf
+        )
+        reg = self.eval_reg(
+            Lasso(alpha=0.001, max_iter=5000),
+            X_tr, y_tr_reg, X_te, y_te_reg
+        )
 
         for name, m in [('Logistic Regression', lr), ('Random Forest', rf)]:
             print(f"   {name}:")
@@ -138,10 +255,17 @@ class BaselineModels:
         print(f"      Direction: {reg['direction']:.1%}")
         print()
 
-        result = {'feature_set': feature_key, 'n_features': len(cols),
-                  'logistic_regression': lr, 'random_forest': rf, 'lasso_regression': reg}
+        result = {
+            'feature_set':         feature_key,
+            'n_features':          len(cols),
+            'logistic_regression': lr,
+            'random_forest':       rf,
+            'lasso_regression':    reg,
+        }
         self.all_results[result_key] = result
         return result
+
+    # ── Sub-phases ────────────────────────────────────────────────────────────
 
     def run_6a(self, train_df, test_df, feature_sets):
         return self._run_subphase(
@@ -158,20 +282,23 @@ class BaselineModels:
             "6C: COMBINED MODEL + EVALUATION METRICS",
             'combined', train_df, test_df, feature_sets, '6C_combined')
 
+    # ── Documentation ─────────────────────────────────────────────────────────
+
     def run_6d(self):
-        print("="*60)
+        print("=" * 60)
         print("6D: BASELINE PERFORMANCE DOCUMENTATION")
-        print("="*60)
+        print("=" * 60)
         print()
 
         label_map = {
             '6A_financial_only': 'Financial Only',
             '6B_sentiment_only': 'Sentiment Only',
-            '6C_combined':       'Combined'
+            '6C_combined':       'Combined',
         }
 
+        # Classification summary
         print(f"{'Feature Set':<20} {'Model':<22} {'ROC-AUC':<10} {'Accuracy':<12} {'F1'}")
-        print("-"*68)
+        print("-" * 68)
         for key, label in label_map.items():
             if key not in self.all_results:
                 continue
@@ -183,8 +310,9 @@ class BaselineModels:
                       f"{m['accuracy']:<12.1%} {m['f1']:.1%}")
         print()
 
+        # Regression summary
         print(f"{'Feature Set':<20} {'RMSE':<12} {'R²':<12} {'Direction'}")
-        print("-"*52)
+        print("-" * 52)
         for key, label in label_map.items():
             if key not in self.all_results:
                 continue
@@ -192,26 +320,35 @@ class BaselineModels:
             print(f"{label:<20} {r['rmse']:<12.4f} {r['r2']:<12.4f} {r['direction']:.1%}")
         print()
 
+        # Threshold check and JSON save
         print("📊 THRESHOLD CHECK (ROC-AUC ≥ 0.55):")
-        doc = {'phase': '6D', 'timestamp': datetime.now().isoformat(),
-               'target_metric': 'ROC-AUC', 'target_threshold': 0.55, 'results': {}}
+        doc = {
+            'phase':             '6D',
+            'timestamp':         datetime.now().isoformat(),
+            'target_metric':     'ROC-AUC',
+            'target_threshold':  0.55,
+            'leak_cols_removed': sorted(list(LEAK_COLS)),
+            'results':           {},
+        }
+
         for key, label in label_map.items():
             if key not in self.all_results:
                 continue
-            r = self.all_results[key]
-            best = max(r['logistic_regression']['roc_auc'], r['random_forest']['roc_auc'])
+            r    = self.all_results[key]
+            best = max(r['logistic_regression']['roc_auc'],
+                       r['random_forest']['roc_auc'])
             status = "✅ MEETS" if best >= 0.55 else "❌ BELOW"
             print(f"   {label:<20} Best AUC: {best:.1%}  {status} threshold")
             doc['results'][key] = {
-                'feature_set': r['feature_set'],
-                'n_features': r['n_features'],
-                'best_roc_auc': best,
-                'meets_threshold': best >= 0.55,
+                'feature_set':         r['feature_set'],
+                'n_features':          r['n_features'],
+                'best_roc_auc':        best,
+                'meets_threshold':     best >= 0.55,
                 'logistic_regression': {k: v for k, v in r['logistic_regression'].items()
                                         if k != 'confusion_matrix'},
-                'random_forest': {k: v for k, v in r['random_forest'].items()
-                                  if k != 'confusion_matrix'},
-                'lasso_regression': r['lasso_regression']
+                'random_forest':       {k: v for k, v in r['random_forest'].items()
+                                        if k != 'confusion_matrix'},
+                'lasso_regression':    r['lasso_regression'],
             }
         print()
 
@@ -221,31 +358,32 @@ class BaselineModels:
         print(f"✅ Documentation saved: {doc_path.name}")
         print()
 
+    # ── Main Entry Point ──────────────────────────────────────────────────────
+
     def run(self):
-        print("="*60)
+        print("=" * 60)
         print("PHASE 6: BASELINE MODELS")
-        print("="*60)
+        print("=" * 60)
         print()
+
         train_df, test_df, feature_info = self.load_data()
         feature_sets = self.get_feature_sets(feature_info, train_df)
-        print(f"📊 Feature sets:")
-        print(f"   Financial only: {len(feature_sets['financial_only'])} features")
-        print(f"   Sentiment only: {len(feature_sets['sentiment_only'])} features")
-        print(f"   Combined:       {len(feature_sets['combined'])} features")
-        print()
+
         self.run_6a(train_df, test_df, feature_sets)
         self.run_6b(train_df, test_df, feature_sets)
         self.run_6c(train_df, test_df, feature_sets)
         self.run_6d()
-        print("="*60)
+
+        print("=" * 60)
         print("✅ PHASE 6 COMPLETE")
-        print("="*60)
+        print("=" * 60)
         print()
         return self.all_results
 
 
 def main():
     BaselineModels().run()
+
 
 if __name__ == "__main__":
     main()
