@@ -46,31 +46,73 @@ class TranscriptCollector:
         }
 
     def get_high_priority_tickers(self):
-        """Get tickers that have financial data"""
-        from config import PROCESSED_DATA_DIR
+        """
+        Get tickers that have financial data AND return a ticker→quarters mapping
+        so that every generated transcript is dated inside a valid financial window.
 
-        financial_file = PROCESSED_DATA_DIR / 'financial' / 'financial_features_normalized.csv'
+        Returns a list of tickers (for backwards-compat with create_sample_transcripts),
+        but also populates self._ticker_quarter_windows used by _get_quarter_date().
+        """
+        from config import RAW_DATA_DIR, PROCESSED_DATA_DIR
+        import pandas as pd
 
-        if financial_file.exists():
-            print("📊 Reading tickers from financial data...")
-            df = pd.read_csv(financial_file)
-            ticker_counts = df['Ticker'].value_counts()
-            top_tickers = ticker_counts.head(50).index.tolist()
-            print(f"✅ Found {len(top_tickers)} tickers with financial data")
-            return top_tickers
-        else:
-            print("⚠️  Financial data not found, using default tickers")
-            return [
-                'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'META', 'TSLA', 'BRK-B', 'UNH', 'JNJ',
-                'XOM', 'V', 'JPM', 'PG', 'MA', 'LLY', 'HD', 'CVX', 'MRK', 'ABBV',
-                'PEP', 'COST', 'KO', 'AVGO', 'TMO', 'WMT', 'MCD', 'CSCO', 'ACN', 'ABT',
-                'BAC', 'CRM', 'ADBE', 'DHR', 'LIN', 'NFLX', 'VZ', 'NKE', 'TXN', 'CMCSA',
-                'WFC', 'NEE', 'DIS', 'RTX', 'ORCL', 'AMD', 'UPS', 'PM', 'QCOM', 'MS'
-            ]
+        # Try raw financial_features first (most reliable for date alignment)
+        for candidate in [
+            RAW_DATA_DIR / 'financial' / 'financial_features.csv',
+            PROCESSED_DATA_DIR / 'financial' / 'financial_features_normalized.csv',
+        ]:
+            if candidate.exists():
+                print(f"📊 Reading financial windows from: {candidate.name}")
+                df = pd.read_csv(candidate)
+                df['Date'] = pd.to_datetime(df['Date'])
+
+                def _to_quarter(d):
+                    m, y = d.month, d.year
+                    if m in (1,2,3):   return f'Q1 {y}'
+                    elif m in (4,5,6): return f'Q2 {y}'
+                    elif m in (7,8,9): return f'Q3 {y}'
+                    else:              return f'Q4 {y}'
+
+                df['quarter'] = df['Date'].apply(_to_quarter)
+
+                # Build mapping: ticker → list of (quarter_label, fin_date)
+                # Transcript date must fall in [fin_date, fin_date + 120 days]
+                # We use fin_date + 21 days as the "earnings call" date (realistic middle)
+                windows: dict[str, list[tuple[str, str]]] = {}
+                for ticker, grp in df.groupby('Ticker'):
+                    pairs = []
+                    for _, row in grp.sort_values('Date').iterrows():
+                        q   = row['quarter']
+                        # Call date = ~3 weeks after quarter-end (conservative middle of window)
+                        call_date = (row['Date'] + pd.Timedelta(days=21)).strftime('%Y-%m-%d')
+                        pairs.append((q, call_date))
+                    windows[ticker] = pairs
+
+                self._ticker_quarter_windows = windows
+                tickers = sorted(windows.keys())
+                print(f"✅ Found {len(tickers)} tickers with valid financial windows")
+                return tickers
+
+        # Fallback: no financial data found
+        print("⚠️  Financial data not found — using default tickers with 2025 quarters")
+        self._ticker_quarter_windows = {}
+        return [
+            'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'META', 'TSLA', 'BRK-B', 'UNH', 'JNJ',
+            'XOM', 'V', 'JPM', 'PG', 'MA', 'LLY', 'HD', 'CVX', 'MRK', 'ABBV',
+            'PEP', 'COST', 'KO', 'AVGO', 'TMO', 'WMT', 'MCD', 'CSCO', 'ACN', 'ABT',
+            'BAC', 'CRM', 'ADBE', 'DHR', 'LIN', 'NFLX', 'VZ', 'NKE', 'TXN', 'CMCSA',
+            'WFC', 'NEE', 'DIS', 'RTX', 'ORCL', 'AMD', 'UPS', 'PM', 'QCOM', 'MS'
+        ]
 
     def create_sample_transcripts(self, tickers, transcripts_per_ticker=3):
         """
-        Create highly varied, realistic sample transcripts (7,000-20,000 words each)
+        Create highly varied, realistic sample transcripts (7,000-20,000 words each).
+
+        KEY FIX: Instead of hard-coding quarters like ['Q1 2024', ...], this method
+        now uses self._ticker_quarter_windows (populated by get_high_priority_tickers)
+        to generate one transcript per ticker-quarter pair that actually has matching
+        financial data.  This guarantees every synthetic transcript will align in
+        Phase 2D without 'transcript date before earliest financial' errors.
         """
         print("=" * 60)
         print("CREATING ENHANCED SYNTHETIC TRANSCRIPTS")
@@ -82,23 +124,49 @@ class TranscriptCollector:
         print("   - Realistic analyst Q&A (8-15 questions)")
         print("   - Sector-specific language and metrics")
         print("   - Multiple management speakers")
+        print("   - Dates aligned to actual financial data windows")
         print()
 
         sample_transcripts = []
-        quarters = ['Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024']
 
-        for ticker in tqdm(tickers[:50], desc="Generating transcripts"):
-            for i in range(min(transcripts_per_ticker, len(quarters))):
-                quarter = quarters[i]
-                transcript = self._generate_full_transcript(ticker, quarter, i)
+        # Use financial-data-derived windows when available; fall back to fixed quarters
+        windows = getattr(self, '_ticker_quarter_windows', {})
+
+        if windows:
+            # Generate one transcript per (ticker, quarter) pair in the financial data
+            all_pairs = []
+            for ticker in tickers:
+                if ticker in windows:
+                    for q_label, call_date in windows[ticker]:
+                        all_pairs.append((ticker, q_label, call_date))
+
+            print(f"📅 Generating {len(all_pairs)} transcripts "
+                  f"({len(tickers)} tickers × their available quarters)")
+            print()
+
+            for seed_idx, (ticker, quarter, call_date) in enumerate(
+                    tqdm(all_pairs, desc="Generating transcripts")):
+                transcript = self._generate_full_transcript(ticker, quarter, seed_idx)
+                # Override date with the financially-aligned call date
+                transcript['date'] = call_date
                 sample_transcripts.append(transcript)
 
-        word_counts = [t['word_count'] for t in sample_transcripts]
-        print(f"\n✅ Generated {len(sample_transcripts)} transcripts")
-        print(f"   Average word count: {sum(word_counts) / len(word_counts):,.0f}")
-        print(f"   Min word count: {min(word_counts):,}")
-        print(f"   Max word count: {max(word_counts):,}")
-        print()
+        else:
+            # Fallback: original hard-coded quarters (2024 only)
+            quarters = ['Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025']
+            for ticker in tqdm(tickers[:50], desc="Generating transcripts"):
+                for i in range(min(transcripts_per_ticker, len(quarters))):
+                    quarter = quarters[i]
+                    transcript = self._generate_full_transcript(ticker, quarter, i)
+                    sample_transcripts.append(transcript)
+
+        if sample_transcripts:
+            word_counts = [t['word_count'] for t in sample_transcripts]
+            print(f"\n✅ Generated {len(sample_transcripts)} transcripts")
+            print(f"   Average word count: {sum(word_counts) / len(word_counts):,.0f}")
+            print(f"   Min word count: {min(word_counts):,}")
+            print(f"   Max word count: {max(word_counts):,}")
+            print()
 
         return sample_transcripts
 
@@ -1238,12 +1306,27 @@ class TranscriptCollector:
     # ------------------------------------------------------------------
 
     def _get_quarter_date(self, quarter_str):
+        """
+        Return the earnings-call date for a given quarter string.
+
+        If self._ticker_quarter_windows is populated (i.e. we have real financial data),
+        this method is effectively bypassed — create_sample_transcripts() overrides
+        the date directly.  This fallback is kept for any code path that calls
+        _get_quarter_date standalone.  It now defaults to a date 3 weeks after
+        quarter-end (a realistic call date) rather than the quarter-end itself,
+        which would equal fin_date and make the transcript arrive too early for
+        some aligners that expect transcript_date > fin_date.
+        """
         quarter, year = quarter_str.split()
         year = int(year)
-        qn = int(quarter[1])
+        qn   = int(quarter[1])
+        # Quarter-end dates
         ends = {1: f"{year}-03-31", 2: f"{year}-06-30",
                 3: f"{year}-09-30", 4: f"{year}-12-31"}
-        return ends[qn]
+        import datetime as dt
+        end_date  = dt.date.fromisoformat(ends[qn])
+        call_date = end_date + dt.timedelta(days=21)   # ~3 weeks after quarter end
+        return call_date.isoformat()
 
     def save_transcripts(self, transcripts):
         if not transcripts:
@@ -1252,28 +1335,31 @@ class TranscriptCollector:
 
         try:
             print("=" * 60)
-            print("💾 SAVING TRANSCRIPTS")
+            print("💾 SAVING TRANSCRIPTS (WITH REAL-FILE PRIORITY)")
             print("=" * 60)
             print()
 
-            df = pd.DataFrame(transcripts)
-            csv_path = self.output_dir / 'transcripts_metadata.csv'
-            metadata_cols = ['ticker', 'company_name', 'quarter', 'date', 'fiscal_year',
-                             'fiscal_quarter', 'word_count', 'source', 'collection_date']
-            df[metadata_cols].to_csv(csv_path, index=False)
-            print(f"✅ Metadata saved: {csv_path}")
-
-            json_path = self.output_dir / 'transcripts_full.json'
-            with open(json_path, 'w', encoding='utf-8') as f:
-                json.dump(transcripts, f, indent=2, ensure_ascii=False)
-            print(f"✅ Full transcripts saved: {json_path}")
-            print(f"   Size: {json_path.stat().st_size / (1024 * 1024):.2f} MB")
-
+            # Define directories
             individual_dir = self.output_dir / 'individual'
-            individual_dir.mkdir(exist_ok=True)
+            real_dir = self.output_dir / 'real' # Path to your real transcripts
+            
+            individual_dir.mkdir(parents=True, exist_ok=True)
+            # We don't create real_dir because it's assumed to be your source of truth
+            
+            saved_count = 0
+            skipped_count = 0
 
             for transcript in transcripts:
+                # Standardize filename format
                 filename = f"{transcript['ticker']}_{transcript['quarter'].replace(' ', '_')}.txt"
+                
+                # Check if this file exists in the /real folder
+                if (real_dir / filename).exists():
+                    print(f"⏩ Skipping {filename} (Existing version found in /real)")
+                    skipped_count += 1
+                    continue
+                
+                # If it doesn't exist in /real, save to /individual
                 with open(individual_dir / filename, 'w', encoding='utf-8') as f:
                     f.write(f"Company: {transcript['company_name']}\n")
                     f.write(f"Ticker: {transcript['ticker']}\n")
@@ -1281,9 +1367,17 @@ class TranscriptCollector:
                     f.write(f"Date: {transcript['date']}\n")
                     f.write("=" * 60 + "\n\n")
                     f.write(transcript['full_text'])
+                saved_count += 1
 
-            print(f"✅ Individual transcripts saved: {individual_dir}/")
-            print(f"   Count: {len(transcripts)} files")
+            # Update Metadata to reflect only what we actually kept/saved
+            # (Optional: modify this if you want the CSV to include real files too)
+            df = pd.DataFrame(transcripts)
+            csv_path = self.output_dir / 'transcripts_metadata.csv'
+            df.to_csv(csv_path, index=False)
+
+            print(f"\n✅ Individual transcripts saved: {individual_dir}/")
+            print(f"   Saved:   {saved_count} files")
+            print(f"   Skipped: {skipped_count} files (due to duplicates in /real)")
             print()
             return True
 
@@ -1308,14 +1402,19 @@ class TranscriptCollector:
         print(f"📏 Length: 7,000-20,000 words per transcript")
         print()
 
+        # get_high_priority_tickers now returns ALL tickers with financial data
+        # and populates self._ticker_quarter_windows for date alignment
         tickers = self.get_high_priority_tickers()
+
+        # transcripts_per_ticker is ignored when _ticker_quarter_windows is populated
+        # (we generate one transcript per ticker×quarter pair instead)
         transcripts = self.create_sample_transcripts(tickers, transcripts_per_ticker=3)
 
         if transcripts:
             success = self.save_transcripts(transcripts)
             if success:
                 total_words = sum(t['word_count'] for t in transcripts)
-                avg_words = total_words / len(transcripts)
+                avg_words   = total_words / len(transcripts)
                 print("=" * 60)
                 print("✅ PHASE 1D COMPLETE")
                 print("=" * 60)

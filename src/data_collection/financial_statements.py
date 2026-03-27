@@ -43,42 +43,101 @@ class FinancialStatementsCollector:
     
     def collect_financials_for_ticker(self, ticker):
         """
-        Collect all financial statements for a single ticker
+        Collect all financial statements for a single ticker.
+
+        FIX: yfinance's quarterly_income_stmt only returns the most recent
+        4-5 quarters by default for many tickers. For tickers whose earliest
+        available quarter is Q3/Q4 2024, any real transcript from Q2/Q3 2024
+        cannot find a matching financial record in Phase 2D (all financial
+        records are dated AFTER the transcript → 'all_future' → dropped).
+
+        Strategy: fetch quarterly statements AND annual statements, then
+        combine and deduplicate so we get the deepest history available.
+        Also try the get_financials() call which sometimes returns more periods.
         """
         try:
             stock = yf.Ticker(ticker)
-            
-            # Get quarterly financial statements
-            income_stmt = stock.quarterly_income_stmt
+
+            # ── Primary: quarterly statements ──────────────────────────
+            income_stmt   = stock.quarterly_income_stmt
             balance_sheet = stock.quarterly_balance_sheet
-            cashflow = stock.quarterly_cashflow
-            
-            # Check if data exists
+            cashflow      = stock.quarterly_cashflow
+
             if income_stmt is None or income_stmt.empty:
                 return None, None, None
-            
-            # Transpose to have dates as rows
-            income_stmt = income_stmt.T
-            balance_sheet = balance_sheet.T if balance_sheet is not None else pd.DataFrame()
-            cashflow = cashflow.T if cashflow is not None else pd.DataFrame()
-            
+
+            # ── Secondary: try to get additional history via get_income_stmt ──
+            # Some yfinance versions expose more periods through this API
+            try:
+                extra_inc = stock.get_income_stmt(freq='quarterly', as_dict=False)
+                if extra_inc is not None and not extra_inc.empty:
+                    # Merge: keep all unique date columns
+                    existing_dates = set(income_stmt.columns)
+                    new_dates      = set(extra_inc.columns) - existing_dates
+                    if new_dates:
+                        income_stmt = pd.concat(
+                            [income_stmt, extra_inc[list(new_dates)]], axis=1
+                        )
+            except Exception:
+                pass  # older yfinance versions don't have get_income_stmt
+
+            # ── Fallback: annual statements give older data points ──────
+            # Quarterly reports are typically released ~45 days after quarter end.
+            # Annual 10-K data for FY2023 contains Q4 2023 figures which can
+            # substitute when quarterly history doesn't go far enough.
+            try:
+                annual_inc = stock.income_stmt          # annual
+                annual_bs  = stock.balance_sheet
+                annual_cf  = stock.cashflow
+
+                if annual_inc is not None and not annual_inc.empty:
+                    existing_dates = set(income_stmt.columns)
+                    new_dates      = set(annual_inc.columns) - existing_dates
+                    if new_dates:
+                        income_stmt = pd.concat(
+                            [income_stmt, annual_inc[list(new_dates)]], axis=1
+                        )
+                    if balance_sheet is not None and annual_bs is not None:
+                        existing_bs = set(balance_sheet.columns)
+                        new_bs      = set(annual_bs.columns) - existing_bs
+                        if new_bs:
+                            balance_sheet = pd.concat(
+                                [balance_sheet, annual_bs[list(new_bs)]], axis=1
+                            )
+                    if cashflow is not None and annual_cf is not None:
+                        existing_cf = set(cashflow.columns)
+                        new_cf      = set(annual_cf.columns) - existing_cf
+                        if new_cf:
+                            cashflow = pd.concat(
+                                [cashflow, annual_cf[list(new_cf)]], axis=1
+                            )
+            except Exception:
+                pass
+
+            # ── Transpose: dates → rows ─────────────────────────────────
+            income_stmt   = income_stmt.T
+            balance_sheet = balance_sheet.T if balance_sheet is not None and not balance_sheet.empty else pd.DataFrame()
+            cashflow      = cashflow.T      if cashflow      is not None and not cashflow.empty      else pd.DataFrame()
+
             # Add ticker column
-            income_stmt['Ticker'] = ticker
+            income_stmt['Ticker']   = ticker
             balance_sheet['Ticker'] = ticker
-            cashflow['Ticker'] = ticker
-            
+            cashflow['Ticker']      = ticker
+
             # Reset index to make dates a column
             income_stmt.reset_index(inplace=True)
             balance_sheet.reset_index(inplace=True)
             cashflow.reset_index(inplace=True)
-            
-            # Rename index column
-            income_stmt.rename(columns={'index': 'Date'}, inplace=True)
-            balance_sheet.rename(columns={'index': 'Date'}, inplace=True)
-            cashflow.rename(columns={'index': 'Date'}, inplace=True)
-            
+
+            # Rename index column (handles both 'index' and Timestamp index names)
+            for df in [income_stmt, balance_sheet, cashflow]:
+                if 'index' in df.columns:
+                    df.rename(columns={'index': 'Date'}, inplace=True)
+                elif df.columns[0] != 'Date':
+                    df.rename(columns={df.columns[0]: 'Date'}, inplace=True)
+
             return income_stmt, balance_sheet, cashflow
-            
+
         except Exception as e:
             self._log_error(f"{ticker}: {e}")
             return None, None, None

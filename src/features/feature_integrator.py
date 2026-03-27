@@ -102,12 +102,20 @@ class FeatureIntegrator:
         # Merge FinBERT features
         print("Merging FinBERT features...")
         
-        # Drop duplicate columns (ticker, quarter, date) from finbert
-        finbert_merge = features['finbert'].drop(columns=['date'], errors='ignore')
+        # Drop duplicate columns AND non-numeric columns before merge
+        finbert_df = features['finbert'].copy()
+        
+        # Identify merge keys
+        merge_keys = ['ticker', 'quarter']
+        
+        # Drop non-numeric columns except merge keys
+        finbert_numeric = finbert_df.select_dtypes(include=[np.number]).columns.tolist()
+        finbert_keep = list(set(merge_keys + finbert_numeric))
+        finbert_merge = finbert_df[finbert_keep]
         
         merged = merged.merge(
             finbert_merge,
-            on=['ticker', 'quarter'],
+            on=merge_keys,
             how='left',
             suffixes=('', '_finbert')
         )
@@ -116,12 +124,14 @@ class FeatureIntegrator:
         # Merge NLP features
         print("Merging NLP features...")
         
-        # Drop duplicate columns from nlp
-        nlp_merge = features['nlp'].drop(columns=['date'], errors='ignore')
+        nlp_df = features['nlp'].copy()
+        nlp_numeric = nlp_df.select_dtypes(include=[np.number]).columns.tolist()
+        nlp_keep = list(set(merge_keys + nlp_numeric))
+        nlp_merge = nlp_df[nlp_keep]
         
         merged = merged.merge(
             nlp_merge,
-            on=['ticker', 'quarter'],
+            on=merge_keys,
             how='left',
             suffixes=('', '_nlp')
         )
@@ -159,10 +169,13 @@ class FeatureIntegrator:
         print()
         
         # Identify feature types
-        metadata_cols = ['ticker', 'company_name', 'quarter', 'transcript_date', 
-                        'financial_date', 'market_date_before', 'market_date_after',
-                        'date', 'fiscal_year', 'fiscal_quarter', 'alignment_timestamp',
-                        'is_temporally_valid', 'financial_date_diff_days']
+        metadata_cols = [
+            'ticker', 'company_name', 'quarter', 'transcript_date',
+            'financial_date', 'market_date_before', 'market_date_after',
+            'date', 'fiscal_year', 'fiscal_quarter', 'alignment_timestamp',
+            'is_temporally_valid', 'financial_date_diff_days',
+            'financial_match_type',   # string col from temporal aligner
+        ]
         
         target_col = 'stock_return_3day'
         

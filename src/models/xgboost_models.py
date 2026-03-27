@@ -92,22 +92,70 @@ class XGBoostModels:
                 'combined': combined, 'full_with_finbert': full}
 
     def clean_and_scale(self, X_train, X_test):
-        for X in [X_train, X_test]:
-            X[np.isinf(X)] = np.nan
+        X_train = np.where(np.isinf(X_train), np.nan, X_train)
+        X_test  = np.where(np.isinf(X_test),  np.nan, X_test)
+ 
         medians = np.nanmedian(X_train, axis=0)
-        for X in [X_train, X_test]:
-            inds = np.where(np.isnan(X))
-            X[inds] = np.take(medians, inds[1])
+        medians = np.where(np.isnan(medians), 0.0, medians)
+ 
+        def _fill(X):
+            nan_mask = np.isnan(X)
+            if nan_mask.any():
+                for j in np.where(nan_mask.any(axis=0))[0]:
+                    X[nan_mask[:, j], j] = medians[j]
+            return X
+ 
+        X_train = _fill(X_train.copy())
+        X_test  = _fill(X_test.copy())
+ 
+        col_std = X_train.std(axis=0)
+        keep    = col_std > 0
+        if not keep.all():
+            print(f"   ⚠️  Dropping {(~keep).sum()} constant/zero-variance column(s)")
+            X_train = X_train[:, keep]
+            X_test  = X_test[:, keep]
+ 
         X_train = np.clip(X_train, -1e6, 1e6)
         X_test  = np.clip(X_test,  -1e6, 1e6)
         scaler  = StandardScaler()
         X_train = scaler.fit_transform(X_train)
         X_test  = scaler.transform(X_test)
+ 
+        X_train = np.nan_to_num(X_train, nan=0.0, posinf=0.0, neginf=0.0)
+        X_test  = np.nan_to_num(X_test,  nan=0.0, posinf=0.0, neginf=0.0)
+ 
         return X_train, X_test
+ 
 
     def prepare(self, train_df, test_df, cols):
-        X_train = train_df[cols].values.astype(np.float64)
-        X_test  = test_df[cols].values.astype(np.float64)
+        """
+        Prepare features with robust data type handling
+        """
+        # Keep only columns that exist in both datasets
+        cols = [c for c in cols if c in train_df.columns and c in test_df.columns]
+        
+        # Keep only numeric columns
+        numeric_cols = []
+        for c in cols:
+            if pd.api.types.is_numeric_dtype(train_df[c]):
+                numeric_cols.append(c)
+        
+        dropped = sorted(set(cols) - set(numeric_cols))
+        if dropped:
+            print(f"   ⚠️  Dropping {len(dropped)} non-numeric columns:")
+            for c in dropped[:5]:  # Show first 5
+                print(f"      - {c} (type: {train_df[c].dtype})")
+            if len(dropped) > 5:
+                print(f"      ... and {len(dropped)-5} more")
+            print()
+        
+        if len(numeric_cols) == 0:
+            print("   ❌ No numeric columns remaining!")
+            return np.array([]), np.array([])
+        
+        X_train = train_df[numeric_cols].values.astype(np.float64)
+        X_test  = test_df[numeric_cols].values.astype(np.float64)
+        
         return self.clean_and_scale(X_train, X_test)
 
     def train_xgboost_classifier(self, X_train, y_train, X_test, y_test):

@@ -93,14 +93,25 @@ class AgenticAI:
             'abnormal_return', 'label_binary', 'label_median',
             'label_tertile', 'sp500_return', 'alignment_timestamp',
             'ticker', 'company_name', 'quarter', 'transcript_date',
-            'financial_date', 'DateDiff', 'date_diff'
+            'financial_date', 'DateDiff', 'date_diff',
+            'financial_match_type',   # string col added by temporal aligner
+            'match_type',
         ]
-        
+
         all_cols = set(feature_info['feature_columns']) & set(df.columns)
+
+        # Also filter to numeric columns only — prevents any string
+        # column (e.g. financial_match_type = 'tight'/'fallback')
+        # from crashing astype(np.float64)
+        numeric_cols_in_df = set(
+            df.select_dtypes(include=[np.number]).columns.tolist()
+        )
+
         clean_features = [
             f for f in all_cols
             if not any(pattern in f for pattern in LEAK_PATTERNS)
-            and not f.startswith('embedding_')  # Exclude embeddings initially
+            and not f.startswith('embedding_')   # Exclude embeddings initially
+            and f in numeric_cols_in_df           # Must be numeric
         ]
         
         # Prepare data

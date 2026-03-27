@@ -80,49 +80,91 @@ class ModelValidator:
         return full_df, feature_info
     
     def get_feature_sets(self, feature_info, df):
-        """Define feature sets for validation"""
-        all_cols = set(feature_info['feature_columns']) & set(df.columns)
-        
+        """Define feature sets for validation — leak columns excluded."""
+
+        # Columns that must NEVER enter any feature set
+        LEAK_COLS = {
+            'price_after_earnings', 'price_before_earnings',
+            'market_date_after', 'market_date_before',
+            'stock_return_3day', 'abnormal_return',
+            'label_binary', 'label_median', 'label_tertile',
+            'is_temporally_valid', 'alignment_timestamp',
+            'financial_match_type',          # string col from temporal aligner
+            'ticker', 'company_name', 'quarter',
+            'transcript_date', 'financial_date',
+            'fiscal_year', 'fiscal_quarter',
+            'financial_date_diff_days', 'financial_DateDiff',
+        }
+
+        all_cols = (
+            set(feature_info['feature_columns']) & set(df.columns)
+        ) - LEAK_COLS
+
+        # Extra guard: catch any renamed price cols or string cols
+        all_cols = {
+            c for c in all_cols
+            if 'price_after' not in c.lower()
+            and 'price_before' not in c.lower()
+            and 'match_type' not in c.lower()
+        }
+
         # Financial features
         financial = sorted([c for c in all_cols
                           if c.startswith('financial_') or c.startswith('fin_')])
-        
+
         # Sentiment/NLP features
         sentiment = sorted([c for c in all_cols
                           if any(c.startswith(p) for p in [
                               'sentiment_', 'mgmt_sentiment_', 'analyst_sentiment_',
                               'lm_', 'mgmt_lm_', 'analyst_lm_',
                               'word_count', 'question_count', 'lexical_diversity'])])
-        
+
         # Combined (no embeddings)
         combined = sorted([c for c in all_cols if not c.startswith('embedding_')])
-        
+
         # Full (with FinBERT embeddings)
         full = sorted(list(all_cols))
-        
+
         return {
-            'financial_only': financial,
-            'sentiment_only': sentiment,
-            'combined': combined,
-            'full_with_finbert': full
+            'financial_only':   financial,
+            'sentiment_only':   sentiment,
+            'combined':         combined,
+            'full_with_finbert': full,
         }
     
+    def get_numeric_features(self, df, cols, verbose=True):
+        numeric_cols = [
+            c for c in cols
+            if c in df.columns and pd.api.types.is_numeric_dtype(df[c])
+        ]
+
+        dropped = sorted(set(cols) - set(numeric_cols))
+
+        if verbose and dropped:
+            print(f"⚠️ Dropping {len(dropped)} non-numeric columns:")
+            for c in dropped[:10]:
+                print(f"   - {c}")
+            if len(dropped) > 10:
+                print(f"   ... and {len(dropped)-10} more")
+
+        return numeric_cols
+
     def prepare_data(self, df, feature_cols):
-        """Prepare data with proper cleaning"""
-        X = df[feature_cols].values.astype(np.float64)
+        numeric_cols = self.get_numeric_features(df, feature_cols)
+
+        X = df[numeric_cols].values.astype(np.float64)
         y = df['label_binary'].values
-        
-        # Handle inf/nan
+
+        # cleaning stays same
         X[np.isinf(X)] = np.nan
         medians = np.nanmedian(X, axis=0)
-        
+
         inds = np.where(np.isnan(X))
         X[inds] = np.take(medians, inds[1])
-        
-        # Clip extremes
+
         X = np.clip(X, -1e6, 1e6)
-        
-        return X, y
+
+        return X, y, numeric_cols
     
     def run_8a_time_series_cv(self, df, feature_sets):
         """
@@ -158,7 +200,7 @@ class ModelValidator:
         for fs_name, fs_cols in feature_sets.items():
             print(f"Testing: {fs_name} ({len(fs_cols)} features)")
             
-            X, y = self.prepare_data(df_sorted, fs_cols)
+            X, y, numeric_cols = self.prepare_data(df_sorted, fs_cols)
             
             fs_results = {}
             
@@ -221,7 +263,7 @@ class ModelValidator:
         
         # Use combined feature set for interpretability
         feature_cols = feature_sets['combined']
-        X, y = self.prepare_data(df, feature_cols)
+        X, y, numeric_cols = self.prepare_data(df, feature_cols)
         
         # Train/test split (temporal)
         split_idx = int(len(X) * 0.7)
@@ -247,11 +289,12 @@ class ModelValidator:
         # Use subset of test data for speed
         X_test_sample = X_test[:min(500, len(X_test))]
         shap_values = explainer.shap_values(X_test_sample)
-        
+        if isinstance(shap_values, list):
+            shap_values = shap_values[1]  # binary classification
         # Get feature importance
         feature_importance = np.abs(shap_values).mean(0)
         feature_importance_df = pd.DataFrame({
-            'feature': feature_cols,
+            'feature': numeric_cols,
             'importance': feature_importance
         }).sort_values('importance', ascending=False)
         
@@ -302,7 +345,7 @@ class ModelValidator:
         
         # Use best feature set
         feature_cols = feature_sets['combined']
-        X, y = self.prepare_data(df, feature_cols)
+        X, y, numeric_cols = self.prepare_data(df, feature_cols)
         
         # Train/test split
         split_idx = int(len(X) * 0.7)
@@ -480,7 +523,7 @@ class ModelValidator:
         for fs_name, fs_cols in feature_sets.items():
             print(f"Training on: {fs_name}")
             
-            X, y = self.prepare_data(df, fs_cols)
+            X, y, numeric_cols = self.prepare_data(df, fs_cols)
             X_train, X_test = X[:split_idx], X[split_idx:]
             y_train = y[:split_idx]
             

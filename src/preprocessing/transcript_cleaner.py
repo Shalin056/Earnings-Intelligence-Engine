@@ -170,9 +170,12 @@ class TranscriptCleaner:
             self._log_error(f"Error cleaning transcript {metadata.get('ticker', 'UNKNOWN')}: {e}")
             return None
     
-    def clean_all_transcripts(self):
+    def clean_all_transcripts(self, real_only=False):  # ← Add parameter
         """
         Clean all transcripts from the raw data
+        
+        Args:
+            real_only: If True, only process real transcripts. If False, include synthetic.
         """
         print("="*60)
         print("PHASE 2A: TRANSCRIPT CLEANING & NORMALIZATION")
@@ -193,6 +196,22 @@ class TranscriptCleaner:
         
         print(f"✅ Loaded {len(raw_transcripts)} raw transcripts")
         print()
+        
+        # Filter: real transcripts only (CONFIGURABLE)
+        if real_only:
+            before = len(raw_transcripts)
+            raw_transcripts = [
+                t for t in raw_transcripts
+                if t.get('source', '').upper() != 'SYNTHETIC'
+            ]
+            synthetic_count = before - len(raw_transcripts)
+            print(f"🔍 Real-only mode: kept {len(raw_transcripts)} real, "
+                f"skipped {synthetic_count} synthetic transcripts")
+            print()
+        
+        if not raw_transcripts:
+            print("⚠️  No transcripts found after filtering.")
+            return []
         
         # Clean each transcript
         cleaned_transcripts = []
@@ -295,12 +314,15 @@ class TranscriptCleaner:
         with open(self.log_file, 'a') as f:
             f.write(f"{datetime.now()} - ERROR: {message}\n")
     
-    def run(self):
+    def run(self, real_only=False):  # ← Add parameter
         """
         Execute complete transcript cleaning workflow
+        
+        Args:
+            real_only: If True, only process real transcripts
         """
         # Clean transcripts
-        cleaned_transcripts = self.clean_all_transcripts()
+        cleaned_transcripts = self.clean_all_transcripts(real_only=real_only)
         
         if cleaned_transcripts is None:
             print("❌ Cleaning failed")
