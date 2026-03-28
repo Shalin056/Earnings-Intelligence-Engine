@@ -1,0 +1,359 @@
+Fiserv, Inc. (FI) Q4 2024 Earnings Conference Call February 5, 2025 8:00 AM ET
+
+Company Participants
+
+Julie Chariell - SVP, Investor Relations
+Frank Bisignano - Chairman, President & CEO
+Mike Lyons - President & CEO
+Bob Hau - CFO
+
+Conference Call Participants
+
+Tien-Tsin Huang - JPMorgan
+Timothy Chiodo - UBS
+Harshita Rawat - Bernstein
+David Koning - Baird
+Dan Dolev - Mizuho Securities
+Jason Kupferberg - Bank of America
+James Faucette - Morgan Stanley
+Ramsey El-Assal - Barclays
+
+Operator
+
+Welcome to the Fiserv Fourth Quarter 2024 Earnings Conference Call. All participants will be in a listen-only mode until the question-and-answer session begins following the presentation. As a reminder, today's call is being recorded.
+
+At this time, I will turn the call over to Julie Chariell, Senior Vice President of Investor Relations at Fiserv.
+
+Julie Chariell
+
+Thank you, and good morning. With me on the call today are Frank Bisignano, our Chairman, President and Chief Executive Officer; and Bob Hau, our Chief Financial Officer; Mike Lyons, our new President and next CEO. Welcome to the call Mike, it’s great to have you here.
+
+Our earnings release and supplemental materials for the quarter and full year are available on the Investor Relations section of fiserv.com. Please refer to these materials for an explanation of the non-GAAP financial measures discussed on this call, along with a reconciliation of those measures to the nearest applicable GAAP measures. Unless otherwise stated, performance references are year-over-year comparisons.
+
+Our remarks today will include forward-looking statements about, among other matters, expected operating and financial results, and strategic initiatives. Forward-looking statements may differ materially from actual results and are subject to a number of risks and uncertainties. You should refer to our earnings release for a discussion of these risk factors.
+
+And now, I'll turn the call over to Frank.
+
+Frank Bisignano
+
+Thank you, Julie, and thank you all for joining us today. We wrapped up another successful year at Fiserv and one that we are all very proud of. We set high expectations back at our 2023 Investor Conference and we exceeded those commitments. Fiserv delivered adjusted earnings per share of $8.80, up 17% driven by strong and diverse revenue growth and further operating margin expansion across our businesses. Adjusted revenue growth was 7% and adjusted operating margin rose 170 basis points to 39.4%.
+
+Total company organic revenue growth was 16%. Our free cash flow was $5.2 billion and we returned $5.5 billion to shareholders via share repurchase in 2024. Throughout the year, we advanced multiple strategies and product offerings that take advantage of the unique construct of this company with strong assets across merchant and financial solutions. We added large enterprise clients, both traditional and e-commerce merchants on the strength of our unified offering, modern gateway and growing value added solutions portfolio.
+
+At Clover, we laid the foundation for continuing our strong growth as we released new software, services and hardware offerings, and added three new countries. We extended merchant acquiring services to more financial institutions focused on winning small business clients. We built solutions to help SMBs navigate the complexity of running their businesses.
+
+Managing cash flow in particular is one of the biggest challenges. It's ineffective, time consuming and expensive. CashFlow Central is our solution to this problem. We completed development of this new offering in the fall. Demand from FIs to offer it remains high. CashFlow Central will grow even more compelling as part of our full small business suite.
+
+The single integrated easy-to-use system that SMBs have been looking for. The products and clients for this SMB suite span our merchant and financial solutions ecosystems, a combination that no single competitor has and a solution that no single competitor can offer today. From our merchant ecosystem, we provide Clover payments, hardware and software. Clover VAS, including vertical software solutions, capital, employee, customer and operations management solutions and the small business index for localized insights.
+
+From our financial ecosystem, we provide CashFlow Central, Optus for business card issuance, SpendTrack for expense management, Zelle for small business and core banking account management and digital banking. The full SMB suite will be integrated this quarter with XD, our digital banking platform, which is already live for an implementation with hundreds of FIs. It will be available directly on Clover late this year.
+
+Lastly, we continue to be a partner of choice in real-time payments enablement with Zelle, PIX and FedNow, and in our core modernization strategies, which include FinTech for simplified technology migration for our existing FI clients, as well as new and larger FIs and embedded finance pioneers. We capped-off all this progress with the naming of our next CEO and we did it in trademark Fiserv style, swiftly, efficiently and with an extremely high quality results.
+
+We announced Mike Lyons as President on a Thursday and he started work here the following Monday. That's the kind of urgency, focus and determination that we bring to our work at Fiserv. It's the speed of execution and the operational excellence that I have committed to you for the last few years, and that will continue under Mike's leadership. I know this not only because of what I've seen since he started, but because we have experienced working with Mike over the last 12 years.
+
+As you know, Mike joined us from P&C, a long-standing Fiserv partner, and one of the nation’s largest and strongest bank. Since he started, Mike and I, and the full leadership team have been working tirelessly to ensure a smooth transition.
+
+Let me hand it over to Mike to say a few words.
+
+Mike Lyons
+
+Thanks, Frank. I'm thrilled to be here. I've known Fiserv for a long-time wearing a number of different hats, including as an investor, a banker, a large client at BofA and P&C, and a small client at my wife's business, where she has been a Clover customer for years and utilizes it to its fullest. Fiserv is an amazing company with an outstanding track record of growth, innovation, operating efficiency, and importantly, the proven ability to add value for our clients and create value for our shareholders.
+
+After just a week on the job, my excitement in being here has only grown stronger. The talent and work ethic of the team, the breadth and quality of our clients and partners, the products, the distribution and technology, and the ideas and opportunities. I couldn't ask for a better platform to build upon. Right now, our number one priority is to ensure a smooth leadership transition, keeping everyone laser-focused on executing our plan that Frank and the team laid out in late 2023.
+
+I believe strongly in that plan as it offers significant growth opportunity by meeting the needs of our merchant and financial institution clients. Fiserv has a very impressive 39-year track record of double-digit adjusted EPS growth that is matched only by the opportunity that lies in front of us. I look forward to meeting you all to discuss this in the coming months.
+
+As Frank mentioned, we've worked closely and effectively together for the last 12 years. And I've had a front row seat watching him and the Fiserv leaders build this incredible company. I thank both Frank and the Board for the opportunity to lead Fiserv into its next year. And of course, we all thank Frank for his future service to our country.
+
+Frank Bisignano
+
+Thanks, Mike. Now I'd like to cover some highlights from the fourth quarter and full year, and then I'll turn the call over to Bob to discuss the numbers. The growing connections between businesses and financial institutions are a key part of the Fiserv story, and our ability to address them makes Fiserv unique.
+
+Embedded finance is the most complete use case from merchant, issuing and banking assets combined. And last quarter, we announced our first large scale win here with DoorDash to offer its delivery contractors full banking services from within a single app. Our cross platform capability and Finxact as a real-time ledger are true differentiators for us here.
+
+We've been executing with speed and quality, and have already onboarded a significant number of accounts and cards since the October announcement, and our pipeline of other embedded finance opportunities continue to grow. We reinforced our position as a partner of choice with the Q4 signing of a key strategic partnership with ADP.
+
+Together, we serve millions of small businesses and now we'll bring them a full solution that includes Clover, our cloud-based point-of-sale and business management platform; and CashFlow Central, our accounts payables and receivables management platform, integrated with ADP’s run, its industry leading small business payroll and HR solutions.
+
+Essentially, ADP will be the integrated payroll solution on Clover, and ADP will resell Clover and CashFlow Central. The integrated solution will make it easier than ever for small businesses to manage the flow of money into and out of their businesses, whether they are selling to customers, paying bills or managing payroll.
+
+In Q4, we initiated mutual client referrals to our respective offerings as our teams work to deliver the fully integrated solution in coming months. For the last few quarters, you've heard me recount how us old is new again, as financial institutions are reinvesting in the merchant acquiring business, especially for SMB merchants, right in our sweet spot.
+
+To address their needs, we've seen acceleration of out signings of financial institutions as merchant acquiring referral partners. In 2024, we added 65% more bank partners than we did in 2023, including NBT, a $14 billion New York based bank. We're approaching 1,000 financial institutions as merchant partners, with significant opportunity to drive further penetration within our existing FI partners.
+
+While others offer merchant acquiring solutions, only Fiserv can deliver a higher SMB integrated solutions, including Clover. The full suite gives FIs a deeper view into an SMB's full financial position. With this knowledge and breadth of product, they can better grow and retain SMB clients and generate deposit and non-interest fees. This year, we'll couple this ability with tools to help FIs readily find merchant customer leads and onboard them digitally. We had several other key wins in each of our businesses in Q4.
+
+In Merchant Solutions, Clover Sport nudged multiple venue wins. One with TD Garden, home of the Boston Celtics and Bruins, and another with the Milwaukee Brewers. We placed over a dozen Clover kiosks in TD Garden that have increased speed of sales and improved the fans self-checkout experience.
+
+At Clover Restaurant, a major hotel operator chose custom website solutions from BentoBox for their 2,000 hotel based restaurants in the U.S. This is the fourth large hotel chain to sign on for the Bento digital and e-commerce package.
+
+In the enterprise space, clients continue to sign up for Commerce Hub, our API based orchestration layer that connects businesses to our enterprise product suite and value added solutions. In Q4, AT&T decided to add our data as a service offering, while a large petro company signed on to add Pay by Bank and TransArmor fraud protection.
+
+Merchants overall are increasingly recognizing the importance of payment data to drive business decisions, and Fiserv is uniquely positioned to deliver cross platform data sets to support their business intelligence, security and AI needs. We are driving our enterprise solutions further into government with Tyler Technologies, an integrated software provider.
+
+We signed a strategic expansion of our relationship that supports processing for state governments to include full omnichannel solutions, more devices, including Clover, and now new added solutions such as digital wallets, broad mitigation and authorization optimization.
+
+E-commerce providers are increasingly coming to Fiserv as well. We fully ramped a U.S. relationship with PayPal in the fourth quarter and went on signed PayPal and Latin America for payment processing and other VAS. We also landed Lead Financial, a fintech firm focused on international remittances and embedded payments that will add Commerce Hub, and we'll be providing card not present acquiring and debit routing optimization for the mortgage operations they've built, the loyalty rewards platform for housing payment.
+
+And finally, Curb Mobility, a leading taxing and mobility services company, decided to migrate to Commerce Hub. They will be our first client to deploy Android Tap to Pay, enabling drivers to use the Android devices that run their driver app as payment accepted devices as well. This will significantly reduce their costs for dedicated in-taxi terminals, hardware and maintenance.
+
+In EMEA, Fiserv reached a first of a kind opportunity in Spain with Unicaja, one of the country's leading banks. We signed a strategic agreement to work together to develop advanced solutions in payments and e-commerce, including tools for omnichannel processing and point-of-sale systems in response to growing market demand in Spain from merchants of all sizes and in all verticals. There was a further traction in Spain in January with RIU Hotels, where we will be providing Clover Flex terminals and Card Present acquiring across their hotels in the U.S. and Canada.
+
+In the Financial Solutions segment, we saw several large core banking wins. South State Bank and now $65 billion Florida based regional bank on our premier core, plans to add approximately 20 billion assets to the platform following its recent acquisition of Independent Bank.
+
+Modernization via our DNA core continues as well with our new relationship with Third Federal Savings & Loan, a $17 billion asset bank headquartered in Cleveland. Finxact momentum is clearly building. According to analysis performed by a prominent global consulting firm, Finxact has more accounts in production and clients in the U.S. than all other next generation competitors combined.
+
+Speed to market is one important reason we win. In just 10 months, we powered the U.S. Super App of Brazil based Banco Inter to support international debit and money movement, investing loyalty points and cash back. And for DoorDash, we enabled access to sponsor bank accounts and real-time payments for DoorDash delivery personnel in just a few months.
+
+Finxact was chosen by FirstRand Group to power its digital transformation and ongoing growth objectives. FirstRand is one of the largest banks in Africa, with over $130 billion in assets, and will become the first financial institution outside of the U.S. to select our cloud native real-time banking platform that offers enhanced access to data.
+
+CashFlow Central had a very strong Q4, signing 29 banking clients for a total of 39 since we launched. Some of the biggest in Q4 included BMO Harris Bank, Affinity Federal Credit Union, UMB Bank and City National Bank of Florida. CashFlow Central is starting to pull through other product sales, including CheckFree and XD. Overall, 2024 was a strong year with important signs of continuing success based on the development and early uptake of many new products designed to be easy for clients to adopt and integrate on our leading platforms.
+
+Compared to the guidance we had laid out and at the start of 2024, our final results have beaten on adjusted operating margin, adjusted EPS and free cash flow based on strong execution, while we met expectations with 16% total company full year organic revenue growth.
+
+If we exclude transitory factors from Argentina, total company organic revenue growth in 2024 was 11%, a healthy and sustainable level. For the full year 2024, we returned value to shareholders in the form of share repurchases worth $5.5 billion or 34 million shares, contributing to a nearly 5% decline in average shares outstanding for the year.
+
+Today, we are sharing a plan that continues down the path we set at our Investor Conference in November 2023. For 2025, we are guiding the 10% to 12% organic revenue growth, greater than 125 basis points of adjusted operating margin expansion, 15% to 17% adjusted EPS growth and roughly $5.5 billion of free cash flow. This guidance assumes zero contribution from transitory factors as Argentina's economy stabilizes.
+
+With 85% recurring revenue in our model, natural operating leverage, ongoing efficiencies, new products, continuing investment and healthy cash flow, we are well-positioned to extend our lead and to shareholder value, and deliver our 40th consecutive year of double-digit adjusted earnings per share growth.
+
+So with that, I'll turn it over to Bob to cover the numbers for the quarter and full year 2024, and some details behind the 2025 guidance.
+
+Bob Hau
+
+Thank you, Frank, and good morning, everyone. If you're following along on our slides, I'll cover the detail on total company and segment performance in the fourth quarter and full year. Starting with our financial metrics and trends on Slide 4. The fourth quarter capped-off a year of strong revenue growth, whether you look at the numbers as reported or on an organic basis, or even if you exclude the transitory benefit of inflation and interest in Argentina. The quarter also featured significant ongoing margin expansion and improved free cash flow.
+
+Total company adjusted revenue grew 7%, while organic growth was 13%, driven by strong double-digit growth in the Merchant segment and mid-single digit growth in Financial Solutions. The spread between these growth rates reflects currency translation. Excluding the transitory effects of excess inflation and the Dolar Turista program in Argentina, total company organic revenue growth would have been 11% in the quarter.
+
+Total company adjusted operating margin reached 42.9%, an increase of 180 basis points versus the prior year, on an adjusted operating income growth of 11%. Adjusted earnings per share for the quarter was $2.51, up 15%. For the full year, on an adjusted basis, revenue grew 7% to $19.1 billion. Total company organic revenue growth was 16%, representing our fourth consecutive year of double-digit organic revenue growth.
+
+Most of the difference between adjusted and organic growth rates came from the sharp devaluation of the Argentine peso through September and broader dollar strength in Q4. For the full year, if you were to exclude the transitory items in Argentina, organic revenue growth would have been 11% for the year. Adjusted earnings per share was $8.80 at the top end of our guidance range, which we raised every quarter last year.
+
+Free cash flow for the quarter was $1.9 billion and $5.2 billion for the year. This very strong free cash flow included a positive impact from a working capital improvement project that we kicked-off in Q3. We improved processes around both payables and receivables, and the benefit accrued sooner than expected. We expect this improvement to be sustained in the future.
+
+Turning to our performance by segment, starting on Slide 6. Organic revenue growth in the Merchant Solutions segment was 23% in the quarter and 27% for the full year. Excluding the transitory effects of excess inflation and the Dolar Turista program in Argentina, organic growth would have been 17% in the quarter and 16% for the year.
+
+On Slide 7, we have again included a summary of the contribution from excess Argentine inflation and interest and the temporary Dolar Turista program, along with the offsetting headwind from currency devaluation, which impacts adjusted revenue for both the company and Merchant segment revenue. Small business organic and adjusted revenue growth in the quarter was 24% and 12%, respectively, and payments volume growth of 4%.
+
+Clover revenue reached $2.7 billion in 2024 with nearly 90% in our small business line reporting. Clover revenue grew 29% in both the quarter and full year on Q4 annualized payment volume growth of 14%. This spread reflects growth in value-added solutions, some targeted value-based pricing actions and strong hardware sales.
+
+In 2024, we rolled out five new hardware products that gained traction, particularly in our ISO channel and among bank partners investing in the Merchant acquiring businesses. VAS penetration continued along its path of roughly 3 points of growth per year, reaching 22% in Q4, driven by continued growth in Clover Capital and the enhanced Clover SaaS package.
+
+Enterprise organic and adjusted revenue growth in the quarter was 31% and 15%, respectively, driven by transactions growth of 17%. As with small business, organic growth in Enterprise included a transitory benefit from Argentina in the fourth quarter. Above average enterprise growth also reflects the ramping of a large PayFac from a processing customer to a direct client, which started in earnest in Q3. For the full year, enterprise growth of 31% organic and 12% adjusted includes the impact of ramping growth from the large PayFac client we mentioned last quarter, as well as the transitory effects from Argentina.
+
+Commerce Hub continued its positive momentum with roughly 250 clients and daily transactions up ten-fold since Q1 of 2024. Through a single API integration, Commerce Hub clients can access a variety of solutions, including fraud and security, routing optimization, Pay by Bank and data analytics, and we continue to add to this portfolio. We found that on average, after one year, Commerce Hub clients take over four VAS products or 60% more than non-Commerce Hub merchants. For our largest Commerce Hub clients, product attach is even higher, approaching five solutions per merchant.
+
+Finally, processing organic revenue in the quarter declined by 3%, partially reflecting the relocation of the large PayFac to our Enterprise segment as a direct client. For the full year, processing organic revenue declined 1%, consistent with our expectation of roughly flat growth over the medium-term.
+
+Adjusted operating income in the Merchant Solutions segment increased 15% for the quarter and 20% for the year. Merchant adjusted operating margin expanded 290 basis points to 37% in 2024. As noted in prior quarters, interest expense from anticipation revenue is recorded below the operating income line. If the interest cost from anticipation were included in operating income, Merchant adjusted operating margins would have expanded 120 basis points for the quarter and 230 basis points for the full year.
+
+Turning to Slide 8 on the Financial Solutions segment. Organic revenue grew 4% in the quarter and 6% for the full year, at the midpoint of our full year outlook of 5% to 7%. Looking at the business lines, digital payments organic and adjusted revenue each grew by 5% in the quarter and 6% for the year.
+
+Growth in Zelle revenue reached a strong 28% for the year, and we are now supporting Early Warning Services newest offering, the digital wallet pays. This is a clear example of the value Fiserv can bring at the integration of Financial and Merchant Solutions. We both enable banks to offer pays to customers and integrate the Pays Wallet as a payment option on our Enterprise and Clover merchant platforms.
+
+We also continue to see demand for our integration on the FedNow for real-time payments, with nearly 400 of our FI clients enable or in process. Many seamlessly, thanks to our existing integration with our NOW network. In issuing, organic revenue grew 3% in the quarter and 7% for the year. Below trend growth in Q4 mostly reflects the timing of plastic and payments volume.
+
+Banking, organic and adjusted revenue each grew 4% in the quarter and 3% for the year, in line with our expectations. Adjusted operating income for the Financial Solutions segment was up 10% for the quarter and 7% for the year, with full year adjusted operating margin reaching 47.3%, a 130 basis point improvement.
+
+Now let me wrap up our 2024 discussion with some remaining details on the financials. The adjusted effective tax rate was 18.8% for the full year. This came in slightly lower than expected on benefits of our green tax credit program. Total debt outstanding was $24.8 billion on December 31. Our debt to adjusted EBITDA ratio edged a bit lower to 2.6 times in the fourth quarter, in line with our targeted leverage range.
+
+During the quarter, we repurchased 6 million shares for $1.3 billion, bringing our total cash return to shareholders for the full year to $5.5 billion. Average shares outstanding declined nearly 5% in 2024 as a result, and we had 18 million shares remaining authorized for repurchase at the end of the year.
+
+Turning to Slide 10. We're setting our full year 2025 adjusted earnings per share guidance to a range of $10.10 to $10.30, representing 15% to 17% adjusted EPS growth. Our organic revenue growth guidance of 10% to 12% is at the high end of our medium-term target range and consistent with our organic growth in 2024, excluding the transitory contributions from Argentina last year.
+
+Given the current macro environment in Argentina, we are assuming no contribution from excess inflation or interest in 2025 and an end to the Dolar Turista program in the first quarter of 2025. The forecasted impact from foreign currency exchange is 1.5% in 2025 compared to 9% in 2024. Since the Argentine peso devaluation is expected to slow as is the recent U.S. dollar strength.
+
+This will bring adjusted revenue growth much closer to organic growth in 2025 and similar to a historical average spread. Our adjusted operating margin expansion outlook of at least 125 basis points is ahead of our prior target of at least 100 basis points annually through 2026, and we expect our free cash flow to about $5.5 billion.
+
+Drilling down by segment, for Merchant Solutions, we see organic revenue growth of 12% to 15% in 2025, driven mostly by strong growth in Clover, as we reach our $3.5 billion revenue target, including an increase in vast penetration to the 25% outlook. Our ability to achieve these goals is supported by opportunities we advanced in 2024 with five new hardware rollouts; new features and functionality for our three focused verticals of restaurant, services and retail; and three new geographies: Brazil, Mexico and Australia.
+
+We expect the small business line to grow above segment average driven by Clover. Enterprise should be slightly below the segment average to more normal levels following the end of transitory benefits in Argentina and some one-time revenues associated with the large PayFac win. In the processing line, we see modest positive growth as we anniversary strategic shifts of certain clients in 2024.
+
+We will see an impact of the reduction of the Argentina transitory contributions more prominently in the first and second quarter this year, as they are tougher compares to higher benefits in the first and second quarter of last year.
+
+In Financial Solutions, we anticipate organic revenue growth of 6% to 8%. All parts of this business are expected to contribute, with new revenue as we go live with Target and Verizon in issuing, embedded finance with DoorDash, several Finxact clients, XD migrations and early adopters of CashFlow Central. The issuing and digital payments business lines should grow at or slightly ahead of the segment growth levels, while banking grows a bit slower than average, given the nature of the business line.
+
+While we don't give quarterly guidance, I think it's instructive to consider the quarterly cadence this year. Overall, we expect growth to be weighted towards the second half of the year. Several reasons for this. First, we've had multiple new product rollouts in late 2024 that we expect will gain traction over time in the market from Clover vertical software to CashFlow Central and the SMB suite.
+
+Second, we had several important new wins that will take time to implement and generate revenue, including Target expected to go live in late March and Verizon in September. Third, we entered three new countries with pilots in the fourth quarter and full scale go-to-market efforts just getting underway this year.
+
+And lastly, the contribution from transitory items in Argentina was highest in the first half of 2024, creating tough year-over-year comparisons for the first half of 2025. Q1 is a particularly difficult growth comparison from one-time Dolar Turista revenue and a LatAm processing client term fee in Q1 2024. So while we see better second half than first half growth, we have strong visibility and has confidence in the drivers of our full year organic revenue growth.
+
+Lastly, on guidance. Both Merchant and Financial Solutions are expected to contribute to the at least 125 basis points of adjusted operating margin expansion that we are forecasting for the total company this year. Below the line, we see a higher interest expense in 2025 and due to refinancing and ongoing growth in the merchant cash advances. Our adjusted effective tax rate should be roughly 19.5%, and we expect to continue our share repurchase program with spending ahead of free cash flow.
+
+With that, let me turn the call back to Frank for some closing remarks.
+
+Frank Bisignano
+
+Thanks, Bob. Those of you who know us know that we are passionate about small businesses. In Q4, we partnered with the U.S. Chamber of Commerce Foundation providing valuable insights on the impacts of Hurricane Helene and Milton to guide response investments and aid in small business recovery.
+
+We are undertaking similar efforts in Los Angeles as we speak, all based on the data captured in the Fiserv Small Business Index. We also have people on the ground offering assistance to all of our clients, including small businesses. And to readily address this and future disasters, we have created a $10 million relief fund to support clients and employees as needed.
+
+Last week, Fiserv was again named a [Technical Difficulty]. This is our 10th in the last 11 years, and we are proud to have moved higher in our ranking, specifically in the areas of quality of product and service, and quality of management. We're gratified to consistently rank highly on two other measures, innovation, and long-term investment value, which I believe are inextricably linked.
+
+In reality, a single ranking or even multiple voice recognitions that we've earned can capture the true value of our company. You've also heard me speak about the unparalleled assets of Fiserv, our scale, broad product set, vast distribution, innovative technology, global presence, deep bench and unique combination of diverse merchant and FI clients and solutions.
+
+I'm very proud of the strong returns we have delivered on these assets, and grateful to the team around me to their talent and support, the Board, our Management Committee and Fiserv associates, as well as our clients, partners and investors, who I have had the privilege of sitting down with over the years.
+
+Ultimately, Fiserv's success comes down to one thing. You've heard me say it over and over again, the construction of the company that can endure and transcend CEOs. On December 5, I told you, we would name a great CEO in a short period of time and that I'd be working every day to meet financial commitments. Now two months later, you can see that we've delivered. I'll give you my full commitment to be working side-by-side with Mike pending the outcome of my nomination.
+
+So now operator, please open the line for questions.
+
+Question-and-Answer Session
+
+Operator
+
+Thank you. We would now like to open the phone lines for questions. [Operator Instructions] Our first question comes from Tien-Tsin Huang from JPMorgan. Please go ahead.
+
+Tien-Tsin Huang
+
+Hey. Thanks so much for taking my question. I have to ask a question for Mike, glad to have him on the call, of course. Just I'm curious to your response to what surprised you about Fiserv as you did your diligence to join the company? What was different from maybe what you thought looking at it as an investor and of course, as a client and partner?
+
+Mike Lyons
+
+Yeah. Thanks for the question. Great to hear from you. It's been a long time. My relationship with the company goes back many years, as I said, as both an investor and as a significant client. And then as a partner, with all the work we did at Zelle and Pays. It's an unbelievable company, obviously performing at a very, very high level, as you can see today, with visible revenue, cash flow and earnings growth. So there weren't a lot of surprises.
+
+It's a terrific franchise. I understand it. I understand the plan that we have in place. I firmly believe in that plan. And our big focus internally with the team, and we've been going hard since last week is to make sure we don't miss a beat on the execution of the strategic priorities. There's a long list of really exciting growth opportunities both on the merchant side of the business and the financial side of the business.
+
+The scope and potential of that set of opportunities and the ability to cross-sell across the two platforms is probably -- if there's anything in the last eight days, still early, it's probably that, that's an unparalleled opportunity that I had full appreciation of I've gotten here. What we have, the potential on international was also a surprise.
+
+And then I've had over -- again, it's only been eight days, but I have a chance to spend time with the team deeper into the organization, incredibly impressed by the talent and innovation, especially the amount of people focused on innovation. You talked about 13,000 engineers, most of them who have reached out and expressed their excitement for the future.
+
+And even over the last seven or eight days have had 10 or 12 client meetings, and we've got incredible clients. And our ability to help them navigate both an evolving and exciting payments world is against unparalleled. So I said high level stuff, obviously, have more as we go to.
+
+Operator
+
+Next, we'll go to the line of Darrin Peller from Wolfe Research. Please go ahead.
+
+Darrin Peller
+
+Hey, guys. Thanks. Mike, congrats. And it's been a while, but welcome. I guess we'll just start off with Clover, I mean, the sustainability of growth has been outstanding. And so when you look at the trend line into next year, even against enough comps, just remind us of what you expect the more nuanced building blocks that can keep that afloat at that level, which I know it kind of needs to be to meet your targets. And then just thinking of that VAS in the cross-sell, when considering what you have in terms of new direct sales and new international markets, how is that going to contribute? So maybe just once again revisit the building blocks to the sustainability? Thanks, guys.
+
+Frank Bisignano
+
+Yeah. Maybe I’ll take it, right? I’d start with – like, I told you all, I was going to Brazil. I was on my way back from the launch in Brazil and the President said no doubt. Gustavo and I spent time and then with the President of Brazil. He was so enthused about how small business efforts. So you go Brazil, Mexico, Australia, all coming online. I think the ADP partnership, Maria Black (ph) got in a job year ago, we spent time. She’s a fabulous leader. She saw the opportunity. We saw the opportunity. You think about – when you want to talk about a back book, let’s think about ADP’s back book, right? That’s a hell of a back book and front book.
+
+We talk about these nearly 1,000 FI partners, we – kind of what I love saying, that was old but it’s new. I mean we’re – with the integrated suite of CashFlow Central, bringing all the other tools, expense management, SpendEnd, attach it to XD, it just gives us this unbelievable opportunity to continue.
+
+We think we’re the heavyweight champion the world at partnership, as I always say partner on choice, whether it’s ADP, whether it’s – we were with the great top 10 bank last night, Mike and I. So demand is super high. And I think every FI partner, we’re building tools to increase penetration in every FI partner.
+
+And then you look at all the things that we’re bringing in, new software besides CashFlow Central, ADP more website management, more employee management, more capital. We rolled it out, we did a great year rolling out five new products. So we’re all gas and no break on this, baby, and that’s kind of how we’re playing it and love it.
+
+And like I will just – I’ll make a statement. I make the statement. I make the statement everywhere. Mike is crushing it, so there’s no pivots going on here. We’re not rethinking, but he’s going to better than me. He’s going to be better than me for 15 reasons, including not a pandemic and not a merger and all gas, no break, fully integrated team. Everybody loves Mikey. That’s it.
+
+Operator
+
+Next we'll go to the line of Timothy Chiodo from UBS. Please go ahead.
+
+Timothy Chiodo
+
+Great. Thank you and congratulations to Mike as well. On DoorDash, so big contract and certainly supports the acceleration in Financial Solutions this year, and you mentioned a pipeline of other embedded finance opportunities. So I was hoping that you could talk a little bit about the Payfare acquisition and how that plays into that? I gather that it brings on program management capabilities.
+
+And previously, Fiserv was working with smaller third-party program managers and now you have that in-house. Maybe just talk about what this means for the revenue opportunity, not only with your existing clients, but also how it might help you with some of those RFPs, particularly in light of those comments around the pipeline.
+
+Bob Hau
+
+Yeah, Tim. It's Bob. Thanks for the question. And you're right on the mark. Obviously, we feel great about landing and very rapidly accelerating our position with DoorDash getting up to a full ramp in just a few months, that's going quite well. Program management is certainly part of the overall program with DoorDash and with embedded finance clients. We do some of that in-house. We partner with third parties. It's a combination, and Payfare will bring some additional capability to us around that aspect. That transaction is not yet closed, but we feel like that's a good add to the overall capability that we have.
+
+And if you think about what an embedded finance client would need, we really don't think there's another company that has all the assets available within our own shop to really wholly serve those clients. We think that's why DoorDash selected us and why we feel like we're in a great position to continue to see that space grow for us.
+
+Operator
+
+Next, we'll go to the line of Harshita Rawat from Bernstein. Please go ahead.
+
+Harshita Rawat
+
+Congratulations, Mike. Bob, can you talk about January trends? Are you seeing kind of continuation of what you saw in December and the fourth quarter? And then separately, can you also expand upon your comments in Clover GPV growth? It kind of decelerated a little bit. We've seen some acceleration in U.S. volume growth by the network. So if you can maybe unpack the growth for us and comment on U.S. versus international dynamics there? Thank you.
+
+Bob Hau
+
+Sure. I would say that, obviously, what, we're 33 days into the first quarter, in line with our expectations, off to a good start from an overall consumer spending standpoint. Consumer continues to do well and remain resilient. We certainly benefit from having the breadth of our capability, serving discretionary as well as non-discretionary categories. A lot of folks talking about experiences and obviously, we participate in that also.
+
+So generally feel good about our ability to continue to grow nicely as we see consumer spending going on and leveraging our very broad distribution channel and a variety of verticals that we serve. Obviously, a lot going on in the world and we've seen FX ease quite a bit or see that going on in 2025. You heard us talk in our prepared remarks our '25 outlook is much lower. That, of course, does play into that volume. That volume is a reported number. We don't adjust it for FX.
+
+We also don't adjust it for the inflation and interest rate dynamic that we saw down in Argentina in 2024 and looking forward to not talking about that in 2025 as that has now returned to more normal levels. So bottom line, feel good about where we are. January is continuing with similar trends we saw in the fourth quarter and excited to get the year going. Thanks, Harshita.
+
+Operator
+
+Next, we'll go to the line of Dave Koning from Baird. Please go ahead.
+
+David Koning
+
+Yeah. Hey, guys. Thanks. Great year. And I guess, my question is within Financial Solutions. Issuer slowed, you talked about that a little bit. Was that -- I guess, was that -- because Financial Solutions product revenue was really strong in Q2, Q3, that fall in issuer, and maybe that's why it slowed a little. And then when does that pick up? When does Verizon, etc., Target kind of hit in 2025 to reaccelerate that?
+
+Bob Hau
+
+Yeah. Overall, fourth quarter, I would probably attribute the slowdown you saw particularly in the issuer space, that's where our print and plastic business reports. And so we saw some slower volume in that space, and I think that's tied to the overall credit environment. For next year, for 2025, we see Target coming on in very late first quarter, late March. Verizon will come in, in September. And the other product, large project that we've been talking about in the past is Desjardin, that will actually come to fruition in 2026. So we'll see an uptick late March, obviously, as that ramps throughout the second half of the year. And Verizon will benefit us as it ramps into the fourth quarter.
+
+Operator
+
+Next, we'll go to the line of Dan Dolev from Mizuho. Please go ahead.
+
+Dan Dolev
+
+Hey, guys. Great results. Great year. Congrats again, Frank. So can we talk strategically a little bit about your Walmart partnership? Like, how do you envision this very exciting, using the NOW Network and FedNow and all these things to actually maybe change the way people pay? Any early observations from your conversations there would be really helpful. Thank you.
+
+Frank Bisignano
+
+Let's take the macro, I mean, I got the first data 2013. And Walmart, at that point was thinking about multiple providers and other things. And we've had a tremendous partnership. We continue doing more with them. I mean, look at us running their JV of One Financial on Finxact, which I always believe we were able to service Walmart on Finxact that -- and you hear us talk about what's going on. You see FirstRand as a client there coming on. So we continue to have an extraordinary relationship.
+
+Remember, we have a team that sits in Vantiv, right? I mean, that's the extent of that relationship. We have one executive in charge of it. We meet all the time. I meet with the leadership of their own payments. Mike obviously understand. My clients understand Walmart inside and out also. So -- and we're generally working side-by-side with them on any initiatives they have in the space of payments or fintech. We're generally focused on our clients and serving our clients.
+
+We are not really selling things to our clients. We're partnering with a client like Walmart to line up with their strategic initiatives way before a rollout. So I mean, I can't say enough about them as a client. But I'd say, no, our client base is unparalleled, right? I mean, from -- we could go through the client base, and it could be even a small community bank or a good community bank somewhere in America. We have lots of them. And we partner with them. It's why we have a structure of coverage the way we do, why we strongly believe in relationship management.
+
+Walmart is a 27-year relationship. So I can't, I mean, it's not about one initiative. It's about -- and it's not about one client. But they are a fabulous client. Great partner. And they're also a strong client. They don't -- they want and deserve superior product and superior service. And we meet regularly, and it's great relationship. Thanks for asking.
+
+Operator
+
+Next, we'll go to the line of Jason Kupferberg from Bank of America. Please go ahead.
+
+Jason Kupferberg
+
+Thanks, guys. Congrats, Mike. Congrats, Frank. I wanted to ask on Clover. Just, Bob, you mentioned that spread between the revenue and the volume growth. It did widen out a little bit. And I know you talked about the VAS penetration, the pricing and the hardware sales. I was hoping you could maybe break down the contribution to the spread among those three. And then any thoughts on how that spread may evolve in 2025? Thank you.
+
+Bob Hau
+
+Sure. Thanks, Jason. I think, overall, the list that you just had is kind of where we are from a ranking standpoint. VAS is certainly continuing to improve, expand. We'll see that actually continue into 2025, where we expected a 25% VAS penetration. Good growth in 2024, 3 points over the previous year. Hardware, given the fact that we rolled out five new pieces of hardware, we saw a very nice uptick in that space. The Kiosk, the Clover Flex, Flex Pocket, etc., all participated in helping drive additional hardware. We're also seeing more uptick in that from our financial institution clients investing in the Clover capability. And then from an overall mix standpoint, more direct is giving us a great opportunity going forward.
+
+Jason Kupferberg
+
+Thank you.
+
+Operator
+
+Next, we'll go to the line of Jim Faucette from Morgan Stanley. Please go ahead.
+
+James Faucette
+
+Good morning. Congrats to Mike and Frank. Wanted to ask quickly about the go-to-market on a lot of these new offerings. It seems like a lot of attractive potential for your financial partners to engage with small businesses further with the new offerings. We're pretty excited about those. But wondering how we should think about go-to-market support for those, what the implications for operating expenses are and what kind of proof points we should be watching to see as your financial partners start to engage and roll out? Thanks.
+
+Frank Bisignano
+
+Yeah. Thanks, Jim. When we lay all this out, obviously, we're adding to our sales force, right, and we love to add to our sales force. So that's a real positive. We also have world class distribution. So our ability to get product out, we have a very, very structured way to deal with our partners that's been tried and true. Start with how much distribution we got at a Clover, right? Like, that was really a distribution channel and a distribution partner, right? So it -- as we like to say, what's old is new. We're just coming back to using our distribution capability, add more sales.
+
+Obviously, we're also going to have more digital capability of distribution this year than we had last year. And we're adding more sales people, feet on the street across the board. So I think there is -- it sounds like a lot, but a lot of it is integrated, a lot of it is technically integrated. We're doing a very good job, whether it's on ADP or CashFlow Central to have deep technical integration. And ultimately, our bank partners want to help because all these things is more revenue for that, right?
+
+So when you think about Clover growth, when you think about CashFlow Central growth, when you think about ADP, deeply technically integrated. We're adding feet on the street. Bank partners love it because it's revenue to them. All our partners, the ADP, these are revenue sharing agreement. Everybody is incented to grow these products. So nothing really new there, except more technically integrated than ever before.
+
+Operator
+
+And our final question will come from line of Ramsey El-Assal from Barclays. Please go ahead.
+
+Ramsey El-Assal
+
+Hi. Thanks for squeezing me in here and nice to meet you, Mike, over the phone. I wanted to ask about CashFlow Central. Could you give us your latest thoughts, Frank or Bob, on when it will become a material contributor to the P&L? Will gain enough momentum to be felt in 2025? And also just help us understand the sort of economic model there. Is it bps on volume, fixed fee, subscription fee? How do you actually price the thing? Thank you.
+
+Frank Bisignano
+
+Meaningful in a $20 billion plus company, has a lot of variability on how people mean meaningful. But well, in the second half of this year, our clients are going to be online and we expect to be booking our revenue. I think you said meaningful in a way specific nano things about meaningful, it's more like '26, not '25. But this has a long-term sustainability, durability. And Mike and I, we sit around and talk. And it's fun to be doing this with him because he's under the hood for eight days.
+
+And most of -- we believe that our ability to grow the company in total is just as much as we can consume because we're continuing to -- what I said this a long time ago to you all when we laid out targets a long time ago. We can continue to add TAM opportunities. So I think on the specific question, it's -- you'll see numbers starting to run up in the second half. I would consider it, in my language, meaningful, right, in '26. And I think we're not limited to that opportunity. We just have so many growth drivers.
+
+And you heard it in Mike, his own words and when he sat in an all-day management meeting on the 1st on last Monday, and we go through the business plans and look at the opportunities, and that's why we're able to post numbers we post. It's a land of opportunity. I hope that's helpful.
+
+So thank you for your attention today. Reach out to our IR team. I hope to talk to all of you. And like I like to say, I'll be here until I'm not. But Mike and I are side by side. They won't let me say that earlier, but I'm saying it now. Have a great day. Bye.
+
+Operator
+
+Thank you all for participating in the Fiserv fourth quarter 2024 earnings conference call. That concludes today's call. Please disconnect at this time, and have a great rest of your day.

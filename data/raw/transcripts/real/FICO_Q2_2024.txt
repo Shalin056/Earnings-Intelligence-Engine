@@ -1,0 +1,348 @@
+Fair Isaac Corporation (FICO) Q2 2024 Earnings Conference Call April 25, 2024 5:00 PM ET
+
+Company Participants
+
+Dave Singleton - Vice President, Investor Relations
+Will Lansing - Chief Executive Officer
+Steve Weber - Chief Financial Officer
+
+Conference Call Participants
+
+Manav Patnaik - Barclays
+Faiza Alwy - Deutsche Bank
+Surinder Thind - Jefferies
+Kyle Peterson - Needham
+Ashish Sabadra - RBC
+Jeff Meuler - Baird
+George Tong - Goldman Sachs
+Simon Clinch - Redburn Atlantic
+
+Operator
+
+Good day and thank you for standing by. Welcome to the Fair Isaac Second Quarter Earnings Conference Call. At this time, all participants are in a listen-only mode. After the speakers' presentation, there will be a question-and-answer session. [Operator Instructions] Please be advised that today's conference is being recorded.
+
+I would now like to hand the conference over to your speaker today, Dave Singleton. Please go ahead.
+
+Dave Singleton
+
+Good afternoon and thank you for attending FICO's second-quarter earnings call. I'm Dave Singleton, Vice-President of Investor Relations, and I'm joined today by our CEO, Will Lansing, and our CFO, Steve Weber. Today, we issued a press release that describes financial results compared to the prior year. On this call, management will also discuss results in comparison with the prior quarter to facilitate an understanding of the run rate of the business. Certain statements made in this presentation are forward-looking under the Private Securities Litigation Reform Act of 1995. Those statements involve many risks and uncertainties that could cause actual results to differ materially.
+
+Information concerning these risks and uncertainties is contained in the company's filings with the SEC, particularly in the risk factors and forward-looking statements portion of such filings. Copies are available from the SEC, from the FICO website or from our Investor Relations team. This call will also include statements regarding certain non-GAAP financial measures. Please refer to the company's earnings release and Regulation G schedule issued today for a reconciliation of each of these non-GAAP financial measures to the most comparable GAAP measure. The earnings release and Regulation G schedule are available on the Investor Relations page of the company's website at fico.com or on the SEC's website at sec.gov. And a replay of this webcast will be available through April 25, 2025.
+
+I will now turn the call over to our CEO, Will Lansing.
+
+Will Lansing
+
+Thanks, Dave, and thanks, everyone, for joining us for our second-quarter earnings call. In the Investor Relations section of our website, we posted some financial highlights slides that we'll be referencing during our presentation today. Today, I'll talk about this quarter's results and our increased guidance for the full fiscal year.
+
+We again delivered strong results, demonstrating the resiliency of our business with solid growth, both in scores and in software. As shown on page 2 of the second-quarter financial highlights, we reported Q2 revenues of $434 million, up 14% over the last year.
+
+We delivered $130 million of GAAP net income in the quarter, up 28%. We delivered GAAP earnings of $5.16 per share, up 29% from the prior year. On a non-GAAP basis, Q2 net income was $154 million with earnings of $6.14 per share, up 27% and 29%, respectively. We delivered free cash flow of $62 million in our second quarter and $182 million in the first half of fiscal '24.
+
+We continue to return capital to our shareholders through buybacks. In Q2, we repurchased 144,000 shares at an average price of $1,246 per share. We have $367 million remaining on our Board repurchase authorization. Now in our Score segment, on page 6 of the presentation, our second-quarter revenues were $237 million, up 19% versus the prior year.
+
+In B2B, the current quarter revenues were up 28% versus the prior year. On the B2C side, the current quarter revenues were down 4% versus the prior year. Second-quarter mortgage originations revenues were up 85% versus the prior year. Mortgage origination revenue accounted for 46% of B2B revenue and 36% of total scores revenue.
+
+Auto originations revenues were down 1%, while credit card, personal loan and other originations revenues were down 9% versus the prior year. We continue to drive strong adoption for FICO Score 10T for non-conforming mortgages.
+
+Since 2023, clients with over $100 billion in annualized mortgage originations and about $300 million -- billion in eligible mortgage portfolio servicing have signed up with a FICO Score 10T. FICO 10T for conforming mortgages will be rolled out based on the timeline of the FHFA.
+
+In our software business, we delivered $197 million in Q2 revenue, up 8% from last year, driven by growth in on-premises and SaaS software, partially offset by a decline in professional services. We continued to drive strong growth in ARR and NRR to our land-and-expand strategy with expand driven by increased customer usage. As shown on page 7, total ARR was up 14% with platform ARR growing 32% and non-platform ARR growing 8%.
+
+Total NRR for the quarter, shown on page 8, was 112%. Platform NRR was 126% and non-platform NRR was 106%. Our total ACV bookings for the quarter were $17 million. Our pipeline remains strong, especially with platform offerings. Before I turn it over to Steve to talk about financial detail, I'd like to take a few moments to talk about the FICO World Event we hosted last year -- last week. The four-day event included 1,200 attendees representing more than 400 companies from 60 countries.
+
+FICO World brought together customers and prospective customers from around the globe to discuss the benefits of making real-time decisions at scale through the power of the FICO platform. Current customers explain the benefits of improved profits, increased customer acquisition and retention, reduced costs, growth in new product offerings and improved employee efficiency.
+
+Through FICO platform demonstrations and our innovation center, customers experienced real examples of the variety of use cases that can be deployed using the FICO platform. At FICO World, we announced several innovations. We responded to market demand with an open API framework, a FICO marketplace open ecosystem and business composability.
+
+Together, these innovations foster a more collaborative environment by reducing silos and creating transparency into future outcomes. Some of the content from FICO World will be available in the coming weeks on our YouTube channel. I'd encourage all of you to view the demonstrations and presentations to better understand our customers' excitement around this innovative technology.
+
+I'll talk about our outlook for the balance of the year, including our increased guidance, but first, let me turn it to Steve for further details.
+
+Steve Weber
+
+Thanks, Will, and good afternoon, everyone. As Will mentioned, we had another very good quarter with total revenue of $434 million, an increase of 14% over the prior year. Score segment revenues for the quarter were $237 million, up 19% from Q2 of 2023.
+
+B2B revenues were up 28%, driven primarily by mortgage originations revenues. Our B2C revenues were down 4% versus the prior year due to volume declines in our myfico.com business. Software revenues in the second quarter were $197 million, up 8% versus Q2 2023. On-premises and SaaS software revenue grew year-over-year, while professional services revenues declined.
+
+This quarter, 84% of total company revenues were derived from our Americas region, which is a combination of our North America and Latin America regions. Our EMEA region generated 10% of revenues and the Asia-Pacific region delivered 6%.
+
+Our total software ARR was $697 million, a 14% increase over the prior year. Platform ARR topped $200 million this year for the first time at $201 million and represented 29% of our total Q2 ARR, up 25 -- up from 25% of the total in Q2 of 2023.
+
+Platform ARR grew 32% versus the prior year, while non-platform ARR grew 8% to $496 million this quarter. Our platform land-and-expand strategy continues to be very successful. Our dollar-based net retention rate in the quarter was 112%. Platform NRR was 126%, while our non-platform NRR was 106%.
+
+Platform NRR was driven by a combination of new use cases and increased usage. Non-platform was driven by customers' increased usage and by CPI price increases. Our software ACV bookings for the quarter were $16.8 million. As a reminder, ACV bookings include only the annual value of software sales and exclude professional services.
+
+Turning to expenses. Our total operating expenses were $239 million this quarter versus $221 million in the prior year. Our current expenses are a 4% increase over the prior quarter. As we indicated last quarter, we maintained focus on investment to accelerate development of the FICO platform and that incremental investment is relatively modest and built into our guidance.
+
+Our non-GAAP operating margin as shown in our Reg G schedule was 53% for the quarter and that represents a 400-basis-point increase from the same quarter last year. GAAP net income this quarter was $130 million, up 28% from the prior year's quarter. Our non-GAAP net income was $154 million for the quarter, up 27% in the prior year's quarter.
+
+The effective tax rate for the quarter was 25%. We believe that our fiscal year 2024 net effective tax rate is expected to be around 22%, while our recurring tax rate is expected to be around 26%. And as a reminder, the recurring tax rate is before any excess tax benefit and other discrete items recognized. Free cash flow for the quarter was $61.6 million, a 30% decrease from the prior year.
+
+The trailing 12-month free cash flow was 467% -- $467 million compared to $494 million in the prior quarter. We do expect free cash flow to accelerate from the Q2 level in the next two quarters. At the end of the quarter, we had $177 million in cash and marketable investments. Our total debt at quarter end was $2.04 billion with a weighted average interest rate of 5.2%.
+
+Currently, 63% of our total debt is fixed rate. Our floating-rate debt is prepayable at any time, giving us the flexibility to use free cash flow to reduce outstanding floating-rate debt balances in future periods. In terms of return of capital, we did buy back 144,000 shares in the second quarter at an average price of $1,246 per share. And at the end of the quarter, we still had $367 million remaining on the Board authorization.
+
+And with that, I'll turn it back to Will for his thoughts on the rest of the year and to give the information on our increasing and full-year guidance.
+
+Will Lansing
+
+Thank you, Steve. Our strategy remains consistent despite an uncertain macroeconomic environment. We're experiencing strong growth in our Scores business even as the current rate environment has driven volumes lower. Throughout our business, we continue to invest in innovation. This is particularly evident as we see growing customer adoption and expanded use cases of FICO platform. Our customers are delighted to be able to optimize interactions with their end customers through data-driven composable solutions that are executed in real-time. I'm pleased to report that today we're raising our full-year guidance as we enter the second half of our fiscal year.
+
+We're raising our full-year revenue guidance to $1.69 billion. GAAP net income is now expected to be $495 million with GAAP earnings per share of $19.70. Non-GAAP net income is now expected to be $573 million with non-GAAP earnings per share of $22.80. With that, I'll turn the call back to Dave to open the Q&A session.
+
+Dave Singleton
+
+Thanks, Will. This concludes our prepared remarks and we're now ready to take questions. Operator, please open the lines.
+
+Question-and-Answer Session
+
+Operator
+
+[Operator Instructions] Please stand by while we compile the Q&A roster. Our first question comes from Manav Patnaik from Barclays. Your line is now open.
+
+Manav Patnaik
+
+Thank you. Good evening. Maybe I'll just start with the software segment first, Will. Clearly, we were at FICO World and your comments, both are pretty bullish. But can you just help us appreciate or understand the second quarter in a row of deceleration on the platform side? I think last quarter, you said there was some movement in the bookings or timing, etc. So just help us, if there's something more of that going on? Is 30% the new level now? Just any help there would be appreciated.
+
+Will Lansing
+
+Yes, absolutely. So as you know, we had many, many quarters of over 50% growth in the platform and then we -- it slowed to the 40s and now we're in the 30s. And I think that's a reasonable and sustainable level for the foreseeable future. I think we'd always anticipated some level of slowing just because as that number gets bigger, that was inevitable. And I think that's really all it is. We're not seeing anything that's cause for any kind of concern or alarm. Our customers are buying the platform. They're expanding the use cases once they've got the platform in. There's a little bit of timing issues around various deals, but I don't think anything really significant. I guess it's probably worth pointing out that the second half of the year is always bigger than the first half. And so there's more to come this year.
+
+Steve Weber
+
+And Manav, I would just say we had a really difficult comp this quarter too. Last -- second quarter, last year, the platform grew 60%. So we're growing more than 30% off of a pretty big number. It was a big step-up last year in the second quarter.
+
+Manav Patnaik
+
+Okay, got it. That's helpful. And then maybe just one on the scores, on the mortgage origination side or the moving pieces there, Steve, maybe just, how did volumes come in this quarter versus your expectations? And then when you think about the guidance raised, like what were the moving pieces there as well, please?
+
+Steve Weber
+
+Yes. I mean, you know how we guide, we're pretty conservative. We don't -- we're not banking. I think it's getting better anytime soon. I mean, I think even when we gave guidance last year, people at that point were talking about six rate cuts in the year and we weren't anticipating that. So we -- the way we look at the guidance and mortgage, obviously being such a big piece of that is that we don't expect things to get better in our fiscal year and if they do great, but it's hard for us to depend on that because, obviously, this gets -- the rates are going to be higher longer than anybody thought. So that's kind of how we look at that. So when they do come down, we'll enjoy that benefit, but we don't try to put a timeline on that.
+
+Manav Patnaik
+
+Okay. Thank you.
+
+Operator
+
+Thank you. One moment for our next question. Our next question comes from Faiza Alwy with Deutsche Bank. Your line is now open.
+
+Faiza Alwy
+
+Yes, hi, thank you. So I wanted to follow up on mortgage. You've taken obviously a lot of pricing successfully the last couple of years and I know you have a long-term strategic plan of value creation here. And there's been some noise from regulators, other bodies. I'm curious how you think about that and what are some of the factors that you're considering as you think about your long-term strategic plan on pricing?
+
+Will Lansing
+
+Well, as we've discussed in the past, we're catching up from 30 years of frozen pricing. And so our putting through price increases in this space is really a matter of trying to close the gap on the value that we provide relative to what we charge. The way we think about criticism, because you're right, every once in a while there is noise about price increases. The way we think about it is transparency is our friend. And so we have increasingly been willing and interested to share exactly what our pricing is because it's such a small part of the overall bundle.
+
+So it's a concern, whether it's from Congress or regulators or third-party groups is about the level of expense associated with the FICO mortgage score. It's important for everyone to understand that we're talking about single-digit dollars in a bundle that costs the consumer about $6,000. So it's -- we point out the gigantic gap between what we charge and the bundle in which we reside. And we think that that's the way to do it. We think transparency is our friend.
+
+Faiza Alwy
+
+Great. Thank you. And then just to follow up on other originations. Maybe you can talk about what you're seeing on the card and auto side in terms of volumes versus pricing, sort of what's the overall environment like? And maybe if you've adjusted your expectations for volumes just given the macro environment here?
+
+Will Lansing
+
+I don't know that we've really adjusted our expectations. I think that what we're seeing is kind of in line with what we did expect and it is a function of the macro environment. As we pointed out, we're down a little bit in auto and a little bit more in credit card and other, but I don't think it's any kind of surprise given the macro environment.
+
+Faiza Alwy
+
+Got it. Thank you.
+
+Operator
+
+Thank you. One moment for our next question. Our next question comes from the line of Surinder Thind with Jefferies. Your line is now open.
+
+Surinder Thind
+
+Thank you. I'd like to revisit the software business and, more specifically, just kind of the bookings. When you think about the client conversations that you've been having, obviously, quite positive, but how much should we attribute to macro because there has been an overall slowdown. So is the earlier commentary that you -- the slowdown is not macro-related to any extent?
+
+Will Lansing
+
+So I think that it's fair to put some of the explanation on macro environment, because what we're not seeing is losses to competition. What we are seeing is projects deferred or taking a little bit longer. And so I think it's very fair to attribute some of that to the macro environment.
+
+Surinder Thind
+
+Got it. And then, I guess, turning to the non-platform piece. When you think about volumes versus pricing, I think you mentioned CPI, but just any other color that you can provide? Is this mostly growth within like Falcon or how does pricing work here? Is it just CPI is the right number and that's how it should continue or how should we think about that?
+
+Will Lansing
+
+There -- so as you know, the non-platform business is very mature and we're deeply embedded and yet our customers prefer to -- often prefer to renew and renew and renew. And so there's a cycle of multiple renewals typically associated with our licensed software, with our -- and with our legacy and non-platform software. You know, our philosophy is to not push the limits on pricing there. These are -- the customers are the same customers who are buying platform from us and customers that we'll have a relationship with for the next 20 or 30-years.
+
+And so it's not about harvesting and gouging. We raise our prices to cover costs of adding features and functionality and cyber security and keeping the products current. But we're not really pushing the limits of what could be done on price there and don't really intend to.
+
+Surinder Thind
+
+Got it. Thank you. I'll get back in the queue.
+
+Operator
+
+Thank you. One moment for our next question. Our next question comes from the line of Kyle Peterson with Needham. Your line is now open.
+
+Kyle Peterson
+
+Great. Good afternoon, guys. Thanks for taking the questions. I wanted to start on capital return. Obviously, it looks like you guys bought back a little bit more this past quarter than the first quarter. How should we think about the pace of buybacks in the back half of the year? Obviously, you've seen a bit of a pullback in the shares, the market and such and then also just given some of your comments on potential for free cash flow to accelerate as the year progresses. Just want to get your opinion on how you guys are thinking about that over the next few quarters?
+
+Will Lansing
+
+We remain as committed to buy back as we have ever been, and it is our intent to continue to spend at least our free cash flow and often in excess of our free cash flow on buyback every year. And I don't expect that would change. Our leverage has slipped a bit as our earnings have gone up. And I guess that's a happy bonus of being more profitable. And in the fullness of time, you'll see that reflected in increased buyback.
+
+Kyle Peterson
+
+Got it. That makes sense and that's helpful. And just a follow-up, I guess in the professional services piece of the business, I guess that revenue is falling off a bit. I get that it's lower margin, but just want to get your sense as to kind of is this, call it, $19 million to $22 million a quarter? Is that kind of a good range to use moving forward, given the mix of the business that you guys are selling? Or was there anything kind of onetime in this past quarter that dragged it down a bit below historical level?
+
+Will Lansing
+
+I think it's a reasonable range to anticipate going forward. We love our professional services and yet we're not a professional services company, first and foremost. We're a software company. And so our goal with professional services is to provide enough PS to manage quality installs and keep our customers happy. We're also delighted to have partners do the installation from us and we're bringing up partners to do some of that work. I don't imagine that our PS will shrink much more than it already has. As you know, it's come down quite a bit. And we're probably pretty close to where I think we're at kind of a base level that it would be hard to imagine going below.
+
+Kyle Peterson
+
+Got it. That's good color. Thanks, guys.
+
+Operator
+
+Thank you. One moment for our next question. Our next question comes from the line of Ashish Sabadra with RBC. Your line is now open.
+
+Ashish Sabadra
+
+Thanks for taking my question. I just had a quick question on the expense trajectory. I was wondering if you -- what should we expect there, both in terms of either sequential or year-on-year growth in expenses for the rest of the year? Thanks.
+
+Steve Weber
+
+Yes. So we had -- as we said, we had FICO World this quarter. So there's a -- that's a pretty significant expense for us. So you'll see an increase in our Q3 spending by a little bit that's associated with that. And then the fourth quarter would probably be relatively flat to that or maybe even down a little bit, but we don't expect any significant uptick in expenses the rest of the year. Really, it's basically due to FICO World being held this quarter.
+
+Ashish Sabadra
+
+That's helpful color. And maybe just from a modeling perspective, the on-prem software, again, the de-emphasis there, that's maybe one of the reasons why that piece of the software revenues has been muted. How should we think about that going forward? Any color?
+
+Will Lansing
+
+What? On-prem software?
+
+Ashish Sabadra
+
+Yes.
+
+Will Lansing
+
+So I mean, we're focused on -- we're cloud-first, right? So we really are focused in the cloud. But if our customers want to run on-prem that we will sell it to them that way there. But I would expect that the on-prem piece is probably not going to grow a lot, but it's probably not going to shrink a lot either because a lot of those are deeply embedded and it's going to take years to move into the cloud.
+
+Ashish Sabadra
+
+That's helpful color. Thank you.
+
+Operator
+
+Thank you. One moment for our next question. Our next question comes from Jeff Meuler with Baird. Your line is now open.
+
+Jeff Meuler
+
+Yes. Thank you. Good afternoon. So I want to go back to the Card, P Loan and Other Origination revenue down 9%. I think the majority of that's card. So is pricing a positive contributor to that line? And if so, just based upon the bureaus that have reported thus far, it doesn't seem like card volumes are down that much, but…
+
+Will Lansing
+
+Perhaps, so, yes. It's a little apples and oranges. So this is just the originations piece. I mean, our card in total is not down that much because we have a lot of the pre-screen and in account management. So the scores are not down that much. This is just the origination subset of that. There is very little pricing in it. So it's probably when you take all that into consideration, I think you -- it's hard to -compare our numbers actually across the board to what the bureau has put out. But things like card, every bureau has a different subset of banks, a subset of what we have. So there could be a lot of different things happening at different banks. So, yes, this is just on the originations piece.
+
+Jeff Meuler
+
+Okay. And then at FICO World, you talked a bit about, I forget the exact first I think it's enterprise platform clients, but maybe talk through like how many of your platform clients have a single-use case? And then of those, how many of them just signed on within the last year and kind of like what the typical path forward is for them broadening out their use-case expansion and how long it typically takes? Thanks.
+
+Will Lansing
+
+So we -- depending on how you count it, we're in about 130 of the top 300 financial institutions globally. And of that, I'd say 40% or so are on their first use-case, maybe a little bit more than that.
+
+Jeff Meuler
+
+And how many of those like just landed with you in the last year? And if you can just kind of like talk about the expansion path?
+
+Will Lansing
+
+Well, I would say most of them have landed in the last year. I mean, there's -- the very typical path is for the single-use cases is to eventually move to multiple use cases. And so the ones that are still on one are typically that are most recent.
+
+Jeff Meuler
+
+Okay. Thank you.
+
+Operator
+
+Thank you. [Operator Instructions] Our next question comes from George Tong with Goldman Sachs. Your line is now open.
+
+George Tong
+
+Hi, thanks. Good afternoon. In Scores, you're catching up from 30 years of frozen pricing to close the gap with what you charge. You're closing the gap more quickly with mortgage than with cards and autos currently. To what extent can pricing in autos and cards close the gap at the same pace as in mortgages over time? What are some of the considerations?
+
+Will Lansing
+
+Well, as we've talked about in the past, we take the entire portfolio scores every year and we evaluate it from top-to-bottom thinking through what is the elasticity of demand for that particular kind of a score. And where should the scores prices move by CPI and not more than that. And where should they move more than that. And so you're going to see variation in the portfolio always. I would never expect for us to raise prices the same amount across all scores. So yes, you could continue to expect them to be different.
+
+George Tong
+
+Okay. Got it. That's helpful. And then with respect to the software business, you saw 32% platform ARR growth in the quarter from both land and expand. Can you break that down? How much of that growth is coming from new business wins versus wallet penetration from existing customers?
+
+Will Lansing
+
+Yes. It's hard to do that, George. I mean, you kind of back into it a little bit by looking at the ARR versus the NRR, but we don't have the detail to talk about use cases versus usage.
+
+George Tong
+
+I guess maybe then qualitatively, would you say you're more in land mode or expand mode?
+
+Will Lansing
+
+Well, I mean, it's -- I mean, we're trying to get as much business as we can land it, but a lot of the -- it's a lot easier to expand once it's in -- once it's in they find their own use cases a lot of times. So a lot of our growth is coming from expansion because a lot of the initial use cases are really small. They're coming in with a very small amount and they're expanding off of that.
+
+Steve Weber
+
+And you're on the right question. I think whether it's today or next quarter or the quarter after that, expand will exceed land sooner or later. That's inevitable, that's anticipated, that's coming. I don't think we're quite at the tipping point yet. I think land probably still exceeds expand, but I'm not sure.
+
+George Tong
+
+Got it. That's helpful. Thank you.
+
+Operator
+
+Thank you. I'm showing no further questions at this time. I would now like to turn it back to Dave Singleton for closing remarks.
+
+Dave Singleton
+
+Did you want to check just one more time, Simon might be in the queue for a question, that he just popped in the last five seconds.
+
+Operator
+
+We do have a question from Simon Clinch with Redburn Atlantic. Your line is now open, Simon.
+
+Simon Clinch
+
+Hi, thanks for taking my question and just squeezing me in, just to the last second there. I wanted to ask a couple of questions. So first of all, on the software side, how should I think about the longer-term sustainable retention rates for both platform and non-platforms?
+
+Will Lansing
+
+Yes. So the -- we've -- the net retention rate on a non-platform is probably going to dip below 100% at some point. These are legacy products that at some point are going to shipped over to the platform. So that's been running probably just slightly above 100% and it will probably be there for a while, but it could dip below 100% at some point. The net retention rate on the platform, it's been very strong as long as we reported it.
+
+So it can vary, obviously quarter-to-quarter and there's no real trend to it. You've seen it was -- some quarters it's been as low as in the hundred and teens and some quarters, it's been as high as 140 plus. But we do see continually that all the customers on the platform almost without sale used more of the following year than they used the previous year. So there's still a lot of room to expand on that. We think that's going to last quite a while.
+
+Simon Clinch
+
+Okay, great. And just as a follow-up, then I mean, you've managed to grow this business pretty rapidly with minimal sort of expense growth recently. I'm just thinking -- when we're thinking over the next decade, what are the kind of key investment areas you're looking at and how do we extrapolate that thinking about the durable expense growth in this business?
+
+Will Lansing
+
+The kind of a key expense, I would say growth, I would -- growth is probably the wrong word. I think we're happy with kind of the expense rates that we have and if anything, they'll go down over time. But the places where we're spending that money from an R&D standpoint are on the product, on the ecosystem and the marketplace and that side of the house. And then, I think -- we also have to think a lot about broadening our distribution because as you know, we have very limited direct distribution, and we have a reasonably nascent indirect partner distribution channel. So there will be more investment on both direct and indirect sales in coming years.
+
+Simon Clinch
+
+That's great. Thanks very much.
+
+Operator
+
+Thank you. And I'm showing no further questions at this time. I'll now turn it back to Dave Singleton for closing.
+
+Dave Singleton
+
+Hey, thank you. Hey, thanks everyone for the great questions and we had another great quarter. That's about all I need to say. Thank you.
+
+Operator
+
+This concludes today's conference call. Thank you for participating. You may now disconnect.

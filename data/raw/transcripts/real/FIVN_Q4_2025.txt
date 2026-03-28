@@ -1,0 +1,684 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 HelveticaNeue-Bold;\f2\fnil\fcharset0 HelveticaNeue-Italic;
+}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red0\green0\blue0;\red31\green78\blue210;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c15686\c40392\c85882;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs27 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 Five9, Inc. ({\field{\*\fldinst{HYPERLINK "https://seekingalpha.com/symbol/FIVN#hasComeFromMpArticle=false%23source=section%3Amain_content%7Cbutton%3Abody_link"}}{\fldrslt \cf4 \strokec4 FIVN}}) Q4 2025 Earnings Call February 19, 2026 4:30 PM EST\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 Company Participants
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Michael Burkland\cb1 \uc0\u8232 \cb2 Amit Mathradas - CEO & Director\cb1 \uc0\u8232 \cb2 Andy Dignan - President\cb1 \uc0\u8232 \cb2 Bryan Lee - CFO & Treasurer\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 Conference Call Participants
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Sitikantha Panigrahi - Mizuho Securities USA LLC, Research Division\cb1 \uc0\u8232 \cb2 Ryan MacWilliams - Wells Fargo Securities, LLC, Research Division\cb1 \uc0\u8232 \cb2 Giancarlo Secchiano\cb1 \uc0\u8232 \cb2 Catharine Trebnick - Rosenblatt Securities Inc., Research Division\cb1 \uc0\u8232 \cb2 Peter Levine - Evercore ISI Institutional Equities, Research Division\cb1 \uc0\u8232 \cb2 Samad Samana - Jefferies LLC, Research Division\cb1 \uc0\u8232 \cb2 David Hynes - Canaccord Genuity Corp., Research Division\cb1 \uc0\u8232 \cb2 Ioannis Samoilis - Robert W. Baird & Co. Incorporated, Research Division\cb1 \uc0\u8232 \cb2 Jackson Nichols - KeyBanc Capital Markets Inc., Research Division\cb1 \uc0\u8232 \cb2 Arjun Bhatia - William Blair & Company L.L.C., Research Division\cb1 \uc0\u8232 \cb2 Clark Wright - D.A. Davidson & Co., Research Division\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 Presentation
+\f0\b0 \cb1 \
+\
+
+\f1\b \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Thank you for joining us today. Certain statements made during the course of this conference call that are not historical facts, including those regarding the future financial performance and cash position of the company, expected improvements in financial and related metrics, expected ARR from certain customers, certain expected revenue mix shifts, expectations regarding seasonality, customer growth, anticipated customer benefits from our solution, including from AI, our AI and CCaaS revenue opportunities and current estimations regarding the same, including the ability to leverage data in support of AI revenue opportunities, company growth, enhancements to and development of our solution, market size and trends, our expectations regarding macroeconomic conditions, company market and leadership positions, including the effective onboarding of our new Chief Executive Officer, business initiatives, pipeline, technology and product initiatives, including investment in R&D and AI, including a recently announced suite of our AI solutions as well as other future events or results are forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995.\cb1 \
+\cb2 Such statements are simply predictions, should not be unduly relied upon by investors. Actual events or results\'a0may differ materially, and the company undertakes no obligation to update the information in such statements. These statements are subject to substantial risks and uncertainties that could adversely affect Five9's future results and cause these forward-looking statements to be inaccurate, including the impact of adverse economic conditions, including the impact of macroeconomic challenges, including continuing inflation, uncertainty regarding consumer spending, high interest rates, fluctuations in currency exchange rates, lower growth rates within our installed base of customers and the other risks discussed under the caption Risk Factors and elsewhere in Five9's annual and quarterly reports filed with the Securities and Exchange Commission.\cb1 \
+\cb2 In addition, Management will make reference to non-GAAP financial measures during this call. A discussion of why we use non-GAAP financial measures and information regarding reconciliation of our GAAP versus non-GAAP results and guidance is currently available in our press release issued earlier this afternoon as well as in the appendix of our investor deck that can be found in the Investor Relations section of Five9's website. Also, please note that the information provided on this call speaks only to management's views as of today and may no longer be accurate at the time of a replay. Lastly, a reminder that unless otherwise indicated, figures -- financial figures discussed are non-GAAP.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And now I'd like to turn the call over to Five9's Chairman, Mike Burkland.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Thanks, Tony, and thanks, everyone, for joining our call this afternoon. Before we discuss our strong finish to the year, I want to acknowledge that this is my final earnings call at Five9 after 18 years with the company. It has been the privilege of my career to lead this organization, and I'm incredibly proud of what we've accomplished together. We've grown Five9 from approximately $10 million in annual revenue to a $1.2 billion run rate, while enabling some of the largest brands in the world to transform their customer experience. These achievements are a testament to the talented team of Five9ers and our vision to be the leader in AI-powered CX.\cb1 \
+\cb2 As you know, Amit Mathradas started as CEO on February 2. And before we dive into the business results, I want to take a moment to formally welcome Amit to his first earnings call. After a comprehensive search process, we selected Amit for his deep experience in product innovation, AI and operational excellence at scale. His leadership style and his proven track record of leading through evolving market conditions align perfectly with Five9's culture and the tremendous opportunity ahead of us. I have the utmost confidence in Amit's leadership and all of us here at Five9 are extremely excited to start this new chapter with Amit at the helm.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 With that, Amit, I'll turn it over to you to share a few of your initial thoughts on Five9 and our opportunity ahead.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Amit Mathradas
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CEO & Director
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Thanks, Mike. I am thrilled to join my first Five9 conference call and would like to express my gratitude to the leadership team and the Board for putting their trust in me as Five9's next CEO. I officially started on February 2. And in the past 2 weeks, I have spent time meeting partners, customers, listening to employees, reviewing road maps and getting deeper into the operational cadence. And what I have seen so far has reinforced why I took this role.\cb1 \
+\cb2 I joined Five9 for a simple reason. That is I believe we have a large opportunity in front of us and that we have the right foundation to capture more of it. I strongly believe that over the long term, customers will look to Five9 for a unified CX platform that can solve their agentic and traditional human needs. This multi-agent world uniquely positions Five9 to drive efficiency, elevate customer experience for all our customers. From a communication standpoint, you should know that I will be clear on what's working, what is not and what we are doing to improve it.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And with that, I'll turn it back to Mike to discuss our fourth quarter and full year performance. Mike?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Thanks, Amit. We're pleased to report solid Q4 results. We had an exceptional bookings quarter, achieving a Q4 record, highlighted by enterprise AI bookings more than doubling year-over-year, contributing to healthy increases in backlog. In terms of top line, we finished the year strong with fourth quarter total revenue coming in at $300 million. Subscription revenue, which now makes up 82% of total, accelerated to 12% year-over-year growth in Q4. This was driven by enterprise AI revenue growth accelerating from 41% to 50% year-over-year and core CCaaS subscription revenue growth accelerating from 7% to 8% year-over-year.\cb1 \
+\cb2 I'm also excited to report that our enterprise AI annual run rate revenue surpassed $100 million in the fourth quarter. On the bottom line, we achieved all-time records in the fourth quarter with adjusted EBITDA increasing to a margin of 26% and free cash flow more than doubling year-over-year to a margin of 22%. These results demonstrate our commitment to balanced growth and operational excellence. I'm incredibly proud of our team's execution. And with our strong positioning in AI-powered CX, we believe we're set up for continued success in 2026 and beyond.\cb1 \
+\cb2 Turning now to our business updates. Today, I'd like to focus on 3 key topics: first, our large and growing market opportunity; second, our differentiated position in AI-driven CX; and third, our strong partner momentum. We are in the early stages of a long-term transition in the CX industry with multiple secular growth vectors driving a significantly expanding addressable market for our platform.\cb1 \
+\cb2 As a reminder, Gartner forecasts the market for traditional CCaaS to grow at a 9% CAGR and the gen AI customer service market to grow at a 34% CAGR through 2029 to a combined annual spend of $48 billion. We believe that both of these growth drivers will create a powerful tailwind for Five9 as we continue to execute against this durable multiyear opportunity.\cb1 \
+\cb2 Importantly, we believe Five9 is well positioned to lead in this new era of AI-powered CX. At the core of our advantage is data, more specifically, conversational data. We capture every customer interaction across voice, digital and AI-driven channels. Therefore, our platform remembers every conversation, whether it was with a human agent or with an AI Agent through voice or digital. This creates what we call a relationship-based experience where every engagement feels personal, contextual and connected.\cb1 \
+\cb2 Our end-to-end platform serves as a real-time orchestration engine for customer interactions, whether handled by a human agent or by an AI Agent, enabling seamless collaboration between the two. Each interaction strengthens the next, and this continuous learning loop compounds over time, creating a powerful data flywheel that drives higher performance, accuracy and personalization. This is a significant advantage that only an end-to-end platform can deliver.\cb1 \
+\cb2 Our platform advantages are also driving significant momentum in product innovation. At our CX Summit in November, we announced a suite of new AI-powered solutions designed to help enterprises elevate their CX, including our AQM, which is a next-generation Agentic Quality Management solution, our AI-powered Genius Routing engine, our OneVue unified analytics and reporting platform. And our no-code Adaptive Digital Engagement solution. These innovations showcase how Five9 continues to lead in AI-driven CX and further strengthen the power of our end-to-end platform.\cb1 \
+\cb2 In addition to our product innovations, we continue to double down on partnerships as a key driver of differentiation in both our products and our go-to-market. That's why we're excited about the expansion of our partnership with Google Cloud and the launch of our joint Enterprise CX AI solution, which we announced in January. We were an early adopter of Google's AI technology, and it continues to pay off for us by accelerating innovation across our CX and AI portfolio. Our joint solution brings together the Five9 AI-infused intelligent CX platform and Google Cloud's Gemini for customer experience, to deliver faster time to value, seamless end-to-end orchestration across the customer journey and more personalized interactions.\cb1 \
+\cb2 Customers can move beyond pilots and deploy AI and production faster, grounded in real customer context and built for enterprise scale. That's why we're already seeing strong traction with some of the largest brands in the world leaning into the combined power of Five9 and Google.\cb1 \
+\cb2 And before I turn it over to Andy, I want to thank our incredible team of Five9 for your passion, dedication and commitment to excellence throughout my tenure as CEO. Together, we've built something truly special. As I transition the CEO role to Amit, I'm more excited than ever about Five9's future. We have a differentiated platform, proven expertise, strong customer momentum and the right leadership to capitalize on the significant opportunity ahead.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And with that, I'll turn it over to our President, Andy Dignan, to share more details on our go-to-market performance. Andy?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Andy Dignan
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 President
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Thank you, Mike, and congratulations on your well-earned retirement. And Amit, I look forward to working with you as we build on Five9's strong foundation. We were pleased to deliver an exceptional quarter of bookings. As Mike mentioned, total bookings represented a Q4 record, driven by enterprise AI bookings more than doubling year-over-year and our installed base bookings achieving another all-time high for the third consecutive quarter, driven by ongoing strength in upsell and cross-sell activities.\cb1 \
+\cb2 In addition to strong execution by our sales teams, a key driver of our success is our partner strategy. Partners expand our reach. They bring us into more enterprise buying motions and speed up time to value for customers. Five9 has been partner-first for years. And today, more than 80% of our business is partner influenced. Our balanced route-to-market model is working. Partners are leading complex transformations, accelerating AI adoption and delivering outcomes faster than ever. In 2025, Five9 doubled year-over-year, the number of partners certified to implement Five9 services, showing just how mature and essential our ecosystem has become.\cb1 \
+\cb2 Building on Mike's comments about the multiple secular growth vectors expanding our market, we're seeing customers lean into both sides of that transition at once, modernizing on CCaaS while accelerating adoption of AI. The first example is a global power management company with over 85,000 employees that selected Five9 to modernize from an on-prem platform to a CCaaS foundation. They chose us based on our native integrations with Salesforce and ServiceNow and our AI Agent and Agent Assist capabilities to improve self-service and drive higher agent productivity. We expect this initial order to result in approximately $2.8 million at ARR.\cb1 \
+\cb2 Another example is a life, health and financial services provider that chose Five9 to move from on-prem to cloud and improve work performance. They selected Five9 for our tight integration with their health care CRM and our comprehensive suite of AI solutions. We expect this initial order to result in approximately $1.1 million in ARR.\cb1 \
+\cb2 The third example is a hospitality technology company migrating off of a cloud competitor. They chose Five9 for our open platform approach, which allows deep integration with their hospitality platform, their core business. They view this integration as a differentiator for their customers, including some of the highest-end hospitality brands in the world. They also chose Five9 because of our joint partnership with Google Cloud to accelerate AI-driven CX. We expect this initial order to result in approximately $3.4 million in ARR.\cb1 \
+\cb2 In addition to customers choosing us as their core CX solution, we continue to see our customers expand their use of Five9's AI capabilities and make long-term commitments to Five9 as their CX AI provider. One example is a health care provider that expanded their Five9 commitment from approximately $6 million to over $10 million in ARR, along with a 3-year commitment. They are doubling down on AI with a clear focus on leveraging AI Agents to drive meaningful cost savings across the business. Looking ahead, we remain encouraged by the momentum of our business, fueled by pipeline and RFP activities sustaining elevated levels.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And with that, I'll turn it over to Bryan to take you through the financials. Bryan?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Bryan Lee
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CFO & Treasurer
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Thank you, Andy. Before I dive into the financials, I want to thank you, Mike, for your exceptional leadership and incredible partnership over the years. Your vision and execution have positioned the company well for the future. And Amit, welcome aboard. I'm excited to work with you as we advance Five9 to the next chapter.\cb1 \
+\cb2 Now turning to our financial performance for the fourth quarter. We're pleased to report strong Q4 results with total revenue coming in at $300 million, representing 8% growth year-over-year. Subscription revenue growth accelerated to 12% year-over-year in the fourth quarter, primarily driven by: first, enterprise AR revenue growth accelerating to 50% year-over-year, now making up 12% of enterprise subscription revenue; second, core CCaaS growth accelerating to 8% year-over-year; and third, continued momentum market where 228 of our million-plus ARR customers grew subscription revenue 24% year-over-year, now making up 59% of subscription revenue.\cb1 \
+\cb2 Additionally, our concurrent seat count continued to grow at a healthy rate, both quarter-over-quarter and year-over-year, relatively in line with our core CCaaS revenue growth. Subscription revenue represented 82% of total revenue, up from 79% a year ago. And we expect this mix shift to continue as we focus on high-margin subscription revenue, increasingly led by our AI solutions. Telecom usage represented 11% of revenue and professional services made up the remaining 7%.\cb1 \
+\cb2 With regard to seasonality, as expected, the sequential uptick in our consumer and health care verticals in Q4 was meaningfully less than last year for telecom usage. For subscription revenue, sequential growth was better than anticipated, but still less than Q4 of last year. Our enterprise business represented approximately 91% of total revenue on an LTM basis. Within this category, LTM enterprise subscription revenue grew 15% year-over-year. Our commercial business represented the remaining 9%. As a reminder, this part of our business underperformed in Q3, but the immediate actions we implemented drove favorable results in Q4, and we expect LTM year-over-year growth to return to normal historical levels next quarter.\cb1 \
+\cb2 With regard to our dollar-based retention rate, our spot rate increased sequentially, while the LTM rate stepped down from 107% in Q3 to 105% in Q4 as anticipated. This is primarily due to tough compares as Q4 '24 benefited from strong seasonality and our largest customer completing its multiyear ramp. In 2026, we expect LTM DBRR to remain range bound within a small band in the first half and inflect upward in the second half.\cb1 \
+\cb2 Turning now to profitability. Q4 adjusted gross margin was 63%, down by approximately 40 basis points year-over-year, primarily driven by lower gross margins in telecom usage and PS. Adjusted EBITDA margin increased by approximately 260 basis points year-over-year to 26% as we continue to focus on disciplined expense management. Additionally, we continue to boost productivity as demonstrated by our revenue per employee increasing 14% year-over-year.\cb1 \
+\cb2 Q4 GAAP EPS was $0.23 per diluted share, representing 5 consecutive quarters of positive GAAP earnings, while non-GAAP EPS came in at $0.80 per diluted share. In terms of cash flow, we generated $84 million or 28% of revenue in operating cash flow. Additionally, we generated free cash flow of $67 million or 22% of revenue, which represented over 10 percentage points of margin improvement year-over-year. As a result, we ended the quarter with total cash and investments of $697 million.\cb1 \
+\cb2 And now for a closer look at key full year 2025 income statement metrics. 2025 total revenue came in at $1.15 billion, growing 10% year-over-year, with subscription revenue growing 13% year-over-year. 2025 adjusted gross margin expanded by approximately 110 basis points year-over-year to 63%, while 2025 adjusted EBITDA margin expanded by approximately 470 basis points to 23%.\cb1 \
+\cb2 2025 GAAP EPS was positive for the first time on an annual basis at $0.45 per diluted share, while non-GAAP EPS came in at $2.96 per diluted share. 2025 operating cash flow finished at $226 million, and free cash flow came in at $162 million.\cb1 \
+\cb2 Now turning to our full year 2026 and first quarter guidance. For 2026 revenue, we're initiating our guidance at a midpoint of $1.254 billion, which is in line with the high-level outlook we provided last quarter. For Q1 revenue, we're guiding to a midpoint of $299.5 million, which is also consistent with the high-level outlook of relatively flat sequential change we shared last quarter. In terms of quarterly progression, we expect Q2 revenue to increase slightly quarter-over-quarter, followed by momentum building further throughout the year. As a result, we continue to expect revenue to return to double-digit growth in the second half of 2026, driven by our strong backlog of both new logo and installed base bookings.\cb1 \
+\cb2 With regard to the bottom line, we're guiding 2026 non-GAAP EPS to a midpoint of $3.18 per diluted share, which is higher than the high-level outlook of $3.14 per diluted share that we provided during our last earnings call. We're also guiding to continued GAAP profitability in 2026 with a midpoint of $0.91 per diluted share for GAAP EPS. For Q1 non-GAAP EPS, we're guiding to a midpoint of $0.68, which reflects a typical sequential decline in the first quarter of the year. As for the remainder of the year, we expect relatively flat sequential move in the second quarter and large improvements in the second half. Also, for other key profitability metrics, we expect at least 24% in annual adjusted EBITDA margin and approximately $175 million in annual free cash flow.\cb1 \
+\cb2 Additionally, we plan to host an Investor Day in late 2026, where we will provide additional details on our strategic priorities and long-term financial outlook. We look forward to sharing more with you at that time.\cb1 \
+\cb2 Finally, on our share repurchase program, we completed a $50 million accelerated share repurchase on February 2, buying back approximately 2.6 million shares. We have $100 million remaining under our authorization through December 2027. This reflects our strong cash generation and confidence in Five9's value creation opportunity.\cb1 \
+\cb2 In closing, 2025 was a transformational year for Five9. We delivered strong financial performance, expanded our AI capabilities and strengthened our strategic partnerships, and we believe we have positioned the company well for sustained profitable growth. With Amit now leading the team, we're energized about our opportunities ahead and committed to executing our strategy to deliver long-term shareholder value.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And with that, operator, please open the line for questions.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 Question-and-Answer Session
+\f0\b0 \cb1 \
+\
+
+\f1\b \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 [Operator Instructions] Our first question comes from Raimo Lenschow from Barclays.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Unknown Analyst
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 This is [ Damon Coggin ] on for Raimo. Congrats on your retirement, Mike, and congrats, Amit as well for the new role. Great to hear the continued strength with the AI portfolio, reaching $100 million ARR, accelerating 50% year-over-year. Can you help us understand some of the breakdown between what is greenfield and then what is within your existing customer base? And then what is factored into the 2026 guide just from that portfolio?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 I'll start, and Bryan, feel free to chime in. But look, this is a combination of us having a lot of success with new logo attach of AI and also penetration into our installed base. I don't think we quantified the breakdown between the two, but I can tell you both are growing at a significant rate and very strong. Bryan?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Bryan Lee
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CFO & Treasurer
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Yes. And if you think about the 2026 revenue guidance, we've kind of given you the shape of the curve on a total revenue basis. And this is the first time we've given you the breakout of growth rates between enterprise AI as well as core CCaaS. So core CCaaS, obviously, that's a big portion today, and that's going to follow the shape of the curve for the total revenue guide, which means that if you back into the enterprise AI, it's going to still be growing at a very fast clip, but it will ebb and flow through the quarters, but it's still going to be the fastest part of our portfolio.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Siti Panigrahi from Mizuho.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Sitikantha Panigrahi
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 Mizuho Securities USA LLC, Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Great. Mike, it was great working with you and wish you good luck for your next phase. And Amit, congratulations and look forward to working with you. Great. Amit, I want to ask you, you have great product experience operation and when you look at AI outside the industry. As you look into Five9, and I know you talked about opportunities huge, how do you see to navigate Five9 when it comes to product? Or where do you think you can bring some changes? Or where do you think it's working? Or do you think it is too early to talk about that?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Amit Mathradas
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CEO & Director
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Thank you, Siti, for that question. Look, I think the answer is a combination of what you laid out a little bit. Look, one of the reasons I took this role is I am really bullish on the transformation that's going to happen within the CX space. As humans, agents, systems, software all come together, I actually think this turns allows our end users and customers to have more efficiency, greater experiences and in some cases, new experiences that haven't even been factored in as yet, right, just like how the Internet per se transform retail. And so for me, I am really looking forward to unlocking that, which is how do we actually increase the TAM by doing new things with AI and traditional CCaaS and providing customers new opportunities.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 To the second part of the question on where do we go from here and which pieces, it's a little bit early. I'm still getting my feet around our product and our road maps. But what is really exciting is the stat we put out, which is we've already done $100 million in ARR of AI, and it's growing. So we have proof points to back up this thesis that AI is growing. It's happening fast, and it's happening both in our new logo as well as in the existing base.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Ryan MacWilliams of Wells Fargo.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Ryan MacWilliams
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 Wells Fargo Securities, LLC, Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Excellent. This one is for Mike. Mike, I mean, what a great run and congrats. I mean I just think back to probably 15 years ago when people said that the biggest contact centers in the world would never move to the cloud, right? And now you guys have customers that are over 10,000 seats and some of the largest Fortune 50 companies that are out there. So people have been wrong before in the contact center industry about what's coming next. I mean, as you kind of take a step back today, what do you think people are missing right now in terms of the contact center opportunity? Like I know it feels like the seats are a question and like where some of these interactions will be. But like what do you think the contact center of 5 years from now means for Five9?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Yes. Thanks, Ryan. I appreciate the comments. And look, I think you're absolutely right. I mean I remember when we went public in 2014, how everyone really just questioned whether or not large enterprises would shift to the cloud. And obviously, we're 40% cloud today, 60% still are on-prem, and it's going to be a multiyear opportunity for us to continue that trend. But look, things have changed. The AI opportunity is massive. We've invested. We were early in this investment with our Inference acquisition. We've built a lot of capabilities on top of that.\cb1 \
+\cb2 And I think what people are starting to realize, and I'm not sure -- I think we're just at the very beginning of this realization, quite frankly, across the investor set and across -- I think our customers already see this, but I think the investor community is starting to learn that this end-to-end platform advantage that we have and some other players have, think of, again, Five9 as the system of engagement or the system of interaction, the system of action as opposed to, say, a CRM system, which is kind of the system of record.\cb1 \
+\cb2 And I think it's important to understand that we're on the front lines. We're right there at the moment of truth with a customer and a brand. And we have an unfair advantage because of that. And providing both AI-driven solutions as well as solutions for the human agents in an orchestrated fashion. That is our power, that is the power of our platform, and it results in, again, these personalized contextual and connected experiences that only a platform like Five9 can deliver.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And I think that is what -- it's showing up in the numbers, but I think we're starting to talk more explicitly about those numbers, Ryan. And that is our core CCaaS revenue growth accelerated from 7% to 8% and our AI revenue growth accelerated from 41% to 50%. And that is the recipe for success. I'll stop there.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Ryan MacWilliams
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 Wells Fargo Securities, LLC, Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 You really want to trust the system to give you the right answer because it's not fun to be on the other side of a wrong answer.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Terry Tillman of Truist.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Giancarlo Secchiano
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 It's Giancarlo on for Terry, and I appreciate the question. Congrats on a strong quarter. And I think that you guys were talking about the strong adoption for the newer features that you guys rolled out. And I was just wondering what sectors were seeing the highest uptake for those features? And maybe can you talk about what customers are kind of saying was their biggest pain point? And like how has that changed over the last few months?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 I'll move to Andy?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Andy Dignan
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 President
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Yes, I'm going to take that one. So we're seeing a lot of success in health care and retail. And we talked about a lot of expansion within our customer base. And so I think what -- really what we're seeing is customers wanting to take that next evolution from their CX strategy to AI. And the challenges that most of them have historically seen is their data is not in a good spot, right? We've talked about this for a while. Your AI strategy is only good as your data strategy. And so we put a lot of effort into focusing on making sure that our customers understand where their data needs to be to go deliver on those use cases.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And over time, as we've talked about like the customer example today, a customer expanding their AI, we've proved that time and time again over the last couple of years. And so now they're making their bets for 3- and 5-year renewals based on what we demonstrated and our success and their confidence in us going into the future.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Catharine Trebnick of Rosenblatt.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Catharine Trebnick
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 Rosenblatt Securities Inc., Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Congratulations, Mike and Amit and back to the AI question. So what percentage of your enterprise base is adopting the AI, especially looking at AI Agent Assist and Genius Routing. What I'm trying to really understand is what's the runway going forward for enterprise adoption?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Yes, I'm happy to start. Catharine, look, I think it's early days in terms of kind of end-to-end full penetration within our base, almost every single one of our customers is obviously, right? Every enterprise in the world is looking at AI and making AI decisions. But it's early in terms of the rollout in a lot of these cases. And again, I talked about our end-to-end platform a lot and the fact that our customers are rolling out our AI and our CCaaS in production environments, not just in proof of concepts, not just in slick demos, but in real production environments. And -- but it's still early days in this opportunity. As I talked about, we've crossed $100 million in ARR and AI, but it's -- we're just getting started.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Peter Levine of Evercore.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Peter Levine
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 Evercore ISI Institutional Equities, Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Mike, best of luck, and Amit welcome aboard. Maybe how do you think about the risk that the LLM native platforms bypass the traditional CCaaS architecture entirely, right? Like in what scenario does an enterprise build their own AI Agent directly on top of like an OpenAI and Anthropic, right? And I guess the question is like what core functionality does Five9 provide that can't be replicated, meaning like what's the hardest to kind of disintermediate from you guys? Is it the workflow, the infrastructure, the compliance, the data? Like help us think through like the risk that these platforms are going to come in overnight to replace you guys?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Yes. Very good question, Peter, and I'll start, and you guys feel free to chime in. Again, we talk about our platform advantages, mainly the data advantage is number one, and it's conversational data and its historical and real-time conversational data. It's also this orchestration capability across all channels and across any back end, whether it's AI on the back end handling this interaction or whether it's a human agent, being able to orchestrate across this entire interaction set is an absolute competitive moat.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And look, we're going to continue to have advancements by LLMs, but I've said this even 2 years ago, you cannot run a customer service organization on an LLM. LLMs are a foundational technology that we're all leveraging to deliver applications, solutions for customer experience. And the bar is set. The bar is always going to be there's an orchestration capability of these on-premise solutions that we replace. They're supporting thousands of human agents and now thousands of AI Agents in the future. And that orchestration capability is really isolated to these end-to-end platforms like Five9.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Peter Levine
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 Evercore ISI Institutional Equities, Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Maybe, Bryan, can you just help us understand the $100 million in AI revenue, what percentage of that is like seat-based, usage-based? But just help us understand what makes up that $100 million.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Bryan Lee
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CFO & Treasurer
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Yes. So our $100 million of enterprise AI revenue is all consumption or capacity based. So the way it works is that we charge for a block of committed units, whether that's minutes or gigabytes or whatever it may be. And then anything above that would be overage. So it is absolutely consumption-based and yes, and gaining a lot of traction there.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Samad Samana from Jefferies.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Samad Samana
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 Jefferies LLC, Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 I'll echo the words of my peers. So congrats, Mike, and great to be working with you, Amit. Just I guess a question, Bryan, as I think about the guidance and how you're thinking about the kind of the first half versus the second half, how much of that is influenced by the timing of either large logos that were still in the backlog, whether let's call it, the large pharmaceutical company or the large logistics company being fully live versus how much of that is AI revenue ramping? And have you made any adjustment to the guidance algorithm to account for maybe the change in revenue being more consumption-based versus seat-based? Just help us understand kind of the guidance mechanics.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Bryan Lee
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CFO & Treasurer
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Yes, absolutely. So if you think about 2026 revenue, we're guiding to a midpoint of $1.254 billion. So that essentially for the year implies incremental revenue of $105 million. So I'll kind of talk about that in the form of contributions from DBRR versus backlog versus new logos bookings for the year. So if you look at DBRR first, the LTM rate, we exited 2025 at 105%, and we expect that to stabilize in the first half with minor fluctuations in either direction, but then inflect in the second half, right? And that alone makes up about 2/3 of that $105 million of incremental revenue.\cb1 \
+\cb2 So the remaining 1/3 is actually fully covered by the backlog that we have. So essentially, there's -- and that has contingencies built in as well. So there's essentially no dependencies on the new logos bookings for the year. And the backlog, as you said, it is combined with both new logo bookings that we've already won as well as installed base bookings that we've won that have ramp associated with it. And those are turning into revenue throughout the year. We have great visibility into those, but every single customer in that backlog has a unique schedule of ramp. And it's -- this year happens to be much more back-end loaded, which is why there's that acceleration to double-digit growth in the back half of the year.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And if you think about consumption versus seat-based, so our AI portfolio is all consumption and capacity-based, as I talked about earlier. And that's going to continue to be a significant driver of growth throughout the year. It's going to ebb and flow, as I mentioned earlier, but it will be the fastest growing part of our portfolio.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Samad Samana
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 Jefferies LLC, Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And then maybe just a follow-up. On the AI revenue, the $100 million for enterprise AI rev is very impressive. Can you just maybe help us understand how much of that is maybe allocated towards, let's call it, like next-gen solutions that you guys have rolled out in maybe like, call it, the last 12 to 18 months versus maybe what was foundationally from like an Inference or something that you had kind of in a prior period? Just to help understand where the momentum is inside of the portfolio.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Bryan Lee
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CFO & Treasurer
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Yes. I'm happy to start and then others can chime in. So if you look at the composition of our AI revenue, the two biggest ones are our AI Agents as well as Agent Assist. And then followed by Workflow Automation and a lot of other smaller products that are growing very fast, but still very small in nature. So -- and AI Agents, of course, we're gaining significant traction in terms of the gen AI base as well as Agent Assist that's using gen AI as well. So we haven't given the exact mix. But of course, there's really strong momentum and acceleration that's happening across the board.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question will come from DJ Hynes of Canaccord.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 David Hynes
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 Canaccord Genuity Corp., Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Well deserved, Mike, we'll miss you on these calls, but I know clearly, you still have an impact on the business from the Chairman seat. So look forward to that. Amit, good to see you again. Look forward to working with you.\cb1 \
+\cb2 I got two questions. Bryan, I'm going to start with you. The AI revenue growth acceleration, I suspect that's just a function of what we talked about last quarter, right, that lag between bookings to kind of when it hits the P&L. And if that's right, I mean, AI bookings have been growing quite a bit faster, right? I think 80% last quarter, 100% this quarter. That tells me AI revenue growth should continue to accelerate. So, a, is that correct?\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And then the second question, I don't know if it's for you, Mike or Andy, but just talk a little bit more about the Google partnership, right? Like what that could mean for the business? What are they using from you? What are they -- what role does Gemini play in that? Just how do the pieces fit together and what it could mean?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Bryan Lee
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CFO & Treasurer
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Yes. So I'll start, DJ. So thanks for the question. So yes, you're exactly right. We've been talking about enterprise AI bookings growing either 80% plus for the last 3 quarters. And we said if we string together multiple quarters like that, we'll start to see the acceleration happen, and we are starting to see that in Q4, where it accelerated from 41% to 50%.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Now going forward, as I mentioned earlier, there will be ebbs and flows, but we do anticipate that if we can continue that momentum on the bookings side, they sit in backlog for a little bit and then they start converting into revenue, and that's what's baked into our guidance. And the acceleration that we're seeing in the back half of 2026 is driven by not just AI, though, also by core CCaaS in our backlog that's converting to revenue as well. So we're seeing momentum on both sides.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 And I'll start on Google, and Andy, please chime in. And I'll just give you one high-level comment. DJ, thanks for the comments, too. Look, it's been a pleasure working with you and the rest of the analyst community.\cb1 \
+\cb2 Look, the Google partnership, in my opinion, is something very significant for Five9. And what I love about the partnership is it was born out of success that we were having together in the market with large enterprises. And it was more than just an alignment on paper. This was driven, as I said, by success in the market that we're having with them. And that's the -- in my opinion, at least those are the kind of partnerships that really flourish in the long run.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 So Andy, feel free to...\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Andy Dignan
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 President
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Yes. If I look at the technical side of it, the solution -- I mean this is real joint solution. This is hands-on keyboards, engineers at Google and Five9 building this joint solution together. We've already had, to Mike's point, success. And we look at the opportunity that filling the pipeline from this coming together is really, really strong. And so you're going to -- obviously, it's going to be our CCaaS environment. We've been leveraging the Google and Gemini application and foundational models to build our own AI products. And so we're going to continue to build out what that joint solution looks like together.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Will Power of Baird.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Ioannis Samoilis
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 Robert W. Baird & Co. Incorporated, Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 This is Yanni Samoilis on for Will Power. And I'll echo the congratulations to Mike and Amit. And I'd love to hear a little bit about what you're seeing across the different verticals that you serve. If you could just discuss if any are strengthening more than others or if there are any that you expect to help power that second half acceleration more than others. And in particular, like for some of your bigger verticals like your health care vertical or maybe consumer, it would be great to get an update on what you're seeing and then what you're factoring into the guide for 2026.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Bryan Lee
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CFO & Treasurer
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Yes, Yanni. So thanks for the question. And seasonality, if you look at our consumer and health care vertical in Q4, which are the 2 seasonally strongest ones typically. Now if you recall, we mentioned that we were expecting minimal seasonal uptick in Q4. In reality, what happened was the uptick was a little bit more favorable than what we were anticipating, but still weaker if you compare to Q4 of '24. And if you break that down between subscription and telecom usage revenue, the usage portion -- telecom usage portion was much weaker than last year, which is why as a percent of revenue, you saw a step down by 1 percentage point quarter-to-quarter versus -- we're going back to Q4 '24, it actually stepped up as a percent of revenue, right?\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 But these dynamics means that in Q1, the seasonal downtick that always happens in those 2 verticals are actually going to be a little bit more muted than what we saw a year ago. And that's exactly what's baked into our guidance. If you look at our Q1 revenue guide, the sequential change is flat this year. But if you compare that to a year ago, it was negative 2% sequential guide, right? And so going forward for the rest of 2026 -- and by the way, the non -- all the other -- we track 17 verticals, the other 15, they're pretty much in line with typical sequential growth rates for Q4. And going throughout 2026, what we're assuming is that the seasonality, the macro conditions are all very similar to what we saw in the fourth quarter.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Andy Dignan
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 President
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 I could add in on some of the segments. I mean our 3 biggest verticals are financial services, health care, retail, and we're truly seeing the adoption in those spaces, right? And I think what it points to is the platform advantage that we do have, health care, financial services, just from a regulatory perspective, security -- integrations, we talk about the complexity of the CCaaS deployment. On average, we do 24 integrations, up to 100 integrations at times. And so I think the bar is really high for them to adopt AI. And I think it just shows the fact that we're building true scalable enterprise AI solutions. It's a testament to the success the team has had building the products.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Jackson Ader of KeyBanc.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Jackson Nichols
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 KeyBanc Capital Markets Inc., Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 This is Jack Nichols on for Jack Ader. I was wondering if you could talk about new logo large customer pipeline and how influential Five9's AI features help land new customers? And then as a follow-up, could you talk about how AI helps dollar-based gross retention and then the dynamics of upselling in renewal contracts?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Andy Dignan
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 President
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Yes, we feel good about our -- in terms of our large deal pipeline, we feel good about the levels continuing to be strong. And obviously, AI is a big part of why they're choosing Five9. And so both in landing new logos. And then as you've heard us talk about $10 million-plus deals over the last couple of quarters that are expanding their spend with us. And so I think it's kind of across both segments.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Bryan Lee
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CFO & Treasurer
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Yes. And I'll just say from a financial perspective for DBRR, when we talk about enterprise AI bookings doubling during the quarter, it wasn't just on the new logo side. It was both new logos and installed base. So we're seeing a lot of momentum there. And that's part of what's going into the backlog and then driving that acceleration on a total revenue basis, but also from a DBRR perspective in terms of the inflection upward in the second half.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Arjun Bhatia.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Arjun Bhatia
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 William Blair & Company L.L.C., Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 All right. Perfect. I had two -- I guess, two quick questions. First, just on the NRR uptick. How -- like when you're expecting to inflect in the back half, obviously, that's a trailing 12-month metric. But where exactly kind of are you seeing the upsell, cross-sell? Is that coming through on the AI front? Is it core CCaaS continuing to pick up pace or on-prem migrations, right, from legacy kind of Cisco, Avaya?\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 And then just a follow-up on the Google question. Are you -- like is it exclusive with Gemini? Are you using multiple models? Can you just talk about how you've built your stack a little bit?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Bryan Lee
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CFO & Treasurer
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Yes, Arjun, I'll answer the first part of the question. So if you look at DBRR, I do want to point out that the spot rate in Q4 actually stepped up from Q3 to Q4, and that was driven by the conversion of installed base bookings in our backlog to revenue during the quarter. So even though the last 12 months coming into the last quarter actually stepped down on a rounded basis from 107% to 105%, which in actuality was only a little bit over 1 percentage point. That was more of a calculation where that's an LTM figure like you said, right, where it was dropping off Q4 '24, where it benefited from very strong seasonality and our largest customer finishing its multiyear ramp at that time.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 So we're already going into the year with a step up from Q3 to Q4. And of course, it will stabilize and fluctuate in either direction slightly. But the driver of that inflection upward is really driven by both core CCaaS and AI. So we saw the momentum in Q4. We talked about the acceleration on both sides. And if you look at the backlog, yes, AI has been gaining significant momentum, and it's consistently been above 20% of enterprise net new bookings. But core -- it's always attached to core CCaaS in the vast majority of deals, and that's also sitting in our backlog. So really, the acceleration will be coming from both.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Andy Dignan
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 President
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 And on the LLM question, the Gemini, I mean, we made a decision 7 years ago, and that brings true that we believe that sort of a multiple engine, multiple LLM is the way to build the products. We sort of saw where this was going, which is these LLMs are continuing to kind of one up each other, right? And the other thing that's really important is each one of them sometimes delivered specific capabilities, right? You could have a single use case and use multiple LLMs as part of that.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Now certainly, as part of the joint go-to-market with Google, we're going to be leveraging Gemini, right? There's a lot of very strong performance. We have a team within engineering and our services teams that are constantly benchmarking these LLMs as well. And so that brings us really to allow us to really continue to innovate on top of what's going on in the market.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Elizabeth Porter of Morgan Stanley.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Unknown Analyst
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 I just want to echo the congratulations to Mike and Hamed. I guess the question from our side is like I think in the past, you guys have described kind of an AI fog among enterprise customers that having kind of lifted through 2025. And I guess just in light of some of the splashy announcements from the Frontier Labs or some of the upstarts in the space, has that fog stayed clear as we enter 2026? Or are you seeing any sort of lengthening in sales cycles as a result?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Yes, I'll start, Andy, please chime in. Look, I think it's safe to say that every company in the world is prioritizing their AI decisions, right? And that's not going away. The fog that we saw predominantly in the kind of middle of '24 is that -- or sorry, a while back was really just the lack of CCaaS decision-making because of that. But we still obviously -- every enterprise out there is thinking about AI first, and we're now part of those conversations. It's so important for us to be front and center in the CX part of those AI decisions. And our sellers have become the experts. We've got solutions that we can lead with from an AI perspective. And it's a great way for us to go to market to a market that is pulling a lot of attention around AI.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Andy Dignan
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 President
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Yes. And in terms of the lengthening of sales cycles, I mean, outside of that fog, which was a lot of times, customers were coming off of doing a lot of proof of concepts, right, that weren't successful. We kind of saw that as an opportunity, like Mike said, to really up our game in terms of enabling our teams, but really more so very focused on having specific vertical-driven outcomes that we have customers who deployed it before. And so that really kind of came through. And so that's allowed us to, in my opinion, sort of accelerate some of our sales cycles, both on the new logo side and obviously, the installed base of customers continuing to just buy more of our AI.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Our next question comes from Gil Luria of D.A. Davidson.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Clark Wright
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 D.A. Davidson & Co., Research Division
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 This is Clark Wright on for Gil Luria. Can you give us a medium-term financial framework? You already are effectively in line with all the metrics, excluding gross margins and revenue growth. How do you think about the impact of AI adoption on revenue growth and the inferencing costs that can weigh on gross margins going forward?\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Bryan Lee
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CFO & Treasurer
+\f0\i0 \cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \cb2 Yes. So I'm happy to answer that. So if you think about enterprise AI revenue growth, what we've always said is that there is a significant opportunity out there. We've been very successful in terms of the bookings growth rate that you've seen. And if we can continue that is definitely upside to the revenue forecast and guidance that we have out there. And we -- it's a huge TAM expander for us, right? And we continue to execute very strongly there.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Now in terms of margins, if you look at our AI Agents, which is the biggest part of our enterprise AI portfolio, they actually -- we have gross margins in the high 70s and 80s. And so -- and that AI portion as it becomes a bigger mix of our revenue, we expect that to be an accretive part of our overall gross margin trajectory going forward.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Operator
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 This concludes the Q&A portion of our call. I will now hand the call back over to CEO (sic) [ Chairman ], Mike Burkland, for closing remarks.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Chairman to be correct. Amit is our new CEO. And look, I just want to thank everybody for joining us. And I also want to just say personally thank you to all the analysts and all our shareholders. It's been a pleasure, my pleasure to work with all of you. And Amit, welcome aboard again. I am so bullish on our future and a big part of that bullishness is because you're here as our next CEO. So welcome.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Amit Mathradas
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CEO & Director
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Thank you.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Michael Burkland
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Thanks, everyone.\cb1 \
+\pard\pardeftab720\sa320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f1\b \cf0 \cb2 Amit Mathradas
+\f0\b0 \cb1 \uc0\u8232 
+\f2\i \cb2 CEO & Director
+\f0\i0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 Thank you.\cb1 \
+}
