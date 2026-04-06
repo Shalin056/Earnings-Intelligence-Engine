@@ -113,7 +113,8 @@ class AgenticFeatureEngineer:
         df = pd.read_csv(self.data_dir / 'final_dataset.csv')
         # Convert every column to numeric where possible; leave the rest as-is.
         for col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors='ignore')
+            if df[col].dtype == "object":
+                df[col] = pd.to_numeric(df[col], errors="coerce")
 
         with open(self.data_dir / 'feature_info.json') as f:
             feature_info = json.load(f)
