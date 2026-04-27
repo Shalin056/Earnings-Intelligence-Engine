@@ -612,7 +612,7 @@ with st.sidebar:
         if st.button(("▸ " if active else "  ") + label, key=f"nav_{key}",
                      use_container_width=True):
             st.session_state.page = key
-            st.experimental_rerun()
+            st.rerun()
 
     st.markdown('<div style="font-size:0.6rem;color:#00C9A7;letter-spacing:0.15em;'
                 'text-transform:uppercase;margin-bottom:0.4rem;">Analyst</div>',
@@ -765,7 +765,7 @@ def page_analyze():
                 st.session_state.result = run_analysis_engine(
                     ticker, quarter, year, content or ""
                 )
-                st.experimental_rerun()
+                st.rerun()
 
     with col_side:
         st.markdown(info_card("📌 How it works",
