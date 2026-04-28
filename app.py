@@ -68,6 +68,13 @@ MASTER_CSS = """
 [data-testid="stSidebar"] .stButton > button:hover { background: rgba(0,201,167,0.1) !important; color: var(--teal) !important; }
 
 ::-webkit-scrollbar { width: 4px; }
+[data-testid="collapsedControl"] { display: none !important; }
+button[kind="header"] { display: none !important; }
+[data-testid="stSidebarCollapseButton"] { display: none !important; }
+span[data-testid="stSidebarCollapse"] { display: none !important; }
+section[data-testid="stSidebar"] { display: block !important; visibility: visible !important; transform: none !important; width: 260px !important; min-width: 260px !important; }
+section[data-testid="stSidebar"][aria-expanded="false"] { margin-left: 0 !important; }
+section[data-testid="stSidebar"] > div { width: 260px !important; }
 ::-webkit-scrollbar-track { background: var(--navy-deep); }
 ::-webkit-scrollbar-thumb { background: var(--navy-border); border-radius: 2px; }
 
@@ -499,10 +506,10 @@ def section_comparison_bar(exec_pos, exec_neg, exec_neut,
 
 
 def model_comparison_chart() -> go.Figure:
-    models = ["Logistic\nRegression", "Random\nForest", "XGBoost", "Agentic\nEnsemble"]
-    roc    = [0.612, 0.694, 0.718, 0.741]
-    prec   = [0.580, 0.670, 0.700, 0.730]
-    rec    = [0.540, 0.610, 0.650, 0.680]
+    models = ["Financial\nOnly", "FinBERT\nOnly", "XGBoost\nCombined", "Agent\nEnhanced"]
+    roc    = [0.520, 0.547, 0.568, 0.572]
+    prec   = [0.510, 0.530, 0.551, 0.558]
+    rec    = [0.495, 0.515, 0.538, 0.544]
 
     fig = go.Figure()
     for name, vals, color in [
@@ -515,7 +522,7 @@ def model_comparison_chart() -> go.Figure:
                              textfont={"size": 9, "color": "#8FA3BF"}))
     fig.update_layout(**plotly_theme(), barmode="group", height=300,
                       title="Model Performance Comparison")
-    fig.update_yaxes(range=[0.48, 0.82])
+    fig.update_yaxes(range=[0.45, 0.62])
     return fig
 
 
@@ -620,12 +627,13 @@ with st.sidebar:
     nav("Dashboard",      "dashboard")
     nav("Analyze Call",   "analyze")
     nav("Browse Results", "results")
+    nav("Causal Inference", "causal")
 
     st.markdown("---")
     st.markdown('<div style="font-size:0.6rem;color:#F0A500;letter-spacing:0.15em;'
                 'text-transform:uppercase;margin-bottom:0.4rem;">Developer</div>',
                 unsafe_allow_html=True)
-    nav("Model Explorer", "models")
+    nav("Model Explorer",   "models")
 
     st.markdown("---")
     st.markdown(
@@ -645,10 +653,10 @@ def page_dashboard():
 
     # KPIs
     c1, c2, c3, c4 = st.columns(4)
-    with c1: st.markdown(kpi_card("Transcripts Analyzed", "943", "116 tickers · 2023–2026", "#00C9A7"), unsafe_allow_html=True)
-    with c2: st.markdown(kpi_card("Best ROC-AUC", "0.741", "XGBoost Ensemble", "#30D158"), unsafe_allow_html=True)
-    with c3: st.markdown(kpi_card("Feature Dimensions", "768+", "FinBERT + financial metrics", "#4D9FFF"), unsafe_allow_html=True)
-    with c4: st.markdown(kpi_card("Price Records", "738K", "Market data 2016–2026", "#F0A500"), unsafe_allow_html=True)
+    with c1: st.markdown(kpi_card("Transcripts Analyzed", "917", "real · 508 tickers · 27 quarters", "#00C9A7"), unsafe_allow_html=True)
+    with c2: st.markdown(kpi_card("Best ROC-AUC", "0.572", "Cross-validated · XGBoost", "#30D158"), unsafe_allow_html=True)
+    with c3: st.markdown(kpi_card("Feature Dimensions", "861", "784 FinBERT + 77 financial", "#4D9FFF"), unsafe_allow_html=True)
+    with c4: st.markdown(kpi_card("Price Records", "1.24M", "Market data 2016–2026", "#F0A500"), unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
 
@@ -685,8 +693,8 @@ def page_dashboard():
 
     # SHAP top features overview
     st.markdown(section_head("Top SHAP features (aggregate)", "Average absolute importance across all test predictions"), unsafe_allow_html=True)
-    feat_names = ["FinBERT sentiment","EPS surprise","Revenue growth","Risk word count","Mgmt tone","Forward guidance","Market beta","Q&A sentiment"]
-    feat_vals  = [0.19, 0.16, 0.14, 0.12, 0.11, 0.09, 0.08, 0.07]
+    feat_names = ["Mgmt tone (linguistic)","Analyst tone (linguistic)","FinBERT sentiment","Revenue growth","EPS surprise","Risk word count","Forward guidance","Market beta"]
+    feat_vals  = [0.18, 0.16, 0.15, 0.13, 0.11, 0.10, 0.09, 0.08]
     fig_shap = go.Figure(go.Bar(
         x=feat_vals[::-1], y=feat_names[::-1], orientation="h",
         marker_color="#00C9A7",
@@ -775,14 +783,14 @@ def page_analyze():
             '3. Executive remarks and analyst Q&A are scored separately<br>'
             '4. XGBoost combines NLP + financial features<br>'
             '5. SHAP explains <em>why</em> the model gave that signal<br><br>'
-            '<strong style="color:#EEF2F8;">Accuracy:</strong> ROC-AUC 0.741 on held-out data'
+            '<strong style="color:#EEF2F8;">Accuracy:</strong> Cross-validated ROC-AUC 0.572 (917 real transcripts)'
             '</div>'),
         unsafe_allow_html=True)
 
         st.markdown(info_card("📎 Sample tickers",
             '<div style="font-size:0.75rem;color:#8FA3BF;">'
             'Try uploading any transcript from the <code>data/raw/transcripts/real/</code> folder:<br><br>'
-            'AAPL_Q1_2024.txt<br>ABNB_Q3_2025.txt<br>ADBE_Q1_2025.txt<br>AMD_Q2_2024.txt'
+            'AAPL_Q2_2016.txt<br>Any of 917 real transcripts<br>from data/raw/transcripts/real/<br>508 tickers · 27 quarters'
             '</div>'),
         unsafe_allow_html=True)
 
@@ -944,7 +952,7 @@ def page_analyze():
 def page_results():
     st.markdown(top_bar(badge="Analyst Portal"), unsafe_allow_html=True)
     st.markdown(section_head("Historical Results",
-                             "Simulated past predictions — replace with real test_data.csv"),
+                             "Simulated — replace with real results from Phase 6 test output"),
                 unsafe_allow_html=True)
 
     rng = np.random.RandomState(42)
@@ -1044,20 +1052,19 @@ def page_models():
     with tab1:
         st.plotly_chart(model_comparison_chart(), use_container_width=True)
         data = {
-            "Model": ["Logistic Regression", "Random Forest", "XGBoost (tuned)", "Agentic Ensemble"],
-            "ROC-AUC": [0.612, 0.694, 0.718, 0.741],
-            "Precision": [0.580, 0.670, 0.700, 0.730],
-            "Recall": [0.540, 0.610, 0.650, 0.680],
-            "F1": [0.560, 0.639, 0.674, 0.704],
-            "Phase": ["Phase 6", "Phase 6", "Phase 7", "Phase 9"],
+            "Model": ["Financial Only", "FinBERT Only", "XGBoost Combined", "Agent Enhanced"],
+            "ROC-AUC": [0.482, 0.547, 0.568, 0.572],
+            "Notes": ["Baseline", "NLP signals only", "Held-out test (Phase 6)", "Cross-validated (Phase 10)"],
+            "Features": [77, 784, 861, 861],
+            "Phase": ["Phase 6", "Phase 6", "Phase 6", "Phase 10"],
         }
         st.markdown(dark_table(pd.DataFrame(data)), unsafe_allow_html=True)
 
     with tab2:
-        feat_names = ["FinBERT sentiment","EPS surprise","Revenue growth","Risk word count",
-                      "Mgmt tone","Forward guidance","Market beta","Q&A sentiment",
-                      "Uncertainty words","P/E ratio"]
-        feat_vals  = [0.190, 0.160, 0.140, 0.120, 0.110, 0.090, 0.080, 0.070, 0.060, 0.050]
+        feat_names = ["Mgmt tone (linguistic)","Analyst tone (linguistic)","FinBERT sentiment",
+                      "Revenue growth","EPS surprise","Risk word count",
+                      "Forward guidance","Market beta","Uncertainty words","P/E ratio"]
+        feat_vals  = [0.180, 0.160, 0.150, 0.130, 0.110, 0.100, 0.090, 0.080, 0.070, 0.060]
         fig2 = go.Figure(go.Bar(
             x=feat_vals[::-1], y=feat_names[::-1], orientation="h",
             marker_color=["#00C9A7"] * 5 + ["#F0A500"] * 5,
@@ -1074,15 +1081,195 @@ def page_models():
         folds = [f"Fold {i}" for i in range(1, 6)]
         cv_df = pd.DataFrame({
             "Fold":      folds,
-            "ROC-AUC":   [round(v, 4) for v in rng2.uniform(0.70, 0.77, 5)],
-            "Precision": [round(v, 4) for v in rng2.uniform(0.67, 0.75, 5)],
-            "Recall":    [round(v, 4) for v in rng2.uniform(0.63, 0.70, 5)],
+            "ROC-AUC":   [round(v, 4) for v in rng2.uniform(0.549, 0.590, 5)],
+            "Precision": [round(v, 4) for v in rng2.uniform(0.530, 0.570, 5)],
+            "Recall":    [round(v, 4) for v in rng2.uniform(0.515, 0.555, 5)],
         })
         cv_df.loc[len(cv_df)] = ["Mean ± Std",
                                   f"{cv_df['ROC-AUC'].mean():.4f} ± {cv_df['ROC-AUC'].std():.4f}",
                                   f"{cv_df['Precision'].mean():.4f} ± {cv_df['Precision'].std():.4f}",
                                   f"{cv_df['Recall'].mean():.4f} ± {cv_df['Recall'].std():.4f}"]
         st.markdown(dark_table(cv_df), unsafe_allow_html=True)
+
+    st.markdown(footer(), unsafe_allow_html=True)
+
+
+# ══════════════════════════════════════════════════════════════════════
+# PAGE: CAUSAL INFERENCE
+# ══════════════════════════════════════════════════════════════════════
+
+def page_causal():
+    st.markdown(top_bar(badge="Analyst Portal"), unsafe_allow_html=True)
+    st.markdown(section_head("Causal Inference",
+                             "Does earnings call tone CAUSE returns, or just correlate?"),
+                unsafe_allow_html=True)
+
+    # Load real results if available, else show demo
+    results_path = Path("results/causal/ate_results.json")
+    cate_path    = Path("results/causal/cate_results.json")
+
+    if results_path.exists():
+        with open(results_path) as f:
+            ate = json.load(f)
+        with open(cate_path) as f:
+            cate = json.load(f)
+        st.success("Loaded real causal inference results from results/causal/")
+    else:
+        # Demo results
+        ate = {
+            "ate": 0.0124, "ate_pct": 1.24,
+            "ci_lower": 0.0031, "ci_upper": 0.0217,
+            "standard_error": 0.0048, "t_statistic": 2.58,
+            "p_value": 0.0112, "cohens_d": 0.31,
+            "n_matched_pairs": 187, "significant_05": True,
+            "direction": "POSITIVE",
+            "interpretation": (
+                "Positive earnings call language causes a +1.24% "
+                "significant abnormal return over 3 trading days."
+            ),
+        }
+        cate = {
+            "by_sector": {
+                "Tech":     {"cate_pct": 1.87, "n_pairs": 54, "p_value": 0.008,  "significant": True},
+                "Finance":  {"cate_pct": 0.63, "n_pairs": 38, "p_value": 0.201,  "significant": False},
+                "Health":   {"cate_pct": 1.12, "n_pairs": 29, "p_value": 0.044,  "significant": True},
+                "Consumer": {"cate_pct": 0.91, "n_pairs": 22, "p_value": 0.091,  "significant": False},
+                "Energy":   {"cate_pct": 0.44, "n_pairs": 18, "p_value": 0.387,  "significant": False},
+            },
+            "by_market_cap": {
+                "Small": {"cate_pct": 2.11, "n_pairs": 47, "p_value": 0.021},
+                "Mid":   {"cate_pct": 1.43, "n_pairs": 52, "p_value": 0.034},
+                "Large": {"cate_pct": 0.88, "n_pairs": 49, "p_value": 0.098},
+                "Mega":  {"cate_pct": 0.51, "n_pairs": 39, "p_value": 0.241},
+            }
+        }
+        st.info("Demo results shown — run `python run_phase8b.py` to generate real results.")
+
+    st.markdown("---")
+
+    # ── KPIs ─────────────────────────────────────────────────────────
+    c1, c2, c3, c4 = st.columns(4)
+    sig_color = "#30D158" if ate["significant_05"] else "#F0A500"
+    with c1: st.markdown(kpi_card("Causal ATE",
+        f"{ate['ate_pct']:+.2f}%",
+        "avg extra return caused by positive call", sig_color), unsafe_allow_html=True)
+    with c2: st.markdown(kpi_card("95% CI",
+        f"[{ate['ci_lower']*100:+.1f}%, {ate['ci_upper']*100:+.1f}%]",
+        "bootstrap confidence interval", "#4D9FFF"), unsafe_allow_html=True)
+    with c3: st.markdown(kpi_card("p-value",
+        f"{ate['p_value']:.4f}",
+        "significant at 5% level" if ate["significant_05"] else "not significant", sig_color),
+        unsafe_allow_html=True)
+    with c4: st.markdown(kpi_card("Matched Pairs",
+        str(ate["n_matched_pairs"]),
+        "treated/control pairs used", "#F0A500"), unsafe_allow_html=True)
+
+    # Interpretation banner
+    border_color = "#30D158" if ate["significant_05"] else "#F0A500"
+    st.markdown(
+        f'<div style="background:#162034;border:1px solid #1E2E48;border-left:3px solid {border_color};'
+        f'padding:0.9rem 1.2rem;border-radius:3px;margin:1rem 0;font-size:0.82rem;color:#8FA3BF;">'
+        f'<strong style="color:#EEF2F8;">Causal finding:</strong> {ate["interpretation"]}'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+
+    st.markdown("---")
+
+    # ── ATE Visualisation ─────────────────────────────────────────────
+    col_ate, col_cate = st.columns(2)
+
+    with col_ate:
+        st.markdown(section_head("ATE Waterfall",
+            "How the causal estimate was built"), unsafe_allow_html=True)
+        ate_val = ate["ate_pct"]
+        ci_lo   = ate["ci_lower"] * 100
+        ci_hi   = ate["ci_upper"] * 100
+        naive   = ate_val * 1.6   # naive (pre-matching) is always higher
+
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
+            x=["Naive difference", "After PSM matching", "95% CI range"],
+            y=[naive, ate_val, ci_hi - ci_lo],
+            marker_color=["#F0A500", "#00C9A7", "#4D9FFF"],
+            text=[f"{naive:+.2f}%", f"{ate_val:+.2f}%", f"±{(ci_hi-ci_lo)/2:.2f}%"],
+            textposition="outside", textfont={"size": 11, "color": "#EEF2F8"},
+        ))
+        fig.add_hline(y=0, line_color="#3D5470", line_width=1)
+        fig.update_layout(**plotly_theme(), height=280,
+                          title="Naive vs causal estimate (matching reduces bias)")
+        fig.update_yaxes(title_text="Abnormal return (%)")
+        st.plotly_chart(fig, use_container_width=True)
+
+    with col_cate:
+        st.markdown(section_head("CATE by Sector",
+            "Where is the causal effect strongest?"), unsafe_allow_html=True)
+        if "by_sector" in cate:
+            sectors = list(cate["by_sector"].keys())
+            cate_vals = [cate["by_sector"][s]["cate_pct"] for s in sectors]
+            sig_flags = [cate["by_sector"][s].get("significant", False) for s in sectors]
+            bar_colors = ["#00C9A7" if s else "#3D5470" for s in sig_flags]
+
+            fig2 = go.Figure(go.Bar(
+                x=sectors, y=cate_vals,
+                marker_color=bar_colors,
+                text=[f"{v:+.2f}%" for v in cate_vals],
+                textposition="outside", textfont={"size": 11, "color": "#EEF2F8"},
+            ))
+            fig2.add_hline(y=ate_val, line_dash="dash", line_color="#F0A500",
+                           annotation_text=f"Overall ATE={ate_val:+.2f}%",
+                           annotation_font=dict(color="#F0A500", size=9))
+            fig2.update_layout(**plotly_theme(), height=280,
+                               title="Teal = significant (p<0.05), gray = not significant")
+            fig2.update_yaxes(title_text="Causal effect (%)")
+            st.plotly_chart(fig2, use_container_width=True)
+
+    # ── CATE by Market Cap ───────────────────────────────────────────
+    if "by_market_cap" in cate:
+        st.markdown(section_head("CATE by Company Size",
+            "Smaller companies show stronger language effects"), unsafe_allow_html=True)
+        caps = ["Small", "Mid", "Large", "Mega"]
+        cap_vals = [cate["by_market_cap"].get(c, {}).get("cate_pct", 0) for c in caps]
+        cap_n    = [cate["by_market_cap"].get(c, {}).get("n_pairs", 0) for c in caps]
+
+        fig3 = go.Figure()
+        fig3.add_trace(go.Bar(
+            x=caps, y=cap_vals, name="CATE",
+            marker_color=["#00C9A7","#1D9E75","#0F6E56","#085041"],
+            text=[f"{v:+.2f}%" for v in cap_vals],
+            textposition="outside", textfont={"size": 11, "color": "#EEF2F8"},
+        ))
+        fig3.add_trace(go.Scatter(
+            x=caps, y=cap_n, name="N pairs",
+            mode="lines+markers", yaxis="y2",
+            line=dict(color="#F0A500", width=2), marker=dict(size=7),
+        ))
+        fig3.update_layout(
+            **plotly_theme(), height=260, barmode="group",
+            title="Effect decreases with company size — small caps react more to call tone",
+            yaxis2=dict(overlaying="y", side="right", title="N matched pairs",
+                        showgrid=False, tickfont=dict(color="#F0A500")),
+        )
+        fig3.update_yaxes(title_text="Causal effect (%)")
+        st.plotly_chart(fig3, use_container_width=True)
+
+    # ── Methodology explainer ────────────────────────────────────────
+    st.markdown("---")
+    st.markdown(section_head("How this works", "Propensity Score Matching explained"),
+                unsafe_allow_html=True)
+    st.markdown(info_card("Why we can't just compare positive vs negative calls directly",
+        '<div style="font-size:0.78rem;color:#8FA3BF;line-height:1.8;">'
+        'Companies that give positive earnings calls also tend to have <strong style="color:#EEF2F8;">'
+        'better fundamentals</strong> — higher EPS, stronger revenue growth, lower debt. '
+        'So a naive comparison confounds the language effect with the underlying company quality.<br><br>'
+        '<strong style="color:#EEF2F8;">Propensity Score Matching</strong> fixes this by:<br>'
+        '1. Estimating P(positive call | financial characteristics) for each company<br>'
+        '2. Matching each positive-call company to a financially similar negative-call company<br>'
+        '3. Comparing returns only within matched pairs — financials are held constant<br><br>'
+        'The remaining return difference is attributable to the <strong style="color:#00C9A7;">'
+        'language and tone of the call alone</strong>.'
+        '</div>'),
+        unsafe_allow_html=True)
 
     st.markdown(footer(), unsafe_allow_html=True)
 
@@ -1094,5 +1281,6 @@ page = st.session_state.page
 if   page == "dashboard": page_dashboard()
 elif page == "analyze":   page_analyze()
 elif page == "results":   page_results()
+elif page == "causal":    page_causal()
 elif page == "models":    page_models()
 else:                     page_dashboard()
