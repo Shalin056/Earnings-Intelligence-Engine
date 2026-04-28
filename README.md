@@ -168,7 +168,7 @@ python run_phase10.py
 ```
 ### Phase 11: Agentic AI Orchestration Layer
 ```bash
-python run_phase5.py
+python run_phase11.py
 ```
 
 ## 📈 Expected Results
