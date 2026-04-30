@@ -506,7 +506,7 @@ def section_comparison_bar(exec_pos, exec_neg, exec_neut,
 
 
 def model_comparison_chart() -> go.Figure:
-    models = ["Financial\nOnly", "FinBERT\nOnly", "XGBoost\n+", "Agent\nEnhanced"]
+    models = ["Financial\nOnly", "FinBERT\nOnly", "XGBoost\n+ FullFinBert", "Agent\nEnhanced"]
     roc    = [0.520, 0.547, 0.633, 0.572]
     prec   = [0.510, 0.530, 0.610, 0.558]
     rec    = [0.495, 0.515, 0.600, 0.544]
