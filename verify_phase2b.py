@@ -67,22 +67,22 @@ def verify_phase2b():
     
     # Sample
     print("   Sample (first 3 records):")
-    print(metadata_df.head(3)[['ticker', 'quarter', 'total_management_words', 
-                                'total_analyst_words', 'management_analyst_word_ratio']].to_string())
+    print(metadata_df.head(3)[['ticker', 'quarter', 'management_word_count',
+                                'analyst_word_count', 'management_analyst_ratio']].to_string())
     print()
     
     # 4. Quality checks
     print("4️⃣ QUALITY CHECKS...")
     
     # Check word counts are reasonable
-    min_mgmt_words = metadata_df['total_management_words'].min()
-    min_analyst_words = metadata_df['total_analyst_words'].min()
+    min_mgmt_words = metadata_df['management_word_count'].min()
+    min_analyst_words = metadata_df['analyst_word_count'].min()
     
     print(f"   Min management words: {min_mgmt_words}")
     print(f"   Min analyst words:    {min_analyst_words}")
     
     # Management should always have more words (prepared remarks + Q&A answers)
-    avg_ratio = metadata_df['management_analyst_word_ratio'].mean()
+    avg_ratio = metadata_df['management_analyst_ratio'].mean()
     print(f"   Avg mgmt/analyst ratio: {avg_ratio:.2f}x")
     
     if avg_ratio > 1:
