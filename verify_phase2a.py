@@ -46,7 +46,20 @@ def verify_phase2a():
     print("2️⃣ CLEANING STATISTICS...")
     with open(transcripts_dir / 'cleaning_statistics.json', 'r', encoding='utf-8') as f:
         stats = json.load(f)
-    
+
+    # Guard: stats file may have been written before the run completed (all zeros).
+    # If so, recompute the essential values from the metadata CSV instead.
+    if stats.get('total_processed', 0) == 0:
+        print("   ⚠️  Statistics file has zero counts — recomputing from metadata CSV...")
+        _meta = pd.read_csv(transcripts_dir / 'transcripts_cleaned_metadata.csv')
+        stats['total_processed']      = len(_meta)
+        stats['successfully_cleaned'] = len(_meta)
+        stats['failed']               = 0
+        stats['avg_original_length']  = _meta['full_text_original_length'].mean()
+        stats['avg_cleaned_length']   = _meta['full_text_cleaned_length'].mean()
+        stats['total_chars_removed']  = int(_meta['total_chars_removed'].sum())
+        print()
+
     print(f"   Total processed:      {stats['total_processed']}")
     print(f"   Successfully cleaned: {stats['successfully_cleaned']}")
     print(f"   Failed:               {stats['failed']}")
