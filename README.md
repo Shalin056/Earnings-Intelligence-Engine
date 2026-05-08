@@ -99,8 +99,6 @@ Transcripts    - Validation      - Agent AI        - Ensemble     ≥3%
 │   ├── models/               # ML model implementations
 │   ├── evaluation/           # Metrics and validation
 │   └── utils/                # Shared utilities
-├── notebooks/                # Jupyter notebooks for EDA
-├── models/                   # Saved model files
 ├── logs/                     # Execution logs
 ├── tests/                    # Unit tests
 ├── requirements.txt          # Python dependencies
