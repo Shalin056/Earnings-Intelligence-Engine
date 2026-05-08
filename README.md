@@ -24,19 +24,19 @@ Every year, 10,000+ earnings calls generate massive unstructured text data. Manu
 - Provide interpretable insights for investment decisions
 
 ## 🏗️ Architecture
+```
 Data Collection → Preprocessing → Feature Engineering → ML Modeling → Prediction
 ↓                ↓                  ↓                  ↓              ↓
-
 Market Data    - Cleaning        - FinBERT         - XGBoost      ROC-AUC
 Financials     - Alignment       - LM Dict         - Random Forest Improvement
 Transcripts    - Validation      - Agent AI        - Ensemble     ≥3%
-
+```
 
 ## 🚀 Key Features
 
-- **Data Collection**: 503 S&P 500 companies, 738K price records, 3.1K quarterly financials, 150 transcripts
+- **Data Collection**: 503 S&P 500 companies, 1.24M price records, 3.1K quarterly financials, 1,720 transcripts
 - **NLP Pipeline**: FinBERT embeddings (768-dim) + sentiment analysis
-- **Agentic AI**: Multi-agent system for advanced feature extraction (Week 9-10)
+- **Agentic AI**: Multi-agent system for advanced feature extraction (Phase 9-10)
 - **ML Models**: Logistic Regression baseline, XGBoost primary, Random Forest validation
 - **Explainability**: SHAP values for feature importance
 
@@ -44,10 +44,10 @@ Transcripts    - Validation      - Agent AI        - Ensemble     ≥3%
 
 | Data Source | Records | Time Period | Status |
 |-------------|---------|-------------|--------|
-| Stock Prices | 738,698 | 2018-2023 | ✅ Complete |
-| Financial Statements | 3,131 | 2018-2023 | ✅ Complete |
-| Earnings Transcripts | 150 | 2022-2023 | ✅ Complete |
-| S&P 500 Index | 1,509 | 2018-2023 | ✅ Complete |
+| Stock Prices | 1,244,349 | 2016-2026 | ✅ Complete |
+| Financial Statements | 3,125 | 2024-2026 | ✅ Complete |
+| Earnings Transcripts | 1,720 | 2016-2026 | ✅ Complete |
+| S&P 500 Index | 2,546 | 2016-2026 | ✅ Complete |
 
 ## 🛠️ Technology Stack
 
@@ -62,33 +62,51 @@ Transcripts    - Validation      - Agent AI        - Ensemble     ≥3%
 - **ML**: XGBoost, LightGBM, scikit-learn
 - **Data**: pandas, numpy, yfinance
 - **Visualization**: matplotlib, seaborn, plotly
-- **Agents**: Anthropic Claude API (Phase 2)
+- **Agents**: Anthropic Claude API (Phase 9-11), LangGraph
+
+## 📁 Project Structure
 
 ```text
-## 📁 Project Structure
 .
 ├── data/
-│   ├── raw/              # Original collected data
-│   ├── processed/        # Cleaned and normalized data
-│   ├── features/         # Extracted features
-│   └── final/            # Model-ready datasets
+│   ├── raw/
+│   │   ├── market/           # Stock prices, S&P 500 index, tickers
+│   │   ├── financial/        # Income statements, balance sheets, cash flows
+│   │   └── transcripts/      # Raw earnings call transcripts (JSON + individual .txt)
+│   ├── processed/
+│   │   ├── aligned/          # Temporally aligned dataset
+│   │   ├── financial/        # Normalized financial features
+│   │   ├── market/           # Processed market data
+│   │   └── transcripts/      # Cleaned and segmented transcripts
+│   ├── features/             # FinBERT and NLP extracted features
+│   └── final/                # Model-ready train/test datasets
+├── results/
+│   ├── agentic_features/     # Agent-discovered features and rankings
+│   ├── agentic_models/       # Agent-enhanced model outputs
+│   ├── agentic_orchestration/ # LangGraph orchestration logs and reports
+│   ├── baseline_models/      # Phase 6 baseline documentation
+│   ├── xgboost_models/       # Phase 7 XGBoost results
+│   ├── validation/           # Cross-validation, SHAP, error analysis
+│   ├── figures/              # Charts and visualizations
+│   ├── quality_reports/      # Data quality reports
+│   ├── tables/               # Result tables
+│   └── reports/              # Final reports
 ├── src/
-│   ├── data_collection/  # Scrapers and collectors
-│   ├── preprocessing/    # Data cleaning pipelines
-│   ├── features/         # Feature engineering
-│   ├── agents/           # Agentic AI modules (Week 9)
-│   ├── models/           # ML model implementations
-│   └── evaluation/       # Metrics and validation
-├── notebooks/            # Jupyter notebooks for EDA
-├── models/               # Saved model files
-├── results/              # Figures, tables, reports
-├── logs/                 # Execution logs
-├── tests/                # Unit tests
-├── requirements.txt      # Python dependencies
-├── config.py             # Configuration settings
+│   ├── data_collection/      # Scrapers and collectors
+│   ├── preprocessing/        # Data cleaning pipelines
+│   ├── features/             # Feature engineering
+│   ├── agentic/              # Agentic AI modules (Phase 9-11)
+│   ├── models/               # ML model implementations
+│   ├── evaluation/           # Metrics and validation
+│   └── utils/                # Shared utilities
+├── notebooks/                # Jupyter notebooks for EDA
+├── models/                   # Saved model files
+├── logs/                     # Execution logs
+├── tests/                    # Unit tests
+├── requirements.txt          # Python dependencies
+├── config.py                 # Configuration settings
 └── README.md
 ```
-
 
 ## 🔧 Installation
 
@@ -105,22 +123,25 @@ cd earnings-intelligence-engine
 ```
 
 2. Running the entire Pipeline
-## Running on Windows
+
+**On Windows:**
 ```bash
 run_everything.bat
 ```
-## Running on MacOS
+
+**On MacOS/Linux:**
 ```bash
 sh run_everything.sh
 ```
 
-#OR Running manually
-2. Install dependencies
+**Or run manually:**
+
+Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Verify installation
+Verify installation:
 ```bash
 python verify_installation.py
 ```
@@ -129,58 +150,85 @@ python verify_installation.py
 
 ### Phase 1: Data Collection
 ```bash
-# Collect all data sources
-python run_phase1ab.py  # Market data
-python run_phase1c.py   # Financial statements
-python run_phase1d.py   # Earnings transcripts
+python run_phase1ab.py   # S&P 500 tickers + market data
+python run_phase1c.py    # Financial statements
+python run_phase1d.py    # Earnings transcripts
 ```
 
-### Phase 2: Preprocessing (Coming Soon)
+Verify each phase:
 ```bash
-python run_phase2.py
+python verify_phase1ab.py
+python verify_phase1c.py
+python verify_phase1d.py
 ```
 
-### Phase 3: Feature Engineering (Coming Soon)
+### Phase 2: Preprocessing
 ```bash
-python run_phase3.py
+python run_phase2a.py    # Transcript cleaning
+python run_phase2b.py    # Speaker segmentation
+python run_phase2c.py    # Financial normalization
+python run_phase2d.py    # Temporal alignment
+python run_phase2e.py    # Quality reporting
+```
+
+### Phase 3: Feature Engineering
+```bash
+python run_phase3a.py    # FinBERT extraction
+python run_phase3b.py    # NLP features (LM dictionary)
+python run_phase3c.py    # Feature integration + target enhancement
 ```
 
 ### Phase 4-5: Baseline Modeling & Regression & Classification
 ```bash
 python run_phase4.py
 ```
+
 ### Phase 6: Baseline Models Comparison
 ```bash
 python run_phase6.py
 ```
+
 ### Phase 7: XGBoost Models
 ```bash
 python run_phase7.py
 ```
-### Phase 8: Model Comparison & Visualization using Streamlit for UI
+
+### Phase 8: Model Validation & SHAP Analysis
 ```bash
 python run_phase8.py
 ```
+
 ### Phase 9: Agentic AI Feature Engineering
 ```bash
 python run_phase9.py
 ```
+
 ### Phase 10: Agent-Enhanced Modeling
 ```bash
 python run_phase10.py
 ```
-### Phase 11: Agentic AI Orchestration Layer
+
+### Phase 11: Agentic AI Orchestration Layer (LangGraph)
 ```bash
 python run_phase11.py
 ```
 
-## 📈 Expected Results
+## 📈 Results
 
-| Model | Features | Target ROC-AUC | Status |
-|-------|----------|----------------|--------|
-| Baseline (Financial Only) | 28 | ≥0.55 | Week 5 |
-| Enhanced (FinBERT) | 796 | ≥0.58 | Week 7 |
-| Agent-Enhanced | 846 | ≥0.61 | Week 10 |
+| Model | Features | Target ROC-AUC | Achieved ROC-AUC | Status |
+|-------|----------|----------------|------------------|--------|
+| Baseline (Financial Only) | 28 | ≥0.55 | 0.568 | ✅ Complete |
+| Enhanced (FinBERT) | 796 | ≥0.58 | — | ✅ Complete |
+| Agent-Enhanced | 863 | ≥0.61 | 0.572 | ✅ Complete |
+
+**Final Pipeline Performance (Phase 11 Orchestration):**
+- Baseline AUC: **0.568** (exceeds ≥0.55 threshold)
+- Final AUC: **0.572**
+- Improvement: **+0.004**
+- Best Model: `agentic_ai`
+- Feature dimensionality: **863** (post-integration)
+- Parsing success rate: **87.0%**
+- Train/test split: **69.9% / 30.1%** (chronological)
 
 ## 🧪 Validation Strategy
 
@@ -192,23 +240,28 @@ python run_phase11.py
 
 ## 📊 Current Progress
 
-- [x] Phase 0: Environment Setup (Week 1)
-- [x] Phase 1A: S&P 500 Tickers (Week 2)
-- [x] Phase 1B: Market Data Collection (Week 2)
-- [x] Phase 1C: Financial Statements (Week 3)
-- [x] Phase 1D: Transcript Collection (Week 3)
-- [x] Phase 2: Data Preprocessing (Week 4-5)
-- [x] Phase 3: Feature Engineering (Week 6-7)
-- [x] Phase 4-8: ML Modeling and adding User Interface - Streamlit(Week 8-9)
-- [x] Phase 9-10: Agentic Enhancement (Week 10-11)
+- [x] Phase 0: Environment Setup
+- [x] Phase 1A: S&P 500 Tickers
+- [x] Phase 1B: Market Data Collection
+- [x] Phase 1C: Financial Statements
+- [x] Phase 1D: Transcript Collection (1,720 transcripts, 508 tickers)
+- [x] Phase 2: Data Preprocessing (2a–2e)
+- [x] Phase 3: Feature Engineering (3a–3c)
+- [x] Phase 4-8: ML Modeling & Validation
+- [x] Phase 9-10: Agentic Feature Engineering & Enhanced Modeling
+- [x] Phase 11: LangGraph Orchestration Layer
 
-## 🤖 Agentic AI Enhancement (Phase 2)
+## 🤖 Agentic AI Enhancement (Phase 9-11)
 
 **Multi-Agent System:**
-- **Transcript Analyzer**: Extracts key insights, forward-looking statements
-- **Risk Assessor**: Identifies red flags and risk mentions
-- **Financial Context Agent**: Analyzes metrics in industry context
-- **Orchestrator**: Synthesizes agent findings
+- **Data Ingestion Agent**: Decides data sources, handles API failures
+- **Preprocessing Validation Agent**: Checks parsing quality (≥80% threshold), validates temporal alignment
+- **Feature Extraction Agent**: Runs FinBERT (768-dim), falls back to Loughran-McDonald if needed
+- **Data Integration Agent**: Validates 863-dimensional feature fusion, enforces train/test temporal split
+- **Modeling & Validation Agent**: Establishes baseline (≥0.55 AUC), selects best architecture
+- **Reporting Agent**: Generates documentation, logs all autonomous decisions
+
+**Orchestration:** LangGraph-based autonomous pipeline control with quality validation, fallback triggers, and complete reproducibility logging.
 
 **Agent-Derived Features:** Management confidence, competitive pressure, strategic shifts, risk severity
 
@@ -236,6 +289,7 @@ For questions or collaboration:
 - fshah14@asu.edu - Freya Shah
 - ksures21@asu.edu - Kruthika Suresh
 - hveldan1@asu.edu - Harihara Y. Veldanda
+
 ---
 
 **Status**: 🟢 Complete
